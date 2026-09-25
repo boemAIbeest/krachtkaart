@@ -59,7 +59,26 @@
     ex('Muscle-up', 'skill', ['rug', 'triceps'], ['borst', 'biceps'], { ladder: ['Explosieve pull-up tot de borst', 'Negatieve muscle-up', 'Eén muscle-up', 'Vijf muscle-ups', 'Tien strikte muscle-ups'] }),
     ex('Pistol squat', 'skill', ['quadriceps', 'billen'], ['kuiten'], { ladder: ['Op een box', 'Met hulp', 'Eén pistol', 'Vijf per been', 'Met gewicht'] }),
     ex('L-sit', 'skill', ['buik'], ['triceps'], { ladder: ['Tuck, 10 s', 'L-sit, 10 s', 'L-sit, 30 s', 'V-sit', 'Manna-progressie'] }),
+    // Stretches: "Stretchen" is the generic one; the parser fills in which muscles.
+    ex('Stretchen', 'stretch', [], [], { aliases: ['stretch', 'rekken', 'gestretcht'] }),
+    ex('Hamstring stretch', 'stretch', ['hamstrings'], [], { aliases: ['hamstrings stretchen', 'hamstring rekken'] }),
+    ex('Quad stretch', 'stretch', ['quadriceps'], [], { aliases: ['quadriceps stretch', 'quads stretchen'] }),
+    ex('Heupflexor stretch', 'stretch', ['quadriceps'], ['billen'], { aliases: ['hip flexor stretch', 'couch stretch', 'heup stretch'] }),
+    ex('Duivenhouding', 'stretch', ['billen'], [], { aliases: ['pigeon stretch', 'pigeon pose'] }),
+    ex('Borst stretch', 'stretch', ['borst'], ['schouders'], { aliases: ['chest stretch', 'borststretch'] }),
+    ex('Lat stretch', 'stretch', ['rug'], [], { aliases: ['rug stretch'] }),
+    ex('Kuit stretch', 'stretch', ['kuiten'], [], { aliases: ['calf stretch', 'kuitstretch'] }),
+    ex('Butterfly', 'stretch', ['adductoren'], [], { aliases: ['butterfly stretch'] }),
+    ex('Pancake', 'stretch', ['hamstrings', 'adductoren'], [], { aliases: ['pancake stretch'] }),
+    ex('Spagaat', 'stretch', ['hamstrings', 'adductoren', 'quadriceps'], [], { aliases: ['splits'] }),
+    ex('Jefferson curl', 'stretch', ['onderrug', 'hamstrings'], [], {}),
+    ex('Schouder dislocates', 'stretch', ['schouders'], ['borst'], { aliases: ['shoulder dislocates', 'dislocates'] }),
+    ex('Polsstretch', 'stretch', ['onderarmen'], [], { aliases: ['wrist stretch', 'pols stretch'] }),
+    ex('Cat-cow', 'stretch', ['onderrug'], [], { aliases: ['cat cow', 'kat koe'] }),
   ];
+  // Dutch everyday names the speech parser will hear.
+  const EXTRA_ALIASES = { 'Pull-up': ['optrekken', 'pull ups'], 'Push-up': ['push ups'], 'Squat': ['kniebuigingen', 'squats'], 'Deadlift': ['deadlifts'] };
+  for (const e of CATALOG) e.aliases.push(...(EXTRA_ALIASES[e.name] || []));
 
   const norm = (s) => String(s || '').toLowerCase().replace(/^\s*(weighted|gewogen)\s+/, '')
     .replace(/[^a-z0-9]/g, '').replace(/s$/, '');
@@ -70,6 +89,26 @@
   const e1rm = (load, reps) => (reps <= 0 || load <= 0) ? 0 : reps === 1 ? load : load * (1 + Math.min(reps, 15) / 30);
   const levelFor = (ratio, t) => 1 + t.filter((x) => ratio >= x).length;
   const thresholds = (e, sex) => e.std.map((x) => sex === 'v' ? x * (e.region === 'onder' ? 0.75 : 0.6) : x);
+
+  const strs = (a) => (Array.isArray(a) ? a : []).map(String);
+  // Exercises from kennis.json: known names gain days/dose/source, new names join the catalog.
+  function addExercises(list) {
+    for (const raw of Array.isArray(list) ? list : []) {
+      if (!raw || !raw.name) continue;
+      const extra = { fromKennis: true, days: strs(raw.days), ...(raw.dose && { dose: raw.dose }), ...(raw.source && { source: String(raw.source) }), ...(raw.note && { note: String(raw.note) }) };
+      let e = findExercise(raw.name);
+      if (e) {
+        Object.assign(e, extra, { days: [...new Set([...(e.days || []), ...extra.days])] });
+      } else {
+        const m = cleanMuscles(raw.muscles);
+        e = ex(String(raw.name), KINDS.includes(raw.kind) ? raw.kind : 'gewicht', m.primary, m.secondary, extra);
+        if (Array.isArray(raw.ladder) && raw.ladder.length === 5) e.ladder = strs(raw.ladder);
+        CATALOG.push(e);
+        INDEX.set(norm(e.name), e);
+      }
+      for (const a of strs(raw.aliases)) { e.aliases.push(a); INDEX.set(norm(a), e); }
+    }
+  }
 
   const cleanMuscles = (m) => ({
     primary: (m?.primary || []).filter((x) => x in MUSCLES),
@@ -178,7 +217,7 @@
   }
 
   const api = {
-    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, e1rm, levelFor, thresholds, resolve,
+    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, addExercises, norm, e1rm, levelFor, thresholds, resolve,
     bestPerExercise, muscleLevels, recovery, recoveryStatus, muscleDates, exerciseSeries, weekStats,
   };
   root.Score = api;

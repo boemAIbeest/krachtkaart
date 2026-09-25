@@ -53,4 +53,19 @@ assert.equal(ser[1].unit, 'kg');
 const ws = S.weekStats([w(1, [bench1]), w(30, [bench1, { exercise: 'Stretchen', kind: 'stretch', sets: [{ sec: 30 }] }]), w(200, [bench1])], now);
 assert.deepEqual(ws, { sessions: 2, hardSets: 2 });
 
+// catalog: Dutch aliases and stretches
+assert.equal(S.findExercise('optrekken').name, 'Pull-up');
+assert.equal(S.findExercise('Duivenhouding').kind, 'stretch');
+
+// knowledge exercises: new ones get appended, known ones gain days/dose but keep their standard
+S.addExercises([{ name: 'Scapula pull-up', aliases: ['scap pulls'], kind: 'lichaamsgewicht', muscles: { primary: ['rug', 'nope'], secondary: ['trapezius'] }, days: ['pull'], dose: { sets: 3, reps: '8-12' }, source: 'yt-1' }]);
+assert.equal(S.findExercise('scap pulls').name, 'Scapula pull-up');
+assert.deepEqual(S.findExercise('Scapula pull-up').muscles.primary, ['rug']);
+assert.ok(S.findExercise('Scapula pull-up').fromKennis);
+S.addExercises([{ name: 'bench press', days: ['push'], dose: { sets: 5, reps: '5' }, source: 'yt-2' }]);
+const bench = S.findExercise('Bankdrukken');
+assert.ok(bench.std);
+assert.equal(bench.dose.sets, 5);
+assert.ok(bench.days.includes('push') && bench.fromKennis);
+
 console.log('score.js: all checks passed');
