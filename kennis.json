@@ -132,6 +132,129 @@
         "Kracht- en sprongtraining helpen ook je botdichtheid en gaan spierverlies op latere leeftijd tegen.",
         "Andere oefeningen mogen ook: skips, hordesprongen, olympische lifts, medicine ball throws, squats en deadlifts."
       ]
+    },
+    {
+      "id": "jason-lauren-power",
+      "type": "video",
+      "title": "Train Like An Athlete: My Top 5 Plyometric and Power Moves",
+      "source": "Jason and Lauren",
+      "url": "https://www.youtube.com/watch?v=Vc9lqjIKfoo",
+      "days": ["benen", "lower", "fullbody"],
+      "whenToUse": "Als kort powerblok van zo'n 5 minuten: na je warming-up, voor je krachtwerk.",
+      "rules": [
+        "Doe één poweroefening na je mobility-warming-up en vóór je krachtoefeningen. Dat kost ongeveer 5 minuten.",
+        "Pogo hops kun je dagelijks doen als voorbereiding: 2–3 sets van 15–30.",
+        "Box jump: 3–4 sets van 5 met 30 s rust. Land in dezelfde houding als waarin je afzet; een hogere box is niet beter als je alleen je benen hoger optrekt. Durf je niet? Neem een lagere box.",
+        "Deficit lunge met knieheffing: 2–3 sets van 5 per been, 30 s rust.",
+        "Speed skaters: 2–3 sets van 8 per kant, 30–45 s rust.",
+        "Broad jump: 3 sets van 5, 30–45 s rust.",
+        "Landen mag stevig, maar niet met een harde klap."
+      ],
+      "keyPoints": [
+        "Kracht is kracht zetten tegen weerstand; power is maximale kracht in zo kort mogelijke tijd, meestal sneller en met minder gewicht.",
+        "Power neemt met de leeftijd het snelst af. Moeite met opstaan uit een stoel komt vooral door minder power, niet alleen minder kracht.",
+        "Een box jump spaart je knieën en enkels: de box haalt een deel van de landingshoogte weg.",
+        "Varieer de richting: omhoog (pogo hops, box jump, knieheffing), zijwaarts (speed skaters) en vooruit (broad jump).",
+        "Eenbenig springen vanuit spreidstand lijkt op de afzet bij hardlopen en sprinten."
+      ]
+    },
+    {
+      "id": "rossner-lopers",
+      "type": "video",
+      "title": "The 8 Most Efficient Lifts for Runners (Backed by Science)",
+      "source": "Nicklas Røssner",
+      "url": "https://www.youtube.com/watch?v=kbLwlCAnS3Q",
+      "days": ["benen", "lower"],
+      "whenToUse": "Als je zuiniger en sneller wil hardlopen: zware kracht plus sprongen.",
+      "rules": [
+        "Combineer zware krachttraining (80% van je 1RM of meer) met plyometrie (sprongen, onder 40% van je 1RM); samen werkt het het best voor je loopeconomie.",
+        "2–3 keer per week. Houd krachttraining en hardlopen minstens 6 uur uit elkaar, liever 24–48 uur.",
+        "Houd het minstens 10 weken vol voor een merkbaar effect op je loopeconomie.",
+        "Romanian deadlift: 3–5 sets van 4–6, gecontroleerd zakken en explosief omhoog.",
+        "Step-up: 3–5 sets van 4–6 per been, box zo hoog dat je knie ongeveer 90 graden buigt.",
+        "Zware kuitheffingen: 4 sets van 6 per been, 3 s zakken (4–5 s mag ook), 1 s pauze onderin, explosief omhoog.",
+        "Bulgarian split squat: 3–5 sets van 4–6 per been, gecontroleerd en door het volledige bereik.",
+        "Drop jumps: 3–5 sets van 4–5 met 2–3 minuten rust. Kwaliteit boven kwantiteit: zware belasting voor je pezen, dus voorzichtig.",
+        "Single leg bounds: 4 sets van 4–5 per been. Power clean: 2–5 sets van 3–5 met perfecte techniek."
+      ],
+      "keyPoints": [
+        "Back squat staat ook in de video (3–5 sets van 1–7 op 80–90%, 2–3 keer per week); die is hier weggelaten.",
+        "Veel hardlopers hebben 15–20% krachtverschil tussen hun benen. Eenbenige oefeningen helpen daartegen en verbeteren je balansgevoel.",
+        "De achillespees werkt als een veer: een stijvere pees slaat meer energie op en geeft die terug.",
+        "Met gestrekte knie train je vooral de gastrocnemius, met gebogen knie (zittend) vooral de soleus.",
+        "Sprongtraining verbeterde de loopeconomie vooral bij snelheden onder 12 km/u (meta-analyse 2024).",
+        "Horizontale, eenbenige sprongen lijken het meest op hardlopen."
+      ]
+    },
+    {
+      "id": "tone-tighten-stretch",
+      "type": "video",
+      "title": "10 Minute Total Body Stretch! [Daily Flexibility Routine for Beginners]",
+      "source": "Tone and Tighten",
+      "url": "https://www.youtube.com/watch?v=COO2S7lPBzA",
+      "days": ["mobility"],
+      "whenToUse": "Als korte stretchroutine voor je hele lichaam, bijvoorbeeld na een training.",
+      "rules": [
+        "Stretchen hoeft niet lang te duren, maar doe het regelmatig.",
+        "Zoek steeds een comfortabele stretch, niet je pijngrens.",
+        "Doe elke kant apart: links en rechts."
+      ],
+      "keyPoints": [
+        "Volgorde van de routine: nek (zijkant), hoofdrollen, borst opener, arm over de borst, cat-cow, kindhouding, liggende rugdraai, figuur-4 (piriformis), liggende hamstring stretch, heupflexor stretch en halve spagaat.",
+        "Heupflexor stretch en halve spagaat doe je als combinatie: eerst naar voren in een lunge, dan terug op je hiel zitten met je voorste been gestrekt."
+      ]
+    },
+    {
+      "id": "upright-stretch",
+      "type": "video",
+      "title": "How to Stretch Properly for Flexibility",
+      "source": "Upright Health",
+      "url": "https://www.youtube.com/watch?v=XhAdwWv5hws",
+      "days": ["mobility"],
+      "whenToUse": "Als een stretch niet goed voelt of niet verder gaat: waar je hem hoort te voelen, contract-relax en stretchen met gewicht.",
+      "rules": [
+        "Weet welke spier je wil rekken en in welke richting je beweegt. Een andere hoek (bijvoorbeeld je hand hoger of lager bij een borststretch) rekt een ander deel.",
+        "Je hoort de rek te voelen in de spier die langer wordt, over de spierbuik. Knelt of klemt het aan de andere kant van het gewricht, of trekt het bij de aanhechting (zoals achter je knie), ga dan minder diep of buig je knie een beetje.",
+        "Stretch op een matige uitdaging: je moet rustig en langzaam kunnen blijven ademen.",
+        "Contract-relax: span in de stretch de gerekte spier 3–5 s aan op 30–50% kracht, ontspan en zak een klein beetje verder. Herhaal zo'n 5 keer.",
+        "Of span juist de spieren aan de andere kant aan, bijvoorbeeld je heupbuigers bij een hamstring stretch. Oefen dat eerst zonder stretch; kramp gaat vanzelf over.",
+        "Stretchen met gewicht: begin licht (2–5 kg) en beweeg langzaam en gecontroleerd. Langzaam is veilig, snel is dom.",
+        "Nieuw met stretchen? Begin met 2 keer per week. Elke dag mag voor de gewoonte, maar niet elke dag intens. Contract-relax en stretchen met gewicht: 2–3 keer per week met rustdagen.",
+        "Stretch beide kanten en let op welke kant stijver is."
+      ],
+      "keyPoints": [
+        "Drie soorten: statisch stretchen, contract-relax en stretchen met gewicht (loaded stretching).",
+        "Je lichaam laat je niet gaan waar het zich niet veilig voelt. Kracht in de gerekte stand maakt het veilig, dus kom je verder.",
+        "Heel soepel worden zonder kracht in die standen voelt instabiel en blijft vreemd strak aanvoelen.",
+        "Statisch houden: minstens zo'n 30 s, tot 2 minuten, zodat je lichaam kan wennen."
+      ]
+    },
+    {
+      "id": "nippard-minimalist",
+      "type": "video",
+      "title": "The Best Science-Based Minimalist Workout Plan (Under 45 Mins)",
+      "source": "Jeff Nippard",
+      "url": "https://www.youtube.com/watch?v=eMjyvIQbn9M",
+      "days": ["fullbody", "upper", "lower"],
+      "whenToUse": "Als je weinig tijd hebt: 2 full body trainingen per week van minder dan 45 minuten.",
+      "rules": [
+        "Warm kort op: 2–3 minuten stevig wandelen en een paar arm- en beenzwaaien.",
+        "Per oefening maar 1–3 zware sets, dus elke set moet perfect zijn en tot (bijna) falen gaan.",
+        "Zware set van 4–6 herhalingen (1 herhaling voor falen), dan een lichtere set van 8–10. Rust ongeveer 3 minuten na de zware set.",
+        "Dropset: na falen het gewicht 30–40% lichter maken en nog een keer tot falen.",
+        "Myo-reps: na falen 3–4 s rust, 4 herhalingen, weer 3–4 s rust, tot je er geen 4 meer haalt.",
+        "Superset tegengestelde spieren (borst en rug), met 30–60 s rust ertussen.",
+        "Dumbbells en machines schelen tijd: niet laden en minder opwarmsets nodig. Gebruik trekbanden als je grip anders het zwakke punt is.",
+        "3 dagen: full body 1, en full body 2 gesplitst in upper en lower. 4 dagen: upper, lower, rust, upper, lower, rust, rust. 5 dagen: upper, lower, push, pull, benen."
+      ],
+      "keyPoints": [
+        "Dag 1: dumbbell bankdrukken (1 × 4–6 en 1 × 8–10), dumbbell RDL (2 × 8–10), lat pulldown (2 × 10–12), step-up (1 × 8–10 per been), overhead triceps extension, lateral raise en kuitheffen op de leg press (elk 1 × 12–15 plus dropset).",
+        "Dag 2: hack squat (1 × 4–6 en 1 × 8–10, hier weggelaten), incline Smith press plus T-bar row als superset (2 × 10–12), seated leg curl (1 × 10–12 plus dropset), EZ-bar curl (1 × 12–15 plus myo-reps) en cable crunch (1 × 12–15 plus twee dropsets).",
+        "Overhead triceps extensions gaven in een onderzoek uit 2022 zo'n 40% meer groei dan pushdowns.",
+        "Zittende leg curls gaven meer hamstringgroei dan liggende, waarschijnlijk door de grotere rek.",
+        "De laatste herhalingen vlak voor falen zijn het meest effectief voor spiergroei.",
+        "Knieën over je tenen bij squatten is veilig."
+      ]
     }
   ],
   "records": [
@@ -264,6 +387,209 @@
       "dose": { "sets": 3, "reps": "6-12" },
       "source": "e3rehab-lopers",
       "note": "Voor als je sprint. Per been. Band om je voeten, leun tegen een muur en trek je knie zo hoog mogelijk op met een rechte rug. Houd 1–2 s vast en zak langzaam terug. Traint je heupbuigers (iliopsoas)."
+    },
+    {
+      "name": "Pogo hops",
+      "aliases": ["pogo hop", "pogo jumps", "pogo"],
+      "kind": "explosief",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "15-30" },
+      "source": "jason-lauren-power",
+      "note": "Als touwtjespringen zonder touw: licht op je voeten op en neer. 2–3 sets. Makkelijker: leun tegen een muur. Moeilijker: voor-achter, zijwaarts, voeten verspringend of op één been."
+    },
+    {
+      "name": "Deficit lunge met knieheffing",
+      "aliases": ["deficit lunge to knee drive", "reverse lunge to knee drive", "reverse lunge knee drive", "lunge met knieheffing"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["hamstrings", "kuiten"] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "5" },
+      "source": "jason-lauren-power",
+      "note": "Per been. Voorste voet op een verhoging van 5–10 cm, zak in een reverse lunge en duw explosief omhoog tot een skip met je andere knie hoog. Makkelijker: vanaf de vloer, of alleen vanuit spreidstand omhoog. 30 s rust."
+    },
+    {
+      "name": "Speed skaters",
+      "aliases": ["speed skater", "skater jumps", "schaatssprongen"],
+      "kind": "explosief",
+      "muscles": { "primary": ["billen", "quadriceps"], "secondary": ["adductoren", "kuiten"] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "8" },
+      "source": "jason-lauren-power",
+      "note": "Per kant. Zijwaartse sprong van been naar been, heupen naar achter. Begin met kleine afstanden en houd de landing even vast. Makkelijker voor je knieën: glijden in plaats van springen. 30–45 s rust."
+    },
+    {
+      "name": "Broad jump",
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "5" },
+      "source": "jason-lauren-power",
+      "note": "Iets meer heupscharnier dan bij een box jump, dan zo ver mogelijk vooruit met een goede landing. Begin met korte sprongen. 30–45 s rust."
+    },
+    {
+      "name": "Romanian deadlift",
+      "days": ["benen"],
+      "source": "rossner-lopers",
+      "note": "Voor hardlopers (Røssner): 3–5 sets van 4–6, gecontroleerd zakken en explosief omhoog."
+    },
+    {
+      "name": "Step-up",
+      "aliases": ["step up", "single leg step-up", "single leg step up", "dumbbell step-up", "dumbbell step up"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["hamstrings"] },
+      "days": ["benen", "lower", "fullbody"],
+      "dose": { "sets": 3, "reps": "4-6" },
+      "source": "rossner-lopers",
+      "note": "Per been. Box zo hoog dat je knie ongeveer 90 graden buigt; houd je knie recht boven je voet. Nippard doet er 1 set van 8–10 tot (bijna) falen, zwaarder dan je denkt, met je achterste been alleen voor balans."
+    },
+    {
+      "name": "Calf raise",
+      "days": ["benen", "lower"],
+      "source": "rossner-lopers",
+      "note": "Voor hardlopers (Røssner): 4 sets van 6 per been, 3 s zakken, 1 s pauze onderin, explosief omhoog. Gestrekte knie traint vooral de gastrocnemius, gebogen knie de soleus."
+    },
+    {
+      "name": "Single leg bounds",
+      "aliases": ["single leg bound", "bounds", "eenbenige sprongen"],
+      "kind": "explosief",
+      "muscles": { "primary": ["billen", "kuiten"], "secondary": ["hamstrings", "quadriceps"] },
+      "days": ["benen"],
+      "dose": { "sets": 4, "reps": "4-5" },
+      "source": "rossner-lopers",
+      "note": "Per been. Horizontale sprongen op één been: zo ver mogelijk, met zo kort mogelijk grondcontact."
+    },
+    {
+      "name": "Power clean",
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "3-5" },
+      "source": "rossner-lopers",
+      "note": "2–5 sets. Perfecte techniek en gecontroleerd krachtig. Kun je de hele clean nog niet, dan werkt alleen het eerste, explosieve deel ook."
+    },
+    {
+      "name": "Dumbbell bankdrukken",
+      "days": ["fullbody", "upper"],
+      "dose": { "sets": 2, "reps": "4-6" },
+      "source": "nippard-minimalist",
+      "note": "Eerst 1 zware set van 4–6 (1 herhaling voor falen), dan een lichtere set van 8–10. Zak met je ellebogen 30–45 graden ingetrokken."
+    },
+    {
+      "name": "Lat pulldown",
+      "days": ["fullbody"],
+      "source": "nippard-minimalist",
+      "note": "Nippard: 2 sets van 10–12, eerst bovenhandse middengreep, dan onderhandse smalle greep."
+    },
+    {
+      "name": "Overhead triceps extension",
+      "aliases": ["overhead tricep extension", "overhead cable triceps extension", "triceps extension boven je hoofd"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["triceps"], "secondary": [] },
+      "days": ["fullbody", "upper", "push", "armen-schouders"],
+      "dose": { "sets": 1, "reps": "12-15" },
+      "source": "nippard-minimalist",
+      "note": "1 set tot falen, dan 30–40% lichter en nog een keer tot falen. Elleboog vast achter je hoofd, voel de rek onderin. Gaf in een onderzoek zo'n 40% meer groei dan pushdowns."
+    },
+    {
+      "name": "Lateral raise",
+      "days": ["fullbody"],
+      "source": "nippard-minimalist",
+      "note": "Nippard: 1 set van 12–15 tot falen plus een dropset (30–40% lichter). Machine, kabel of dumbbells; stoppen op schouderhoogte is ook goed."
+    },
+    {
+      "name": "Leg press calf raise",
+      "aliases": ["toe press", "calf press", "kuitheffen op de leg press"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["fullbody", "lower"],
+      "dose": { "sets": 1, "reps": "12-15" },
+      "source": "nippard-minimalist",
+      "note": "Plus een dropset. 1 s pauze onderin, volledig aanknijpen bovenin, en niet gaan stuiteren als je moe wordt."
+    },
+    {
+      "name": "Incline Smith press",
+      "aliases": ["high incline smith press", "smith incline press", "schuine smith press"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["borst", "schouders"], "secondary": ["triceps"] },
+      "days": ["fullbody", "upper"],
+      "dose": { "sets": 2 },
+      "source": "nippard-minimalist",
+      "note": "Bank op 45–60 graden, iets smallere greep: borst, schouders en triceps in één oefening. Superset met T-bar row, 30–60 s rust ertussen."
+    },
+    {
+      "name": "T-bar row",
+      "aliases": ["tbar row", "t-bar roeien"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["rug", "trapezius"], "secondary": ["biceps", "schouders"] },
+      "days": ["fullbody", "upper", "borst-rug"],
+      "dose": { "sets": 2, "reps": "10-12" },
+      "source": "nippard-minimalist",
+      "note": "Eén set met brede en één met smalle greep. Geen T-bar? Borst-ondersteund roeien met dumbbells op een schuine bank."
+    },
+    {
+      "name": "Seated leg curl",
+      "aliases": ["seated hamstring curl", "zittende leg curl"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["hamstrings"], "secondary": [] },
+      "days": ["fullbody", "lower"],
+      "dose": { "sets": 1, "reps": "10-12" },
+      "source": "nippard-minimalist",
+      "note": "Tot falen plus een dropset. Leun voorover voor meer rek; zittend gaf meer groei dan liggend."
+    },
+    {
+      "name": "Biceps curl",
+      "aliases": ["ez bar curl", "ez curl"],
+      "days": ["fullbody"],
+      "source": "nippard-minimalist",
+      "note": "Nippard: EZ-bar, 1 set van 12–15 tot falen, dan myo-reps (3–4 s rust, 4 herhalingen, herhalen tot je er geen 4 meer haalt). Krul naar buiten en omhoog met een losse grip."
+    },
+    {
+      "name": "Cable crunch",
+      "aliases": ["kabel crunch", "cable crunches"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["buik"], "secondary": [] },
+      "days": ["fullbody"],
+      "dose": { "sets": 1, "reps": "12-15" },
+      "source": "nippard-minimalist",
+      "note": "Geknield met het touw bij je hoofd en rol je hele rug in. Na falen twee dropsets."
+    },
+    { "name": "Nek stretch", "aliases": ["upper trap stretch"], "days": ["mobility"], "source": "tone-tighten-stretch" },
+    {
+      "name": "Hoofdrollen",
+      "aliases": ["head rolls", "nek rollen", "hoofd rollen"],
+      "kind": "stretch",
+      "muscles": { "primary": ["trapezius"], "secondary": [] },
+      "days": ["mobility"],
+      "source": "tone-tighten-stretch"
+    },
+    { "name": "Borst opener achter de rug", "aliases": ["chest opener"], "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Cross-body schouder stretch", "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Cat-cow", "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Kindhouding", "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Liggende rugdraai", "aliases": ["low back rotation", "lumbar rotation"], "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Figuur-4 stretch", "aliases": ["piriformis stretch"], "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Hamstring stretch", "days": ["mobility"], "source": "tone-tighten-stretch" },
+    { "name": "Heupflexor stretch", "days": ["mobility"], "source": "tone-tighten-stretch" },
+    {
+      "name": "Halve spagaat",
+      "aliases": ["half split", "halve split", "glute hamstring stretch"],
+      "kind": "stretch",
+      "muscles": { "primary": ["hamstrings", "billen"], "secondary": [] },
+      "days": ["mobility"],
+      "source": "tone-tighten-stretch"
+    },
+    {
+      "name": "Vooroverbuiging met gewicht",
+      "aliases": ["loaded hamstring stretch", "loaded forward fold"],
+      "kind": "stretch",
+      "muscles": { "primary": ["hamstrings"], "secondary": ["onderrug"] },
+      "days": ["mobility"],
+      "source": "upright-stretch"
+    },
+    {
+      "name": "Borst stretch met gewicht",
+      "aliases": ["loaded chest stretch"],
+      "kind": "stretch",
+      "muscles": { "primary": ["borst", "schouders"], "secondary": [] },
+      "days": ["mobility"],
+      "source": "upright-stretch"
     }
   ]
 }
