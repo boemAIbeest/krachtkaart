@@ -1,5 +1,284 @@
 {
   "updated": "2026-09-25",
-  "sources": [],
-  "exercises": []
+  "sources": [
+    {
+      "id": "huberman-spier",
+      "type": "video",
+      "title": "Build Muscle Size, Increase Strength & Improve Recovery",
+      "source": "Huberman Lab Essentials",
+      "url": "https://www.youtube.com/watch?v=jgaoLdS82vw",
+      "days": ["push", "pull", "benen", "upper", "lower", "borst-rug", "armen-schouders", "fullbody"],
+      "whenToUse": "Bij het kiezen van gewicht, sets en rust, en om 's ochtends te checken of je hersteld bent.",
+      "rules": [
+        "Werk met 30–80% van je 1RM: dat bouwt zowel kracht als spiermassa. Zwaar tillen mag, maar hoeft niet.",
+        "Minstens 5 sets per spiergroep per week om te behouden, zo'n 10 om vooruit te gaan. Voor de meeste mensen werkt 5–15.",
+        "Ga in ongeveer 10% van je sets tot falen, de rest niet: zo kun je meer volume doen.",
+        "Voor explosiviteit: 60–75% van je 1RM zo snel mogelijk bewegen, niet tot falen.",
+        "Rust ongeveer 2 minuten tussen sets; voor kracht en spiergroei mag 3–6 minuten ook.",
+        "Knijpkrachttest 's ochtends (knijpen in een handgreep of weegschaal): 10–20% minder dan je uitgeruste waarde betekent dat je nog niet hersteld bent.",
+        "CO2-test 's ochtends: 4 keer diep door de neus in en helemaal uit, de 5e keer vol inademen en zo langzaam mogelijk uitademen door de mond. Onder 20–25 s: nog niet hersteld. 30–60 s: groen licht. 65–120 s: zenuwstelsel volledig hersteld.",
+        "Geen ijsbad direct na krachttraining: het remt de spiergroei. Wees voorzichtig met ontstekingsremmers (NSAID's) in de 4 uur voor en na de training.",
+        "Zorg voor genoeg zout, kalium en magnesium. Creatine: ongeveer 5 g per dag. Leucine: 700–3000 mg per maaltijd, liefst uit gewone voeding. Eet 2–4 keer per dag met genoeg eiwit."
+      ],
+      "keyPoints": [
+        "Spieren worden sterker en groter door stress, spanning en schade. Niet alle drie zijn nodig, maar stress wel.",
+        "Kracht: steeds zwaardere lasten verplaatsen met je lichaam als geheel. Spiergroei: harde, geïsoleerde contracties van één spier.",
+        "Kun je een spier buiten de training hard aanspannen (bijna laten krampen), dan heb je minder sets nodig om hem te laten groeien.",
+        "Wie al lang traint, kan baat hebben bij meer volume: tot 25–30 sets per week.",
+        "Spieren groeien en herstellen na de training, niet tijdens. Verdeel je de sets over de week, laat de spier dan tussen sessies herstellen."
+      ]
+    },
+    {
+      "id": "huberman-stretchen",
+      "type": "video",
+      "title": "Improve Flexibility with Research-Supported Stretching Protocols",
+      "source": "Huberman Lab Essentials",
+      "url": "https://www.youtube.com/watch?v=syJYZm5OZhE",
+      "days": ["mobility"],
+      "whenToUse": "Op mobility-dagen en voor de stretches aan het eind van een training.",
+      "rules": [
+        "Statisch stretchen werkt het best voor blijvend meer bereik: houd elke stretch 30 s vast.",
+        "Doe 2–4 sets (bijvoorbeeld 3 × 30 s) per spiergroep, 5 dagen per week: minstens 5 minuten per spiergroep per week.",
+        "Stretch licht: op 30–40% van je pijngrens werkte beter dan op 80%. Ontspan in de stretch.",
+        "Stretch warm: na je training, of na 5–10 minuten rustige cardio.",
+        "Het eind van je bereik is waar je de stretch voelt, niet een vaste afstand. Dat verschilt per dag.",
+        "Statisch stretchen vlak voor hardlopen of krachttraining kan je prestatie drukken. Doe het vooraf alleen als je het bereik nodig hebt voor een goede techniek, bijvoorbeeld na een blessure.",
+        "Dynamisch of ballistisch stretchen voor skilltraining of sport is prima als warming-up."
+      ],
+      "keyPoints": [
+        "Soepelheid hangt af van je zenuwstelsel, je spieren en je bindweefsel.",
+        "Spierspoelen laten een spier aanspannen als hij te ver rekt; de peesorgaantjes van Golgi remmen een spier bij te veel belasting.",
+        "De insula in je hersenen weegt ongemak af en helpt je te ontspannen in een stretch.",
+        "Vier soorten: dynamisch, ballistisch, statisch en PNF (bijvoorbeeld je been met een band aantrekken en weer ontspannen). Voor de lange termijn wint statisch.",
+        "In een onderzoek bij dansers gaf 6 weken licht stretchen (60 s houden op 30–40% van de pijngrens) meer bereik dan stretchen op 80%.",
+        "Yogabeoefenaars hadden in een onderzoek een minstens twee keer zo hoge pijntolerantie en meer grijze stof in de insula."
+      ]
+    },
+    {
+      "id": "galpin-kracht",
+      "type": "video",
+      "title": "How to Build Strength, Muscle Size & Endurance (Dr. Andy Galpin)",
+      "source": "Huberman Lab Essentials",
+      "url": "https://www.youtube.com/watch?v=0VSOoMuStvg",
+      "days": ["fullbody", "upper", "lower", "push", "pull"],
+      "whenToUse": "Bij de keuze tussen kracht, spiergroei of explosiviteit, en voor een full body training.",
+      "rules": [
+        "Kracht (3-5-regel): 3–5 oefeningen, 3–5 sets van 3–5 herhalingen op 85%+ van je 1RM (75% als je matig getraind bent), 3–5 minuten rust, 3–5 keer per week.",
+        "Explosiviteit: dezelfde opzet, maar op 40–70% van je 1RM en zo snel mogelijk bewegen.",
+        "Spiergroei: 5–30 herhalingen per set werken even goed, als je (bijna) tot falen gaat. Minstens 10 sets per spiergroep per week, liever 15–20.",
+        "Spiergroei: train dezelfde spier pas weer na 48–72 uur, of als de spierpijn onder 3 op 10 zit.",
+        "Kracht: een spier 2 keer per week trainen is genoeg; elke dag mag ook.",
+        "Warm op voor zware sets, bijvoorbeeld 10 × 50%, 8 × 60%, 8 × 70%, 5 × 75%, en dan 2–3 werksets.",
+        "Superset gerust met een andere spiergroep tijdens de rust: het kost heel weinig kracht en scheelt veel tijd.",
+        "Full body met 4 oefeningen: een duw (bankdrukken), een trek (roeien of pull-up), een heupscharnier (deadlift) en een beenduw (squat).",
+        "Beweeg elk gewricht door zijn volledige bereik, maar alleen in een goede houding.",
+        "Ademen: adem in en zet vast voor het zakken, adem uit tijdens de tweede helft van het omhoog duwen. Bij veel herhalingen: elke derde herhaling opnieuw ademen.",
+        "Na de training 3–5 minuten tot rust komen: door de neus ademen, uitademing twee keer zo lang als inademing, of box breathing (4 s in, 4 vast, 4 uit, 4 vast)."
+      ],
+      "keyPoints": [
+        "Negen dingen die je kunt trainen: techniek, snelheid, power, kracht, spiermassa, spieruithoudingsvermogen, anaerobe power, VO2max en lange duur.",
+        "Zonder progressieve overbelasting (meer gewicht, herhalingen, frequentie of een moeilijkere oefening) blijf je op hetzelfde niveau.",
+        "Spierpijn zegt weinig over hoe goed een training was. Liever iets te weinig dan zo veel dat je trainingen moet overslaan.",
+        "Intentie telt: probeer het gewicht zo snel mogelijk te bewegen, ook als het niet sneller gaat. Bij spiergroei helpt focussen op de spier die je aanspant.",
+        "Een spier die je niet voelt, leer je aanspannen met aanraking en met negatieve (excentrische) herhalingen.",
+        "Liever 20 minuten geconcentreerd trainen dan een uur op de automatische piloot."
+      ]
+    },
+    {
+      "id": "ido-portal-beweging",
+      "type": "video",
+      "title": "The Science & Practice of Movement (Ido Portal)",
+      "source": "Huberman Lab Essentials",
+      "url": "https://www.youtube.com/watch?v=JsICN9ZiSjA",
+      "whenToUse": "Als je je training wil variëren of je aandacht wil trainen. Geen vast schema.",
+      "rules": [
+        "Varieer bekende oefeningen: doe een curl met één voet voor, met je ogen dicht of met je hoofd anders, en blijf wisselen.",
+        "Wissel gefocust kijken af met breed, panoramisch kijken. In panoramisch zicht reageer je sneller.",
+        "Oefen verschillende manieren van lopen, ook met bochten en draaiing in plaats van alleen in een rechte lijn.",
+        "Voorbeeld: loop door een drukke straat zonder iemand aan te raken.",
+        "Probeer dezelfde training eens met een glimlach en eens met een frons, en let op het verschil."
+      ],
+      "keyPoints": [
+        "Beweging is een open systeem zonder vast beginpunt. Speelsheid en zelfonderzoek staan centraal.",
+        "Feldenkrais: het lichaam bestaat uit het zenuwstelsel, het mechanische systeem (spieren en skelet) en de omgeving.",
+        "Mensen blijven vaak in dezelfde houdingen hangen, in beweging, denken en emotie. Variatie maakt je vrijer.",
+        "Ogen omhoog maakt alerter, ogen omlaag rustiger. Het hoofd stuurt de voeten: trek je hoofd opzij en je voeten volgen vanzelf.",
+        "Moderne yoga en fitness zijn erg lineair; traditionele dans en vechtkunst bewegen rond en in bogen.",
+        "Nabijheid en aanraking oefenen (altijd met toestemming), bijvoorbeeld met contactimprovisatie, helpt minder reactief te worden.",
+        "Neem kennis niet als wet: probeer het uit en kijk wat voor jou werkt."
+      ]
+    },
+    {
+      "id": "e3rehab-lopers",
+      "type": "video",
+      "title": "BEST Exercises for Runners (Strength Training | Plyometrics | Power Exercises)",
+      "source": "E3 Rehab",
+      "url": "https://www.youtube.com/watch?v=GcZJhNi2yOM",
+      "days": ["benen", "lower"],
+      "whenToUse": "Als je hardloopt, of sneller en zuiniger wil lopen. Kies per blok optie A of B.",
+      "rules": [
+        "Kies per blok één optie: plyometrie (drop jump), explosief (box jump of explosieve step-up), quadriceps (lateral step-down of Bulgarian split squat), billen (single leg deadlift of side plank hip abduction) en kuiten (eenbenige of zittende heel raise).",
+        "Sprint je? Voeg dan Nordic hamstring curls en heupbuiging met band toe.",
+        "Minstens 2 keer per week, liefst 24 uur los van een zware loopsessie.",
+        "Krachtsets zijn zwaar maar niet maximaal: stop 2–4 herhalingen voor falen.",
+        "Houd het minstens 8–12 weken vol en voer gewicht en inspanning op zolang dat goed gaat.",
+        "Weinig herhalingen is de bedoeling: zo train je onder meer peesstijfheid, wat je met duurlopen niet krijgt."
+      ],
+      "keyPoints": [
+        "Plyometrie optie A: diagonale pogo jumps, 3 × 30–60 s. Handen op de heupen, knieën bijna gestrekt, zo kort mogelijk op de grond; begin klein en spring steeds hoger.",
+        "Bij rustig tempo leveren kuit (soleus) en quadriceps de meeste kracht; richting sprint worden heupbuigers en hamstrings belangrijker, tot zo'n 9 keer je lichaamsgewicht.",
+        "Sneller lopen gaat eerst via langere passen (afzet vanuit de kuit), bij sprinten via een hogere pasfrequentie (vanuit de heup).",
+        "Krachttraining verbetert vooral je loopeconomie, topsnelheid en anaerobe capaciteit. Dat het blessures voorkomt, is nog niet bewezen.",
+        "Kracht- en sprongtraining helpen ook je botdichtheid en gaan spierverlies op latere leeftijd tegen.",
+        "Andere oefeningen mogen ook: skips, hordesprongen, olympische lifts, medicine ball throws, squats en deadlifts."
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "name": "Hamstring stretch",
+      "days": ["mobility"],
+      "dose": { "sets": 3, "sec": 30 },
+      "source": "huberman-stretchen",
+      "note": "Licht stretchen, op 30–40% van je pijngrens, en ontspannen. Met een band om je enkel mag ook."
+    },
+    {
+      "name": "Negatieve pull-up",
+      "aliases": ["negative pull-up", "eccentric pull-up", "excentrische pull-up", "negatieve pull ups"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["rug"], "secondary": ["biceps", "onderarmen"] },
+      "days": ["pull", "calisthenics"],
+      "source": "galpin-kracht",
+      "note": "Stap op een box naar de bovenkant van de pull-up en zak zo gecontroleerd mogelijk. Helpt als je je lats niet voelt; bouw daarna op naar volledige pull-ups."
+    },
+    {
+      "name": "Bankdrukken",
+      "days": ["fullbody"],
+      "source": "galpin-kracht",
+      "note": "De duw van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
+    },
+    {
+      "name": "Barbell row",
+      "days": ["fullbody"],
+      "source": "galpin-kracht",
+      "note": "De trek van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
+    },
+    {
+      "name": "Deadlift",
+      "days": ["fullbody"],
+      "source": "galpin-kracht",
+      "note": "Het heupscharnier van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
+    },
+    {
+      "name": "Squat",
+      "days": ["fullbody"],
+      "source": "galpin-kracht",
+      "note": "De beenduw van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
+    },
+    {
+      "name": "Drop jump",
+      "aliases": ["drop jumps", "dropjump"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "kuiten"], "secondary": ["billen"] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "6" },
+      "source": "e3rehab-lopers",
+      "note": "Stap van een box (maximaal zo'n 60 cm) en spring meteen zo snel mogelijk omhoog. Land met weinig kniebuiging en blijf zo kort mogelijk op de grond."
+    },
+    {
+      "name": "Box jump",
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "6" },
+      "source": "e3rehab-lopers",
+      "note": "Sta lang met je armen omhoog, zak snel in en spring zo hoog mogelijk; enkels, knieën en heupen volledig gestrekt. Land zacht op de box en stap af. Box pas hoger als je techniek goed blijft."
+    },
+    {
+      "name": "Explosieve step-up",
+      "aliases": ["explosive step up", "explosive step-up", "explosieve step up"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["kuiten"] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "6" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Box van 30–60 cm: zet je voet krachtig neer, stap snel op en eindig rechtop met je andere knie hoog en je armen in loopbeweging. Later mag er gewicht bij."
+    },
+    {
+      "name": "Lateral step-down",
+      "aliases": ["lateral step down", "step-down", "step down"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["quadriceps"], "secondary": ["billen"] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Sta op een verhoging, zak en tik met de hak van je andere been de grond. Borst omhoog, je knie mag over je tenen. Hoger of gewicht erbij als het makkelijk wordt."
+    },
+    {
+      "name": "Bulgarian split squat",
+      "aliases": ["rear foot elevated split squat", "rfess"],
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Achterste voet op een bank, borst omhoog, zak tot je achterste knie net boven de grond zweeft. Houd je gewicht vooral op je voorste been."
+    },
+    {
+      "name": "Single leg deadlift",
+      "aliases": ["single-leg deadlift", "single leg rdl", "eenbenige deadlift"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["billen", "hamstrings"], "secondary": ["onderrug"] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Knie licht gebogen, heupen naar achter met een vlakke rug tot je romp ongeveer horizontaal is. Knijp je bil aan op de weg terug. Houd je vast als dat nodig is."
+    },
+    {
+      "name": "Side plank hip abduction",
+      "aliases": ["side plank abduction", "zijplank met been heffen"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["billen"], "secondary": ["schuine"] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Zijplank op je elleboog, voeten op elkaar, lichaam in één lijn; til je bovenste been rustig op en neer. Te zwaar: begin met alleen de zijplank. Te licht: band om je knieën."
+    },
+    {
+      "name": "Single leg deficit heel raise",
+      "aliases": ["single leg calf raise", "eenbenige heel raise", "eenbenig kuitheffen"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Per been. Op de rand van een traptrede zo hoog mogelijk op de bal van je voet, bovenin aanknijpen, dan langzaam zakken tot je je kuit voelt rekken."
+    },
+    {
+      "name": "Seated deficit heel raise",
+      "aliases": ["seated calf raise", "seated heel raise", "zittend kuitheffen"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Zittend, voeten op een verhoging, knieën in 90 graden, gewicht op je bovenbenen. Hielen zo hoog mogelijk, langzaam en gecontroleerd."
+    },
+    {
+      "name": "Nordic hamstring curl",
+      "aliases": ["nordic curl", "nordics", "nordic curls"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["hamstrings"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "4-6" },
+      "source": "e3rehab-lopers",
+      "note": "Voor als je sprint. Rechtop op je knieën met je voeten vast en je heupen gestrekt. Zak zo langzaam mogelijk voorover met je hamstrings en duw jezelf terug omhoog."
+    },
+    {
+      "name": "Heupbuiging met band",
+      "aliases": ["banded hip flexion", "hip flexion met band", "heupbuiging"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["quadriceps"], "secondary": [] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "e3rehab-lopers",
+      "note": "Voor als je sprint. Per been. Band om je voeten, leun tegen een muur en trek je knie zo hoog mogelijk op met een rechte rug. Houd 1–2 s vast en zak langzaam terug. Traint je heupbuigers (iliopsoas)."
+    }
+  ]
 }
