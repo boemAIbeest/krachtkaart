@@ -55,16 +55,16 @@
       { id: 'v1', dayType: 'push', at: at(1), raw: '', entries: [
         E('Bankdrukken', 'gewicht', rep(4, { reps: 8, kg: 70 })), E('Dips', 'lichaamsgewicht', rep(3, { reps: 8, kg: 32.5 })),
         E('Overhead press', 'gewicht', rep(3, { reps: 8, kg: 42.5 })), E('Triceps pushdown', 'gewicht', rep(3, { reps: 12, kg: 25 })),
-        E('Borst stretch', 'stretch', [{ sec: 60 }], ['borst'])] },
+        E('Borst stretch', 'stretch', [{}], ['borst'])] },
       { id: 'v2', dayType: 'benen', at: at(2), raw: '', entries: [
-        E('Box jump', 'explosief', rep(4, { reps: 5 })), E('Squat', 'gewicht', rep(5, { reps: 5, kg: 100 })),
+        E('Box jump', 'explosief', rep(4, { reps: 5 })), E('Bulgarian split squat', 'gewicht', rep(3, { reps: 8, kg: 20 })),
         E('Romanian deadlift', 'gewicht', rep(3, { reps: 8, kg: 80 })), E('Calf raise', 'gewicht', rep(3, { reps: 12, kg: 60 })),
-        E('Hamstring stretch', 'stretch', [{ sec: 90 }], ['hamstrings'])] },
+        E('Hamstring stretch', 'stretch', [{}], ['hamstrings'])] },
       { id: 'v3', dayType: 'pull', at: at(4), raw: '', entries: [
         E('Pull-up', 'lichaamsgewicht', rep(4, { reps: 6, kg: 15 })), E('Barbell row', 'gewicht', rep(4, { reps: 8, kg: 65 })),
         E('Biceps curl', 'gewicht', rep(3, { reps: 10, kg: 32.5 })), E('Front lever', 'skill', rep(3, { step: 1, sec: 10 }))] },
       { id: 'v4', dayType: 'lower', at: at(6), raw: '', entries: [
-        E('Deadlift', 'gewicht', rep(3, { reps: 5, kg: 175 })), E('Hip thrust', 'gewicht', rep(3, { reps: 10, kg: 100 })),
+        E('Leg curl', 'gewicht', rep(3, { reps: 10, kg: 50 })), E('Hip thrust', 'gewicht', rep(3, { reps: 10, kg: 100 })),
         E('Handstand', 'skill', rep(3, { step: 2, sec: 45 }))] },
       { id: 'v5', dayType: 'push', at: at(8), raw: '', entries: [E('Bankdrukken', 'gewicht', rep(4, { reps: 8, kg: 67.5 }))] },
       { id: 'v6', dayType: 'push', at: at(15), raw: '', entries: [E('Bankdrukken', 'gewicht', rep(4, { reps: 8, kg: 65 }))] },
@@ -86,15 +86,17 @@
   function status(el, msg, isErr) { el.className = 'status' + (isErr ? ' err' : ''); el.textContent = msg; }
 
   // ---------- knowledge file ----------
-  let K = { sources: [], exercises: [], updated: null, failed: false };
+  let K = { sources: [], exercises: [], records: [], updated: null, failed: false };
   const sourceTitle = (id) => K.sources.find((s) => s.id === id)?.title || id;
   async function loadKennis() {
     try {
       const res = await fetch('kennis.json', { cache: 'no-cache' });
       if (!res.ok) throw new Error(String(res.status));
       const d = await res.json();
-      K = { sources: Array.isArray(d.sources) ? d.sources : [], exercises: Array.isArray(d.exercises) ? d.exercises : [], updated: d.updated || null, failed: false };
+      K = { sources: Array.isArray(d.sources) ? d.sources : [], exercises: Array.isArray(d.exercises) ? d.exercises : [],
+        records: Array.isArray(d.records) ? d.records : [], updated: d.updated || null, failed: false };
       Score.addExercises(K.exercises);
+      Score.setRecords(K.records);
     } catch { K.failed = true; }
     fillDatalist();
     renderAll();
@@ -230,11 +232,15 @@
 
   // ---------- Training: choose ----------
   function resetPicks() {
-    const now = Date.now();
-    U.picks = new Set(Plan.pool(U.day, S.workouts, now).slice(0, U.day === 'mobility' ? 6 : 5).map((x) => x.name));
-    if (U.day !== 'mobility') Plan.stretchPool(U.day, S.workouts, now).slice(0, 2).forEach((x) => U.picks.add(x.name));
+    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now()).slice(0, 5).map((x) => x.name));
     U.extra = [];
   }
+  // Named stretches are a checklist during the training, not sets. The generic "Stretchen" keeps its muscles as an item.
+  const namedStretch = (n) => { const e = Score.findExercise(n); return e?.kind === 'stretch' && e.muscles.primary.length ? e.name : null; };
+  const splitEntries = (entries) => ({
+    stretches: [...new Set(entries.map((e) => namedStretch(e.exercise)).filter(Boolean))],
+    rest: entries.filter((e) => !namedStretch(e.exercise)),
+  });
   function pickRow(x) {
     const t = Plan.target(x.name, S.workouts);
     const when = x.lastAt ? ago(x.lastAt) : 'nog nooit gedaan';
@@ -245,24 +251,22 @@
   function startLabel() {
     const n = $$('#chooser [data-pick]:checked').length;
     const b = $('#btn-start');
-    if (b) { b.disabled = !n; b.textContent = `Start training (${n} ${n === 1 ? 'oefening' : 'oefeningen'})`; }
+    if (b) { b.disabled = !n && U.day !== 'mobility'; b.textContent = n ? `Start training (${n} ${n === 1 ? 'oefening' : 'oefeningen'})` : 'Start training'; }
   }
   function renderChooser() {
     const now = Date.now();
     const rec = Plan.recommendDay(S.workouts, now);
     if (!U.day) { U.day = rec.id; resetPicks(); }
-    const main = Plan.pool(U.day, S.workouts, now);
+    const main = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, now);
     const last = Plan.lastDone(S.workouts);
     const extras = U.extra.filter((n) => !main.some((x) => x.name === n))
       .map((n) => { const e = Score.findExercise(n); return { name: e?.name || n, kind: e?.kind || 'gewicht', lastAt: last[e?.name || n] || null, source: e?.source || null }; });
-    const stretches = U.day === 'mobility' ? [] : Plan.stretchPool(U.day, S.workouts, now).slice(0, 8);
     $('#chooser').innerHTML = `<div class="view" style="padding-top:0">
       <div><h2>Training</h2><p class="muted" style="margin-top:6px">Aanbevolen: <b>${esc(rec.label)}</b>. ${esc(rec.reason)}</p></div>
       <div class="daychips" role="group" aria-label="Dagtype">${Plan.DAYS.map((d) => `<button type="button" data-day="${d.id}" aria-pressed="${d.id === U.day}"${d.id === rec.id ? ' data-rec title="Aanbevolen"' : ''}>${esc(d.label)}</button>`).join('')}</div>
-      <div><h3>${U.day === 'mobility' ? 'Stretches' : 'Oefeningen'}</h3><p class="small">Oefeningen uit je kennis eerst, daarna wat je het langst niet hebt gedaan.</p>
+      <div><h3>Oefeningen</h3><p class="small">${U.day === 'mobility' ? 'Je stretches vink je aan tijdens de training.' : 'Oefeningen uit je kennis eerst, daarna wat je het langst niet hebt gedaan. Stretches vink je aan tijdens de training.'}</p>
         <ul class="picks">${[...extras, ...main].map(pickRow).join('')}</ul></div>
       <div class="row"><input list="all-ex" id="add-pick" placeholder="Andere oefening toevoegen" aria-label="Andere oefening toevoegen"><button class="btn ghost" type="button" id="btn-add-pick">Voeg toe</button></div>
-      ${stretches.length ? `<div><h3>Stretchen</h3><ul class="picks">${stretches.map(pickRow).join('')}</ul></div>` : ''}
       <button class="btn wide" type="button" id="btn-start"></button>
     </div>`;
     startLabel();
@@ -310,6 +314,20 @@
       <div><button class="link" type="button" data-act="add-set" data-i="${i}">+ Set</button></div>
     </section>`;
   }
+  // Every named stretch, grouped by its main muscle; the day's muscles first and open.
+  function stretchList(a) {
+    const ticked = new Set(a.stretches || []), last = Plan.lastDone(S.workouts);
+    const dayM = Plan.dayById(a.dayType)?.muscles || [];
+    const all = Score.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length);
+    return [...dayM, ...Object.keys(Score.MUSCLES).filter((m) => !dayM.includes(m))].map((m) => {
+      const list = all.filter((e) => e.muscles.primary[0] === m).sort((x, y) => x.name.localeCompare(y.name, 'nl'));
+      if (!list.length) return '';
+      const open = a.dayType === 'mobility' || dayM.includes(m) || list.some((e) => ticked.has(e.name));
+      return `<details class="stretch-group"${open ? ' open' : ''}><summary>${Score.MUSCLES[m]}</summary><ul class="picks">${list.map((e) => `<li><label>
+        <input type="checkbox" data-stretch="${esc(e.name)}"${ticked.has(e.name) ? ' checked' : ''}><span class="name">${esc(e.name)}</span>
+        <span class="meta">${esc(cap(last[e.name] ? ago(last[e.name]) : 'nog nooit gedaan'))}</span></label></li>`).join('')}</ul></details>`;
+    }).join('');
+  }
   function renderActive() {
     const a = S.active;
     $('#active').hidden = !a;
@@ -327,6 +345,7 @@
       ${a.unknown?.length ? `<p class="notice">Niet herkend: ${a.unknown.map(esc).join('; ')}. Voeg die oefeningen hieronder toe.</p>` : ''}
       ${a.items.map(exBlock).join('')}
       <div class="row"><input list="all-ex" id="add-active" placeholder="Oefening toevoegen" aria-label="Oefening toevoegen"><button class="btn ghost" type="button" id="btn-add-active">Voeg toe</button></div>
+      <div><h3>Stretchen</h3><p class="small">Vink aan wat je doet.</p>${stretchList(a)}</div>
       <button class="btn wide" type="button" id="btn-finish">${a.editOf ? 'Wijzigingen opslaan' : 'Training afronden'}</button>
       <p class="status" id="a-status" role="status"></p>
       <div class="row" style="justify-content:center"><button class="link danger" type="button" data-confirm="stop">${a.editOf ? 'Aanpassen stoppen' : 'Training stoppen'}</button></div>
@@ -339,8 +358,9 @@
 
   function startTraining() {
     const names = $$('#chooser [data-pick]:checked').map((i) => i.dataset.pick);
-    if (!names.length) return;
-    S.active = { dayType: U.day, date: todayISO(), startedAt: new Date().toISOString(), items: names.map((n) => makeItem(n)) };
+    if (!names.length && U.day !== 'mobility') return;
+    S.active = { dayType: U.day, date: todayISO(), startedAt: new Date().toISOString(),
+      stretches: names.map(namedStretch).filter(Boolean), items: names.filter((n) => !namedStretch(n)).map((n) => makeItem(n)) };
     save();
     renderTraining();
     window.scrollTo(0, 0);
@@ -353,9 +373,11 @@
   };
   function finish() {
     const a = S.active;
-    const entries = a.items.map((it) => ({ exercise: it.exercise, kind: it.kind, muscles: it.muscles, sets: it.sets.filter((s) => s.done).map(cleanSet) }))
-      .filter((e) => e.sets.length);
-    if (!entries.length) return status($('#a-status'), 'Vink eerst minstens één set af.', true);
+    const stretches = (a.stretches || []).map((n) => Score.findExercise(n)).filter(Boolean)
+      .map((e) => ({ exercise: e.name, kind: 'stretch', muscles: { primary: [...e.muscles.primary], secondary: [...e.muscles.secondary] }, sets: [{}] }));
+    const entries = [...a.items.map((it) => ({ exercise: it.exercise, kind: it.kind, muscles: it.muscles, sets: it.sets.filter((s) => s.done).map(cleanSet) }))
+      .filter((e) => e.sets.length), ...stretches];
+    if (!entries.length) return status($('#a-status'), 'Vink eerst minstens één set of stretch af.', true);
     const date = a.date || todayISO();
     const at = a.editOf && a.origDate === date ? a.at
       : date === todayISO() ? new Date().toISOString() : new Date(date + 'T12:00:00').toISOString();
@@ -373,10 +395,11 @@
     if (S.active) return toast('Rond eerst je huidige training af of stop hem.');
     const w = S.workouts.find((x) => x.id === id);
     if (!w) return;
+    const { stretches, rest } = splitEntries(w.entries || []);
     S.active = {
       editOf: id, at: w.at, origDate: w.date, date: w.date || w.at.slice(0, 10), dayType: w.dayType || Plan.guessDay(w.entries || []),
-      raw: w.raw || '', startedAt: new Date().toISOString(),
-      items: (w.entries || []).map((e) => makeItem(e.exercise, { kind: e.kind, muscles: e.muscles || { primary: [], secondary: [] }, sets: e.sets || [] })),
+      raw: w.raw || '', startedAt: new Date().toISOString(), stretches,
+      items: rest.map((e) => makeItem(e.exercise, { kind: e.kind, muscles: e.muscles || { primary: [], secondary: [] }, sets: e.sets || [] })),
     };
     save();
     go('training');
@@ -413,9 +436,10 @@
     if (!r.entries.length) {
       return status(st, 'Ik herkende geen oefeningen. Noem de oefening met sets, herhalingen en kilo\'s, bijvoorbeeld: 3 sets squat 5 keer 100 kilo.', true);
     }
+    const { stretches, rest } = splitEntries(r.entries);
     S.active = {
       dayType: Plan.guessDay(r.entries), date: r.date || $('#sp-date').value || todayISO(), raw: text,
-      startedAt: new Date().toISOString(), unknown: r.unknown, items: r.entries.map((e) => makeItem(e.exercise, e)),
+      startedAt: new Date().toISOString(), unknown: r.unknown, stretches, items: rest.map((e) => makeItem(e.exercise, e)),
     };
     save();
     $('#sp-text').value = '';
@@ -470,8 +494,12 @@
     </article>`).join('') || '<p class="muted">Nog geen trainingen.</p>';
   }
   function renderProgress() {
-    const W = data();
-    const names = Object.keys(Score.bestPerExercise(W, bw(), sex())).sort((a, b) => a.localeCompare(b, 'nl'));
+    const W = data(), best = Score.bestPerExercise(W, bw(), sex());
+    const recs = K.records.map((r) => best[Score.findExercise(r.exercise)?.name]).filter(Boolean);
+    $('#maxes').innerHTML = recs.length ? `<h3>Maxen</h3><ul class="lifts">${recs.map((b) => `<li><span>${esc(b.name)}${b.level ? `, ${Score.LEVELS[b.level].toLowerCase()}` : ''}</span>
+      <span class="num">${nlNum(Math.round(b.e1rm))} kg</span></li>`).join('')}</ul>` : '';
+    // Maxes without a logged set have no history to chart.
+    const names = Object.values(best).filter((b) => b.at).map((b) => b.name).sort((a, b) => a.localeCompare(b, 'nl'));
     if (!names.includes(U.ex)) U.ex = names.includes('Bankdrukken') ? 'Bankdrukken' : names[0] || null;
     $('#ex-select').innerHTML = names.map((n) => `<option${n === U.ex ? ' selected' : ''}>${esc(n)}</option>`).join('');
     const series = U.ex ? Score.exerciseSeries(W, U.ex, bw()) : [];
@@ -637,7 +665,11 @@
       }
       if (t.id === 'btn-add-active') {
         const n = addByName($('#add-active'));
-        if (n) { S.active.items.push(makeItem(n)); save(); renderActive(); }
+        if (n) {
+          const st = namedStretch(n);
+          if (st) S.active.stretches = [...new Set([...(S.active.stretches || []), st])]; else S.active.items.push(makeItem(n));
+          save(); renderActive();
+        }
       }
       if (t.id === 'btn-restore-go' && U.restore) {
         S = { ...blank(), ...U.restore, lastBackup: S.lastBackup };
@@ -653,6 +685,13 @@
       if (t.dataset.pick !== undefined) {
         t.checked ? U.picks.add(t.dataset.pick) : U.picks.delete(t.dataset.pick);
         startLabel();
+      }
+      // No re-render, so the groups you opened stay open.
+      if (t.dataset.stretch !== undefined) {
+        const st = new Set(S.active.stretches || []);
+        t.checked ? st.add(t.dataset.stretch) : st.delete(t.dataset.stretch);
+        S.active.stretches = [...st];
+        save();
       }
       if (t.matches('#active input[data-f]')) {
         const k = t.dataset.f, v = parseFloat(t.value.replace(',', '.'));

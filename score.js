@@ -75,6 +75,39 @@
     ex('Schouder dislocates', 'stretch', ['schouders'], ['borst'], { aliases: ['shoulder dislocates', 'dislocates'] }),
     ex('Polsstretch', 'stretch', ['onderarmen'], [], { aliases: ['wrist stretch', 'pols stretch'] }),
     ex('Cat-cow', 'stretch', ['onderrug'], [], { aliases: ['cat cow', 'kat koe'] }),
+    ex('Deurpost stretch', 'stretch', ['borst'], ['schouders'], { aliases: ['doorway stretch', 'doorway chest stretch'] }),
+    ex('Borst opener achter de rug', 'stretch', ['borst', 'schouders'], ['biceps'], { aliases: ['handen achter de rug', 'behind the back stretch'] }),
+    ex('Cross-body schouder stretch', 'stretch', ['schouders'], ['trapezius'], { aliases: ['cross body stretch', 'arm over de borst', 'schouder stretch', 'shoulder stretch'] }),
+    ex('Sleeper stretch', 'stretch', ['schouders'], [], {}),
+    ex('Puppy pose', 'stretch', ['schouders', 'rug'], ['borst'], { aliases: ['puppy stretch'] }),
+    ex('Triceps stretch', 'stretch', ['triceps'], ['rug'], { aliases: ['tricep stretch', 'overhead triceps stretch'] }),
+    ex('Biceps stretch', 'stretch', ['biceps'], ['borst', 'schouders'], { aliases: ['bicep stretch'] }),
+    ex('Handrug stretch', 'stretch', ['onderarmen'], [], { aliases: ['wrist extensor stretch', 'onderarm stretch'] }),
+    ex('Nek stretch', 'stretch', ['trapezius'], [], { aliases: ['neck stretch', 'nekstretch'] }),
+    ex('Kin naar borst', 'stretch', ['trapezius'], ['rug'], { aliases: ['chin to chest', 'nek voorover'] }),
+    ex('Kindhouding', 'stretch', ['rug', 'onderrug'], ['schouders'], { aliases: ["child's pose", 'childs pose', 'balasana'] }),
+    ex('Dead hang', 'stretch', ['rug', 'onderarmen'], ['schouders'], { aliases: ['hangen aan de stang', 'passive hang'] }),
+    ex('Open book', 'stretch', ['rug', 'borst'], ['schuine'], { aliases: ['open boek'] }),
+    ex('Thread the needle', 'stretch', ['rug', 'schouders'], ['trapezius'], { aliases: ['draad door de naald'] }),
+    ex('Knieën naar borst', 'stretch', ['onderrug'], ['billen'], { aliases: ['knees to chest', 'knieen naar borst', 'knie naar borst'] }),
+    ex('Liggende rugdraai', 'stretch', ['onderrug', 'schuine'], ['billen'], { aliases: ['supine twist', 'spinal twist', 'rugdraai'] }),
+    ex('Cobra', 'stretch', ['buik'], ['onderrug'], { aliases: ['cobra stretch', 'cobra pose'] }),
+    ex('Sfinx', 'stretch', ['buik'], ['onderrug'], { aliases: ['sphinx', 'sphinx pose'] }),
+    ex('Zijwaartse buiging', 'stretch', ['schuine'], ['rug'], { aliases: ['side bend', 'zijbuiging', 'side stretch'] }),
+    ex('Figuur-4 stretch', 'stretch', ['billen'], [], { aliases: ['figure 4 stretch', 'figure four stretch', 'figuur 4'] }),
+    ex('90/90 heupstretch', 'stretch', ['billen', 'adductoren'], [], { aliases: ['90 90', '90/90', 'ninety ninety'] }),
+    ex('Lage lunge', 'stretch', ['quadriceps'], ['billen'], { aliases: ['low lunge'] }),
+    ex('Kniezit', 'stretch', ['quadriceps'], [], { aliases: ['hero pose', 'heldenhouding', 'virasana'] }),
+    ex("World's greatest stretch", 'stretch', ['quadriceps', 'rug'], ['hamstrings', 'billen', 'borst'], { aliases: ['worlds greatest stretch', 'greatest stretch'] }),
+    ex('Staande vooroverbuiging', 'stretch', ['hamstrings'], ['onderrug', 'kuiten'], { aliases: ['standing forward fold', 'forward fold', 'toe touch', 'tenen aanraken'] }),
+    ex('Zittende vooroverbuiging', 'stretch', ['hamstrings'], ['onderrug'], { aliases: ['seated forward fold', 'seated hamstring stretch'] }),
+    ex('Hamstring stretch met band', 'stretch', ['hamstrings'], ['kuiten'], { aliases: ['liggende hamstring stretch', 'band hamstring stretch'] }),
+    ex('Downward dog', 'stretch', ['hamstrings', 'kuiten'], ['schouders', 'rug'], { aliases: ['down dog', 'neerwaartse hond', 'downward facing dog'] }),
+    ex('Kikker stretch', 'stretch', ['adductoren'], ['billen'], { aliases: ['frog stretch', 'frog pose'] }),
+    ex('Zijwaartse lunge stretch', 'stretch', ['adductoren'], ['hamstrings'], { aliases: ['side lunge stretch', 'cossack stretch'] }),
+    ex('Middenspagaat', 'stretch', ['adductoren'], ['hamstrings'], { aliases: ['middle split', 'straddle split', 'zijspagaat'] }),
+    ex('Soleus stretch', 'stretch', ['kuiten'], [], { aliases: ['bent knee calf stretch'] }),
+    ex('Hurkzit', 'stretch', ['kuiten', 'adductoren'], ['billen', 'onderrug'], { aliases: ['deep squat hold', 'diepe squat', 'asian squat'] }),
   ];
   // Dutch everyday names the speech parser will hear.
   const EXTRA_ALIASES = { 'Pull-up': ['optrekken', 'pull ups'], 'Push-up': ['push ups'], 'Squat': ['kniebuigingen', 'squats'], 'Deadlift': ['deadlifts'] };
@@ -123,8 +156,18 @@
   const loadOf = (kind, s, bw) => kind === 'lichaamsgewicht' ? bw + (+s.kg || 0) : (+s.kg || 0);
   const ageHours = (at, now) => Math.max(0, (now - Date.parse(at)) / 3600e3);
 
+  // Maxes from kennis.json for lifts you no longer log: a 1-rep best without a date.
+  let RECORDS = [];
+  function setRecords(list) {
+    RECORDS = (Array.isArray(list) ? list : []).filter((r) => r && findExercise(r.exercise) && +r.kg > 0);
+  }
+
   function bestPerExercise(workouts, bw, sex) {
     const out = {};
+    for (const r of RECORDS) {
+      const e = findExercise(r.exercise), kg = +r.kg;
+      out[e.name] = { name: e.name, kind: e.kind, muscles: e.muscles, e1rm: kg, step: 0, level: e.std && bw ? levelFor(kg / bw, thresholds(e, sex)) : null, at: null };
+    }
     for (const w of workouts) for (const entry of w.entries || []) {
       const r = resolve(entry);
       const b = out[r.key] || (out[r.key] = { name: r.key, kind: r.kind, muscles: r.muscles, e1rm: 0, step: 0, level: null, at: null });
@@ -217,7 +260,7 @@
   }
 
   const api = {
-    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, addExercises, norm, e1rm, levelFor, thresholds, resolve,
+    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, addExercises, setRecords, norm, e1rm, levelFor, thresholds, resolve,
     bestPerExercise, muscleLevels, recovery, recoveryStatus, muscleDates, exerciseSeries, weekStats,
   };
   root.Score = api;

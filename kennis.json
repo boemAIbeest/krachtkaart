@@ -134,14 +134,11 @@
       ]
     }
   ],
+  "records": [
+    { "exercise": "Squat", "kg": 150 },
+    { "exercise": "Deadlift", "kg": 195 }
+  ],
   "exercises": [
-    {
-      "name": "Hamstring stretch",
-      "days": ["mobility"],
-      "dose": { "sets": 3, "sec": 30 },
-      "source": "huberman-stretchen",
-      "note": "Licht stretchen, op 30–40% van je pijngrens, en ontspannen. Met een band om je enkel mag ook."
-    },
     {
       "name": "Negatieve pull-up",
       "aliases": ["negative pull-up", "eccentric pull-up", "excentrische pull-up", "negatieve pull ups"],
@@ -162,18 +159,6 @@
       "days": ["fullbody"],
       "source": "galpin-kracht",
       "note": "De trek van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
-    },
-    {
-      "name": "Deadlift",
-      "days": ["fullbody"],
-      "source": "galpin-kracht",
-      "note": "Het heupscharnier van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
-    },
-    {
-      "name": "Squat",
-      "days": ["fullbody"],
-      "source": "galpin-kracht",
-      "note": "De beenduw van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
     },
     {
       "name": "Drop jump",

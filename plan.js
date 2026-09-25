@@ -5,14 +5,14 @@
   const DAYS = [
     { id: 'push', label: 'Push', muscles: ['borst', 'schouders', 'triceps'], defaults: ['Bankdrukken', 'Schuine bankdrukken', 'Overhead press', 'Dips', 'Lateral raise', 'Triceps pushdown'] },
     { id: 'pull', label: 'Pull', muscles: ['rug', 'biceps', 'trapezius', 'onderarmen'], defaults: ['Pull-up', 'Barbell row', 'Lat pulldown', 'Face pull', 'Biceps curl', 'Hammer curl'] },
-    { id: 'benen', label: 'Benen (explosief)', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'], defaults: ['Box jump', 'Jump squat', 'Broad jump', 'Squat', 'Romanian deadlift', 'Bulgarian split squat', 'Calf raise'] },
+    { id: 'benen', label: 'Benen (explosief)', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'], defaults: ['Box jump', 'Jump squat', 'Broad jump', 'Romanian deadlift', 'Bulgarian split squat', 'Calf raise'] },
     { id: 'mobility', label: 'Mobility', muscles: [], defaults: [] },
     { id: 'calisthenics', label: 'Calisthenics', muscles: ['rug', 'schouders', 'buik', 'triceps'], defaults: ['Front lever', 'Handstand', 'Muscle-up', 'L-sit', 'Planche', 'Pistol squat', 'Pull-up', 'Dips', 'Push-up'] },
     { id: 'upper', label: 'Upper', muscles: ['borst', 'rug', 'schouders', 'biceps', 'triceps'], defaults: ['Bankdrukken', 'Pull-up', 'Overhead press', 'Barbell row', 'Dips', 'Biceps curl'] },
-    { id: 'lower', label: 'Lower', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten'], defaults: ['Squat', 'Deadlift', 'Hip thrust', 'Leg curl', 'Leg extension', 'Calf raise'] },
+    { id: 'lower', label: 'Lower', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten'], defaults: ['Hip thrust', 'Leg curl', 'Leg extension', 'Calf raise'] },
     { id: 'borst-rug', label: 'Borst & rug', muscles: ['borst', 'rug'], defaults: ['Bankdrukken', 'Pull-up', 'Schuine bankdrukken', 'Barbell row', 'Dips', 'Lat pulldown'] },
     { id: 'armen-schouders', label: 'Armen & schouders', muscles: ['schouders', 'biceps', 'triceps', 'onderarmen'], defaults: ['Overhead press', 'Lateral raise', 'Face pull', 'Biceps curl', 'Triceps pushdown', 'Hammer curl'] },
-    { id: 'fullbody', label: 'Full body', muscles: ['borst', 'rug', 'schouders', 'quadriceps', 'hamstrings', 'billen'], defaults: ['Squat', 'Bankdrukken', 'Pull-up', 'Romanian deadlift', 'Overhead press', 'Plank'] },
+    { id: 'fullbody', label: 'Full body', muscles: ['borst', 'rug', 'schouders', 'quadriceps', 'hamstrings', 'billen'], defaults: ['Bankdrukken', 'Pull-up', 'Romanian deadlift', 'Overhead press', 'Plank'] },
   ];
   const LEGS = ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'];
   const dayById = (id) => DAYS.find((d) => d.id === id);
@@ -73,15 +73,6 @@
     workouts.filter((w) => w.dayType === dayId).forEach((w) => (w.entries || []).forEach((en) => add(S.findExercise(en.exercise))));
     return [...seen.values()].map((e) => item(e, dayId, last))
       .sort((a, b) => (b.fromKennis - a.fromKennis) || (age(b, now) - age(a, now)));
-  }
-
-  // Stretches for the end of a session: knowledge first, then the day's muscles, then the longest not done.
-  function stretchPool(dayId, workouts, now) {
-    const S = Sc(), d = dayById(dayId), last = lastDone(workouts);
-    const overlap = (e) => e.muscles.primary.filter((m) => d.muscles.includes(m)).length;
-    return S.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length)
-      .map((e) => ({ ...item(e, dayId, last), overlap: overlap(e) }))
-      .sort((a, b) => (b.fromKennis - a.fromKennis) || (b.overlap - a.overlap) || (age(b, now) - age(a, now)));
   }
 
   function parseRange(r) {
@@ -145,7 +136,7 @@
     return best.id;
   }
 
-  const api = { DAYS, dayById, recommendDay, pool, stretchPool, target, guessDay, lastDone };
+  const api = { DAYS, dayById, recommendDay, pool, target, guessDay, lastDone };
   root.Plan = api;
   if (typeof module !== 'undefined') module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);

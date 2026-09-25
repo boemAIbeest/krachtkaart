@@ -144,6 +144,7 @@
   .daychips button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
 
   /* Exercise tick-list */
+  .stretch-group > summary { font-weight: 700; font-size: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
   .picks { list-style: none; margin: 0; padding: 0; }
   .picks li { border-top: 1px solid var(--line); }
   .picks label { display: grid; grid-template-columns: 26px 1fr auto; gap: 2px 12px; align-items: center; padding: 11px 0; font: inherit; cursor: pointer; }
@@ -259,6 +260,7 @@
   <section class="view" id="v-voortgang" aria-label="Voortgang" hidden>
     <h2>Voortgang</h2>
     <p class="notice example-flag" hidden>Voorbeelddata.</p>
+    <div id="maxes"></div>
     <label>Oefening<select id="ex-select"></select></label>
     <div class="chart" id="chart"></div>
     <p class="small" id="chart-note"></p>

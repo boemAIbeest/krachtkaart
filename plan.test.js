@@ -31,7 +31,6 @@ assert.equal(names[0], 'Scapula pull-up');
 assert.ok(names.indexOf('Lat pulldown') < names.indexOf('Barbell row'));
 assert.ok(names.indexOf('Barbell row') < names.indexOf('Pull-up'));
 assert.ok(Plan.pool('mobility', [], now).every((x) => x.kind === 'stretch'));
-assert.ok(Plan.stretchPool('benen', [], now).length >= 2);
 
 // targets: double progression with a rep range
 Score.addExercises([{ name: 'Lateral raise', dose: { sets: 3, reps: '8-12' }, days: ['push'] }]);

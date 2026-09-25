@@ -68,4 +68,18 @@ assert.ok(bench.std);
 assert.equal(bench.dose.sets, 5);
 assert.ok(bench.days.includes('push') && bench.fromKennis);
 
+// maxes from kennis.json count as a 1-rep best (squat 150 / 80 kg = 1.875, between Gemiddeld 1.5 and Gevorderd 2.25)
+S.setRecords([{ exercise: 'squat', kg: 150 }, { exercise: 'Onbekend ding', kg: 50 }, { exercise: 'Deadlift', kg: 0 }]);
+let rb = S.bestPerExercise([], 80, 'm');
+assert.deepEqual(Object.keys(rb), ['Squat']);
+assert.equal(rb.Squat.e1rm, 150);
+assert.equal(rb.Squat.level, 3);
+assert.equal(rb.Squat.at, null);
+assert.equal(S.muscleLevels([], 80, 'm').quadriceps.level, 3);
+// a logged set beats the max, and gets a date
+rb = S.bestPerExercise([w(1, [{ exercise: 'Squat', kind: 'gewicht', sets: [set(1, 160)] }])], 80, 'm');
+assert.equal(rb.Squat.e1rm, 160);
+assert.ok(rb.Squat.at);
+S.setRecords([]);
+
 console.log('score.js: all checks passed');
