@@ -39,7 +39,13 @@
     quadriceps: 'quadriceps', quads: 'quadriceps', bovenbenen: 'quadriceps', hamstring: 'hamstrings', hamstrings: 'hamstrings',
     kuit: 'kuiten', kuiten: 'kuiten', adductoren: 'adductoren', lies: 'adductoren', liezen: 'adductoren',
   };
-  const FILLER = new Set(['daarna', 'daarnaast', 'vervolgens', 'gedaan', 'getraind', 'training', 'vandaag', 'gisteren', 'eergisteren', 'beetje', 'lekker', 'zwaar', 'goed']);
+  const FILLER = new Set(['daarna', 'daarnaast', 'vervolgens', 'gedaan', 'getraind', 'training', 'vandaag', 'gisteren', 'eergisteren',
+    'beetje', 'lekker', 'zwaar', 'zware', 'lichte', 'licht', 'goed', 'langzaam', 'snelle', 'laatste', 'eerste', 'allemaal', 'ongeveer',
+    'steeds', 'telkens', 'beide', 'elke', 'iedere', 'kanten', 'seconden', 'seconde', 'minuten', 'minuut', 'herhalingen', 'herhaling',
+    'kilogram', 'kilos', 'series', 'rondes', 'ronde', 'extra', 'erbij', 'gewicht']);
+  // A word that looks like an exercise name we don't know (so its text must not be mixed into another exercise).
+  const isContent = (w, e) => w.length >= 5 && !/\d/.test(w) && !FILLER.has(w) && !(w in MUSCLE_WORDS)
+    && !(e?.ladder || []).some((s) => clean(s.toLowerCase()).split(' ').includes(w));
 
   // Speech text is lowercase, maybe without punctuation. Decimals become "§" so "." can split sentences.
   const clean = (s) => s.replace(/×/g, 'x').replace(/[-_/+']/g, ' ').replace(/[^a-z0-9§ëéïöü ]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -115,6 +121,19 @@
     return out;
   }
 
+  // "X en Y": a part without the mention that names something else goes to unknown.
+  function splitUnknown(part, relStart, e) {
+    const keep = [], lost = [];
+    let pos = 0;
+    for (const seg of part.split(' en ')) {
+      const start = pos;
+      pos += seg.length + 4;
+      const holdsMention = relStart >= start && relStart <= start + seg.length;
+      if (!holdsMention && seg.split(' ').some((w) => isContent(w, e))) lost.push(seg.trim()); else keep.push(seg);
+    }
+    return { text: keep.join(' '), lost };
+  }
+
   function shiftDate(today, days) {
     const d = new Date(today + 'T12:00:00Z');
     d.setUTCDate(d.getUTCDate() - days);
@@ -129,7 +148,7 @@
     const entries = [], unknown = [];
 
     for (const sentence of t.split(/[.;!?\n]+|\b(?:daarna|toen|vervolgens|daarnaast|dan)\b/)) {
-      const groups = [];
+      const groups = [], unknownBefore = unknown.length;
       let pending = [];
       let any = false;
       for (const rawPiece of sentence.split(',')) {
@@ -137,7 +156,8 @@
         if (!piece) continue;
         const ms = mentions(piece, list);
         if (!ms.length) {
-          if (/\d/.test(piece)) (groups.length ? groups[groups.length - 1].texts : pending).push(piece);
+          if (piece.split(' ').some((w) => isContent(w))) unknown.push(piece.replace(/§/g, ','));
+          else if (/\d/.test(piece)) (groups.length ? groups[groups.length - 1].texts : pending).push(piece);
           continue;
         }
         any = true;
@@ -148,8 +168,9 @@
           return before ? m.start - before[1].length : m.start;
         });
         ms.forEach((m, i) => {
-          const part = piece.slice(cuts[i], i + 1 < ms.length ? cuts[i + 1] : piece.length);
-          groups.push({ e: m.e, texts: i === 0 ? [...pending, part] : [part] });
+          const part = splitUnknown(piece.slice(cuts[i], i + 1 < ms.length ? cuts[i + 1] : piece.length), m.start - cuts[i], m.e);
+          unknown.push(...part.lost.map((s) => s.replace(/§/g, ',')));
+          groups.push({ e: m.e, texts: i === 0 ? [...pending, part.text] : [part.text] });
           pending = [];
         });
       }
@@ -164,7 +185,7 @@
         });
       }
       const words = clean(sentence).split(' ').filter(Boolean);
-      if (!any && (words.some((w) => /\d/.test(w)) || words.some((w) => w.length >= 5 && !FILLER.has(w)))) {
+      if (!any && unknown.length === unknownBefore && (words.some((w) => /\d/.test(w)) || words.some((w) => isContent(w)))) {
         unknown.push(clean(sentence).replace(/§/g, ','));
       }
     }

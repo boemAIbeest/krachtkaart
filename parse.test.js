@@ -73,6 +73,20 @@ assert.deepEqual(r.entries[0].sets, times(3, { reps: 10, kg: 60 }));
 assert.equal(r.unknown.length, 1);
 assert.match(r.unknown[0], /reverse flyes/);
 
+// an unknown exercise joined with "en" is reported instead of swallowed
+r = one('face pulls 3 sets van 15 en reverse flyes 3 sets van 12');
+assert.deepEqual(r.entries.map((e) => e.exercise), ['Face pull']);
+assert.deepEqual(r.entries[0].sets, times(3, { reps: 15 }));
+assert.match(r.unknown.join('|'), /reverse flyes 3 sets van 12/);
+r = one('nog reverse flyes met de band en 2 minuten hamstrings stretchen');
+assert.equal(r.entries[0].exercise, 'Hamstring stretch');
+assert.deepEqual(r.entries[0].sets, [{ sec: 120 }]);
+assert.match(r.unknown.join('|'), /reverse flyes met de band/);
+// ...but a skill step joined with "en" stays with its exercise
+r = one('front lever 3 keer 8 seconden en advanced tuck');
+assert.deepEqual(r.entries[0].sets, times(3, { step: 2, sec: 8 }));
+assert.equal(r.unknown.length, 0);
+
 // exercises from kennis.json are recognised too
 Score.addExercises([{ name: 'Nordic curl', kind: 'lichaamsgewicht', muscles: { primary: ['hamstrings'] }, days: ['benen'] }]);
 r = one('nordic curls 3 sets van 5');

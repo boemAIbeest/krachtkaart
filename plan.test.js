@@ -55,6 +55,8 @@ assert.equal(Plan.guessDay([E('Box jump'), E('Squat'), E('Romanian deadlift')]),
 assert.equal(Plan.guessDay([E('Squat'), E('Romanian deadlift'), E('Leg curl')]), 'lower');
 assert.equal(Plan.guessDay([E('Bankdrukken'), E('Pull-up')]), 'borst-rug');
 assert.equal(Plan.guessDay([E('Duivenhouding'), E('Spagaat')]), 'mobility');
+// stretches don't pull the guess toward full body; face pulls belong to pull day
+assert.equal(Plan.guessDay([E('Pull-up'), E('Barbell row'), E('Face pull'), E('Hamstring stretch')]), 'pull');
 assert.equal(Plan.guessDay([E('Front lever'), E('Handstand'), E('Pull-up')]), 'calisthenics');
 
 console.log('plan.js: all checks passed');

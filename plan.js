@@ -129,14 +129,17 @@
     const kinds = entries.map((e) => S.findExercise(e.exercise)?.kind || e.kind);
     if (kinds.every((k) => k === 'stretch')) return 'mobility';
     if (kinds.filter((k) => k === 'skill').length * 2 >= entries.length) return 'calisthenics';
-    const prim = new Set(entries.flatMap((e) => S.findExercise(e.exercise)?.muscles.primary || e.muscles?.primary || []));
+    // Stretches say nothing about the day; exercises that belong to a day count double.
+    const work = entries.filter((e, i) => kinds[i] !== 'stretch').map((e) => ({ e, ex: S.findExercise(e.exercise) }));
+    const prim = new Set(work.flatMap(({ e, ex }) => ex?.muscles.primary || e.muscles?.primary || []));
     const explosive = kinds.includes('explosief');
     let best = null;
     for (const d of DAYS) {
       if (!d.muscles.length) continue;
+      const members = work.filter(({ ex }) => ex && (d.defaults.includes(ex.name) || (ex.days || []).includes(d.id))).length;
       const hits = d.muscles.filter((m) => prim.has(m)).length;
       const miss = [...prim].filter((m) => !d.muscles.includes(m)).length;
-      const score = hits - 0.5 * miss - 0.25 * (d.muscles.length - hits) + (explosive && d.id === 'benen' ? 1 : 0);
+      const score = 2 * members + hits - 0.5 * miss - 0.25 * (d.muscles.length - hits) + (explosive && d.id === 'benen' ? 1 : 0);
       if (!best || score > best.score) best = { id: d.id, score };
     }
     return best.id;
