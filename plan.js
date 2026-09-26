@@ -63,11 +63,11 @@
   }
   const age = (x, now) => x.lastAt ? now - Date.parse(x.lastAt) : 1e15;
 
-  // Knowledge exercises for this day first, then the longest rested. Archived names never come back.
-  function pool(dayId, workouts, now, archived = []) {
+  // Knowledge exercises for this day first, then the longest rested. Only names in `mine` (the switched-on list) come up.
+  function pool(dayId, workouts, now, mine) {
     const S = Sc(), d = dayById(dayId), last = lastDone(workouts), seen = new Map();
     const stretchDay = dayId === 'mobility';
-    const add = (e) => { if (e && !seen.has(e.name) && !archived.includes(e.name) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
+    const add = (e) => { if (e && !seen.has(e.name) && (!mine || mine.includes(e.name)) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
     S.CATALOG.filter((e) => e.fromKennis && (e.days || []).includes(dayId)).forEach(add);
     (stretchDay ? S.CATALOG.filter((e) => e.kind === 'stretch') : d.defaults.map((n) => S.findExercise(n))).forEach(add);
     workouts.filter((w) => w.dayType === dayId).forEach((w) => (w.entries || []).forEach((en) => add(S.findExercise(en.exercise))));

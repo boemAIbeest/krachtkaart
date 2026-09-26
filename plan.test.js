@@ -58,10 +58,11 @@ assert.equal(Plan.guessDay([E('Duivenhouding'), E('Spagaat')]), 'mobility');
 assert.equal(Plan.guessDay([E('Pull-up'), E('Barbell row'), E('Face pull'), E('Hamstring stretch')]), 'pull');
 assert.equal(Plan.guessDay([E('Front lever'), E('Handstand'), E('Pull-up')]), 'calisthenics');
 
-// archived exercises never come back, not even from history
-const lowerNames = (arch) => Plan.pool('lower', [w(24, 'lower', [{ exercise: 'Squat', sets: [{ reps: 5, kg: 100 }] }])], now, arch).map((x) => x.name);
-assert.ok(lowerNames([]).includes('Squat'));
-assert.ok(!lowerNames(['Squat', 'Deadlift']).some((n) => n === 'Squat' || n === 'Deadlift'));
+// only switched-on exercises come up, not even from history; undefined means no filter
+const lowerNames = (mine) => Plan.pool('lower', [w(24, 'lower', [{ exercise: 'Squat', sets: [{ reps: 5, kg: 100 }] }])], now, mine).map((x) => x.name);
+assert.ok(lowerNames(undefined).includes('Squat'));
+assert.deepEqual(lowerNames(['Hip thrust', 'Leg curl']).sort(), ['Hip thrust', 'Leg curl']);
+assert.deepEqual(lowerNames([]), []);
 
 // holds are timed: dose seconds first, then the best time from last session
 Score.addExercises([{ name: 'Frog stand test', kind: 'lichaamsgewicht', muscles: { primary: ['schouders'] }, days: ['calisthenics'], hold: true, dose: { sets: 3, sec: 20 } }]);
