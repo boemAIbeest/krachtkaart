@@ -142,6 +142,13 @@
       for (const a of strs(raw.aliases)) { e.aliases.push(a); INDEX.set(norm(a), e); }
     }
   }
+  // Own exercises can be edited or deleted: drop the entry and every name that points at it.
+  function removeExercise(name) {
+    const e = findExercise(name);
+    if (!e) return;
+    CATALOG.splice(CATALOG.indexOf(e), 1);
+    for (const [k, v] of INDEX) if (v === e) INDEX.delete(k);
+  }
 
   const cleanMuscles = (m) => ({
     primary: (m?.primary || []).filter((x) => x in MUSCLES),
@@ -260,7 +267,7 @@
   }
 
   const api = {
-    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, addExercises, setRecords, norm, e1rm, levelFor, thresholds, resolve,
+    MUSCLES, LEVELS, PLATES, RECOVERY, KINDS, CATALOG, findExercise, addExercises, removeExercise, setRecords, norm, e1rm, levelFor, thresholds, resolve,
     bestPerExercise, muscleLevels, recovery, recoveryStatus, muscleDates, exerciseSeries, weekStats,
   };
   root.Score = api;

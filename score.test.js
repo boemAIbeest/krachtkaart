@@ -82,4 +82,12 @@ assert.equal(rb.Squat.e1rm, 160);
 assert.ok(rb.Squat.at);
 S.setRecords([]);
 
+// own exercises can be removed again, aliases and all
+S.addExercises([{ name: 'Mijn curl', aliases: ['mc'], kind: 'gewicht', muscles: { primary: ['biceps'] }, source: 'eigen' }]);
+assert.equal(S.findExercise('mc').name, 'Mijn curl');
+S.removeExercise('Mijn curl');
+assert.equal(S.findExercise('Mijn curl'), null);
+assert.equal(S.findExercise('mc'), null);
+assert.ok(!S.CATALOG.some((e) => e.name === 'Mijn curl'));
+
 console.log('score.js: all checks passed');

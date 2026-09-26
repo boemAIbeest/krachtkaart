@@ -202,6 +202,14 @@
   #q-res > .k-item:first-child, #q-res > details:first-child { border-top: 0; }
   .k-item p + p { margin-top: 8px; }
   .k-item ul.lifts { padding-left: 0; }
+  fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+  legend { font-size: 14px; font-weight: 600; font-stretch: 90%; padding: 0; margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chk { display: inline-block; position: relative; }
+  .chk input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .chk span { display: inline-block; font: 620 14px/1 var(--font); font-stretch: 92%; padding: 10px 13px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+  .chk input:checked + span { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .chk input:focus-visible + span { outline: 2px solid var(--p4); outline-offset: 2px; }
 
   /* Tab bar */
   .tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -314,6 +322,32 @@
   <section class="view" id="v-oefeningen" aria-label="Mijn oefeningen" hidden>
     <div class="head-row"><h2>Mijn oefeningen</h2><button class="btn ghost" type="button" id="btn-mine-done">Klaar</button></div>
     <p class="muted">Alleen wat aanstaat komt in je trainingen en je stretchlijst. Log je iets dat uit staat, dan gaat het vanzelf aan.</p>
+    <div class="row"><button class="btn ghost" type="button" id="btn-c-new">+ Eigen oefening</button></div>
+    <form class="panel" id="c-form" hidden>
+      <h3 id="c-title">Eigen oefening</h3>
+      <label>Naam<input id="c-name" maxlength="60" autocomplete="off" placeholder="Bijv. Landmine press"></label>
+      <label>Soort<select id="c-kind">
+        <option value="gewicht">Met gewicht</option>
+        <option value="lichaamsgewicht">Lichaamsgewicht</option>
+        <option value="explosief">Explosief</option>
+        <option value="hold">Vasthouden (op tijd)</option>
+        <option value="stretch">Stretch</option>
+      </select></label>
+      <fieldset><legend>Hoofdspieren</legend><div class="chips" id="c-prim"></div></fieldset>
+      <fieldset><legend>Werken mee (optioneel)</legend><div class="chips" id="c-sec"></div></fieldset>
+      <fieldset id="c-days-f"><legend>Bij welke trainingen</legend><div class="chips" id="c-days"></div></fieldset>
+      <div class="row" id="c-dose">
+        <label style="flex:1 1 90px">Sets (optioneel)<input id="c-sets" type="number" inputmode="numeric" min="1" max="10"></label>
+        <label style="flex:2 1 140px" id="c-reps-l">Herhalingen<input id="c-reps" placeholder="bijv. 8-12"></label>
+      </div>
+      <label>Notitie (optioneel)<textarea id="c-note" rows="2" style="min-height:0" placeholder="Bijv. uitvoering of waar je hem vandaan hebt"></textarea></label>
+      <div class="row">
+        <button class="btn" type="submit">Opslaan</button>
+        <button class="link" type="button" id="btn-c-cancel">Annuleer</button>
+        <button class="link danger" type="button" id="btn-c-del" data-confirm="del-c" hidden>Verwijder</button>
+      </div>
+      <p class="status" id="c-status" role="status"></p>
+    </form>
     <input type="search" id="o-q" placeholder="Zoek een oefening" aria-label="Zoek een oefening">
     <div id="o-list"></div>
   </section>

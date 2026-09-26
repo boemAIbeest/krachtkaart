@@ -28,7 +28,7 @@
   // ---------- storage (this phone only) ----------
   const KEY = 'krachtkaart.v1';
   // mine = the exercises the app may use; seen = names already shown in Mijn oefeningen (null until kennis.json loads once).
-  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, seen: null });
+  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, seen: null, custom: [] });
   // Older saves had an archive instead: everything ever logged goes on, minus what was archived (squat and deadlift by default).
   function migrate(s) {
     if (!Array.isArray(s.mine)) {
@@ -55,7 +55,7 @@
     if (!persistAsked && navigator.storage?.persist) { persistAsked = true; navigator.storage.persist().catch(() => {}); }
     return true;
   }
-  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null, tab: 'vandaag', back: null, fresh: new Set(), theme: null };
+  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null, tab: 'vandaag', back: null, fresh: new Set(), theme: null, editC: null };
 
   // Shown on Vandaag and Voortgang until the first real training; never saved.
   const EXAMPLE = (() => {
@@ -99,7 +99,12 @@
   // ---------- knowledge file ----------
   let K = { sources: [], exercises: [], records: [], updated: null, failed: false };
   let Q = { themes: [], items: [], idx: null, failed: false };
-  const sourceTitle = (id) => K.sources.find((s) => s.id === id)?.title || id;
+  const EIGEN = 'eigen';
+  const sourceTitle = (id) => id === EIGEN ? 'je eigen oefeningen' : K.sources.find((s) => s.id === id)?.title || id;
+  function useCustom(prev, next) {
+    for (const c of prev) Score.removeExercise(c.name);
+    Score.addExercises(next.map((c) => ({ ...c, source: EIGEN })));
+  }
   async function loadVragen() {
     try {
       const res = await fetch('vragen.json', { cache: 'no-cache' });
@@ -634,14 +639,15 @@
 
   // ---------- Mijn oefeningen ----------
   const REGION = { borst: 'Borst', rug: 'Rug', trapezius: 'Rug', onderrug: 'Rug', schouders: 'Schouders', biceps: 'Armen', triceps: 'Armen', onderarmen: 'Armen', buik: 'Buik', schuine: 'Buik' };
-  const GROUPS = ['Nieuw', 'Borst', 'Rug', 'Schouders', 'Armen', 'Buik', 'Benen', 'Explosief', 'Calisthenics', 'Stretches'];
-  const groupOf = (e) => U.fresh.has(e.name) ? 'Nieuw' : e.kind === 'stretch' ? 'Stretches' : e.kind === 'skill' ? 'Calisthenics'
+  const GROUPS = ['Eigen', 'Nieuw', 'Borst', 'Rug', 'Schouders', 'Armen', 'Buik', 'Benen', 'Explosief', 'Calisthenics', 'Stretches'];
+  const groupOf = (e) => e.source === EIGEN ? 'Eigen' : U.fresh.has(e.name) ? 'Nieuw' : e.kind === 'stretch' ? 'Stretches' : e.kind === 'skill' ? 'Calisthenics'
     : e.kind === 'explosief' ? 'Explosief' : REGION[e.muscles.primary[0]] || 'Benen';
   // New names are shown under Nieuw for this visit, then count as seen.
   function openMine() {
     U.fresh = new Set(newNames());
     if (Array.isArray(S.seen)) { S.seen = listable().map((e) => e.name); save(); }
     $('#o-q').value = '';
+    $('#c-form').hidden = true;
     renderMine();
   }
   const countText = (on, n) => `${on} van ${n} aan`;
@@ -652,14 +658,70 @@
     $('#o-list').innerHTML = GROUPS.map((g) => {
       const list = all.filter((e) => groupOf(e) === g);
       if (!list.length) return '';
-      return `<details class="stretch-group"${q || g === 'Nieuw' ? ' open' : ''}><summary>${g} <span class="small" data-count>${countText(list.filter((e) => S.mine.includes(e.name)).length, list.length)}</span></summary>
+      return `<details class="stretch-group"${q || g === 'Nieuw' || g === 'Eigen' ? ' open' : ''}><summary>${g} <span class="small" data-count>${countText(list.filter((e) => S.mine.includes(e.name)).length, list.length)}</span></summary>
         <ul class="picks">${list.map((e) => `<li><label><input type="checkbox" data-mine="${esc(e.name)}"${S.mine.includes(e.name) ? ' checked' : ''}>
-          <span class="name">${esc(e.name)}</span><span class="meta">${e.source ? `uit ${esc(sourceTitle(e.source))}` : esc(e.muscles.primary.map((m) => Score.MUSCLES[m]).join(', '))}</span></label></li>`).join('')}</ul></details>`;
+          <span class="name">${esc(e.name)}</span><span class="meta">${e.source && e.source !== EIGEN ? `uit ${esc(sourceTitle(e.source))}` : esc(e.muscles.primary.map((m) => Score.MUSCLES[m]).join(', '))}</span></label>
+          ${e.source === EIGEN ? `<button class="link" type="button" data-edit-c="${esc(e.name)}">Wijzig</button>` : ''}</li>`).join('')}</ul></details>`;
     }).join('') || '<p class="muted">Geen oefening gevonden.</p>';
   }
 
+  // ---------- Eigen oefeningen ----------
+  const chipBoxes = (sel, pairs) => { $(sel).innerHTML = pairs.map(([v, l]) => `<label class="chk"><input type="checkbox" value="${esc(v)}"><span>${esc(l)}</span></label>`).join(''); };
+  const ticked = (sel) => $$(`${sel} input:checked`).map((i) => i.value);
+  const tick = (sel, vals) => $$(`${sel} input`).forEach((i) => { i.checked = vals.includes(i.value); });
+  // Stretches need no days or target: they are ticked per muscle after the training.
+  function kindUI() {
+    const k = $('#c-kind').value;
+    $('#c-days-f').hidden = $('#c-dose').hidden = k === 'stretch';
+    $('#c-reps-l').firstChild.textContent = k === 'hold' ? 'Seconden' : 'Herhalingen';
+    $('#c-reps').placeholder = k === 'hold' ? 'bijv. 30' : 'bijv. 8-12';
+  }
+  function openCustom(name) {
+    const c = S.custom.find((x) => x.name === name);
+    U.editC = c ? c.name : null;
+    $('#c-title').textContent = c ? 'Eigen oefening aanpassen' : 'Eigen oefening';
+    $('#c-name').value = c?.name || '';
+    $('#c-kind').value = c ? (c.hold ? 'hold' : c.kind) : 'gewicht';
+    tick('#c-prim', c?.muscles.primary || []);
+    tick('#c-sec', c?.muscles.secondary || []);
+    tick('#c-days', c?.days || []);
+    $('#c-sets').value = c?.dose?.sets || '';
+    $('#c-reps').value = c?.dose?.sec || c?.dose?.reps || '';
+    $('#c-note').value = c?.note || '';
+    $('#btn-c-del').hidden = !c;
+    status($('#c-status'), '');
+    kindUI();
+    $('#c-form').hidden = false;
+    $('#c-form').scrollIntoView({ block: 'start' });
+  }
+  function saveCustom() {
+    const st = $('#c-status'), k = $('#c-kind').value, old = U.editC;
+    const name = $('#c-name').value.trim().replace(/\s+/g, ' ').slice(0, 60);
+    const primary = ticked('#c-prim'), secondary = ticked('#c-sec').filter((m) => !primary.includes(m));
+    if (!name) return status(st, 'Geef je oefening een naam.', true);
+    const clash = Score.findExercise(name);
+    if (clash && clash.name !== old) return status(st, `${clash.name} bestaat al. Zet hem aan in de lijst hieronder.`, true);
+    if (!primary.length) return status(st, 'Kies minstens één hoofdspier.', true);
+    const amount = $('#c-reps').value.trim(), sets = Math.round(+$('#c-sets').value) || (amount ? 3 : 0);
+    const dose = k !== 'stretch' && sets > 0 ? { sets: Math.min(sets, 10), ...(amount && (k === 'hold' ? { sec: parseInt(amount, 10) || 30 } : { reps: amount.slice(0, 10) })) } : null;
+    const note = $('#c-note').value.trim().slice(0, 500);
+    const c = { name, kind: k === 'hold' ? 'lichaamsgewicht' : k, ...(k === 'hold' && { hold: true }), muscles: { primary, secondary },
+      days: k === 'stretch' ? [] : ticked('#c-days'), ...(dose && { dose }), ...(note && { note }) };
+    const next = [...S.custom.filter((x) => x.name !== old), c];
+    useCustom(S.custom, next);
+    S.custom = next;
+    // A new name keeps the history together.
+    if (old && old !== name) for (const w of S.workouts) for (const e of w.entries || []) if (e.exercise === old) e.exercise = name;
+    S.mine = [...new Set([...S.mine.filter((n) => n !== old), name])];
+    save();
+    fillDatalist();
+    $('#c-form').hidden = true;
+    renderMine();
+    toast(old ? `${name} aangepast` : `${name} staat erin en staat aan`);
+  }
+
   async function makeBackup() {
-    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, mine: S.mine, seen: S.seen });
+    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, mine: S.mine, seen: S.seen, custom: S.custom });
     const name = `krachtkaart-backup-${todayISO()}.json`;
     const file = new File([payload], name, { type: 'application/json' });
     try {
@@ -688,7 +750,8 @@
       const workouts = d.workouts.filter((w) => w && typeof w.at === 'string' && Array.isArray(w.entries)).map((w) => ({ ...w, id: w.id || uid() }));
       U.restore = { workouts, profile: d.profile && typeof d.profile === 'object' ? d.profile : null, notes: Array.isArray(d.notes) ? d.notes : [],
         ...(Array.isArray(d.archived) && { archived: d.archived.map(String) }),
-        ...(Array.isArray(d.mine) && { mine: d.mine.map(String) }), ...(Array.isArray(d.seen) && { seen: d.seen.map(String) }) };
+        ...(Array.isArray(d.mine) && { mine: d.mine.map(String) }), ...(Array.isArray(d.seen) && { seen: d.seen.map(String) }),
+        ...(Array.isArray(d.custom) && { custom: d.custom.filter((c) => c && typeof c.name === 'string' && c.muscles) }) };
       box.hidden = false;
       box.innerHTML = `<p>Back-up van ${esc(d.exportedAt ? fmtDay.format(new Date(d.exportedAt)) : 'onbekende datum')} met ${workouts.length} ${workouts.length === 1 ? 'training' : 'trainingen'}. Terugzetten vervangt alles wat nu op deze telefoon staat.</p>
         <div class="row"><button class="btn" type="button" id="btn-restore-go">Terugzetten</button><button class="link" type="button" id="btn-restore-no">Annuleer</button></div>`;
@@ -716,6 +779,16 @@
     if (kind === 'rm-ex') { S.active.items.splice(+t.dataset.i, 1); save(); renderActive(); }
     if (kind === 'del-w') { S.workouts = S.workouts.filter((w) => w.id !== t.dataset.id); save(); renderAll(); toast('Training verwijderd'); }
     if (kind === 'del-n') { S.notes = S.notes.filter((n) => n.id !== t.dataset.id); save(); renderKennis(); }
+    if (kind === 'del-c') {
+      const n = U.editC, next = S.custom.filter((x) => x.name !== n);
+      useCustom(S.custom, next);
+      S.custom = next;
+      S.mine = S.mine.filter((x) => x !== n);
+      save(); fillDatalist();
+      $('#c-form').hidden = true;
+      renderMine();
+      toast(`${n} is verwijderd. Je gelogde trainingen blijven staan.`);
+    }
     if (kind === 'off') {
       const n = t.dataset.name;
       U.picks.delete(n);
@@ -782,6 +855,9 @@
       if (t.dataset.go) go(t.dataset.go);
       if (t.dataset.theme) { U.theme = U.theme === t.dataset.theme ? null : t.dataset.theme; $('#q-in').value = ''; renderAsk(); }
       if (t.dataset.on) { const n = t.dataset.on, on = !S.mine.includes(n); setMine(n, on); renderAll(); toast(on ? `${n} staat aan` : `${n} staat uit`); }
+      if (t.id === 'btn-c-new') openCustom(null);
+      if (t.dataset.editC !== undefined) openCustom(t.dataset.editC);
+      if (t.id === 'btn-c-cancel') $('#c-form').hidden = true;
       if (t.id === 'btn-mine-done') { if (U.day && !S.active) resetPicks(); renderAll(); go(U.back || 'profiel'); }
       if (t.dataset.choose) { U.day = t.dataset.choose; resetPicks(); go('training'); }
       if (t.dataset.day) { U.day = t.dataset.day; resetPicks(); renderChooser(); }
@@ -803,7 +879,10 @@
         }
       }
       if (t.id === 'btn-restore-go' && U.restore) {
+        const prev = S.custom;
         S = migrate({ ...blank(), seen: S.seen, ...U.restore, lastBackup: S.lastBackup });
+        useCustom(prev, S.custom);
+        fillDatalist();
         U.restore = null;
         $('#restore-confirm').hidden = true;
         if (save()) { renderAll(); toast('Back-up teruggezet'); }
@@ -840,6 +919,11 @@
     });
 
     $('#o-q').addEventListener('input', renderMine);
+    chipBoxes('#c-prim', Object.entries(Score.MUSCLES));
+    chipBoxes('#c-sec', Object.entries(Score.MUSCLES));
+    chipBoxes('#c-days', Plan.DAYS.filter((d) => d.id !== 'mobility').map((d) => [d.id, d.label]));
+    $('#c-kind').onchange = kindUI;
+    $('#c-form').addEventListener('submit', (ev) => { ev.preventDefault(); saveCustom(); });
     $('#btn-backup').onclick = makeBackup;
     $('#btn-restore').onclick = () => $('#restore-file').click();
     $('#restore-file').onchange = (ev) => { const f = ev.target.files[0]; ev.target.value = ''; if (f) readRestore(f); };
@@ -873,6 +957,7 @@
   $('#today').textContent = cap(fmtDay.format(new Date()));
   Body.render($('#fig-voor'), 'voor');
   Body.render($('#fig-achter'), 'achter');
+  useCustom([], S.custom);
   wire();
   fillDatalist();
   renderAll();
