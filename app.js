@@ -27,13 +27,23 @@
 
   // ---------- storage (this phone only) ----------
   const KEY = 'krachtkaart.v1';
-  // Squat and deadlift start archived: the user never does them (older saves without the field get this too).
-  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, archived: ['Squat', 'Deadlift'] });
+  // mine = the exercises the app may use; seen = names already shown in Mijn oefeningen (null until kennis.json loads once).
+  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, seen: null });
+  // Older saves had an archive instead: everything ever logged goes on, minus what was archived (squat and deadlift by default).
+  function migrate(s) {
+    if (!Array.isArray(s.mine)) {
+      const arch = s.archived || ['Squat', 'Deadlift'];
+      const logged = s.workouts.flatMap((w) => (w.entries || []).map((e) => Score.findExercise(e.exercise)?.name || e.exercise));
+      s.mine = [...new Set(logged)].filter((n) => !arch.includes(n));
+    }
+    delete s.archived;
+    return s;
+  }
   function load() {
     try {
       const d = JSON.parse(localStorage.getItem(KEY) || 'null');
-      return d && Array.isArray(d.workouts) ? { ...blank(), ...d } : blank();
-    } catch { return blank(); }
+      return migrate(d && Array.isArray(d.workouts) ? { ...blank(), ...d } : blank());
+    } catch { return migrate(blank()); }
   }
   let S = load();
   let persistAsked = false;
@@ -45,7 +55,7 @@
     if (!persistAsked && navigator.storage?.persist) { persistAsked = true; navigator.storage.persist().catch(() => {}); }
     return true;
   }
-  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null };
+  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null, tab: 'vandaag', back: null, fresh: new Set() };
 
   // Shown on Vandaag and Voortgang until the first real training; never saved.
   const EXAMPLE = (() => {
@@ -98,12 +108,21 @@
         records: Array.isArray(d.records) ? d.records : [], updated: d.updated || null, failed: false };
       Score.addExercises(K.exercises);
       Score.setRecords(K.records);
+      if (!Array.isArray(S.seen)) { S.seen = listable().filter((e) => !isResearch(e)).map((e) => e.name); save(); }
     } catch { K.failed = true; }
     fillDatalist();
     renderAll();
   }
+  // Everything you can switch on: the generic "Stretchen" has no muscles and stays out.
+  const listable = () => Score.CATALOG.filter((e) => e.kind !== 'stretch' || e.muscles.primary.length);
+  const isResearch = (e) => K.sources.find((s) => s.id === e.source)?.type === 'onderzoek';
+  const newNames = () => Array.isArray(S.seen) ? listable().map((e) => e.name).filter((n) => !S.seen.includes(n)) : [];
+  function setMine(n, on) {
+    S.mine = on ? [...new Set([...S.mine, n])] : S.mine.filter((x) => x !== n);
+    save();
+  }
   function fillDatalist() {
-    $('#all-ex').innerHTML = Score.CATALOG.filter((e) => e.kind !== 'stretch' || e.muscles.primary.length)
+    $('#all-ex').innerHTML = listable()
       .map((e) => e.name).sort((a, b) => a.localeCompare(b, 'nl')).map((n) => `<option value="${esc(n)}"></option>`).join('');
   }
 
@@ -140,9 +159,13 @@
 
   // ---------- navigation ----------
   function go(tab) {
-    for (const b of $$('.tabs button')) b.dataset.tab === tab ? b.setAttribute('aria-current', 'page') : b.removeAttribute('aria-current');
+    if (tab === 'oefeningen' && U.tab !== 'oefeningen') { U.back = U.tab; openMine(); }
+    U.tab = tab;
+    const lit = tab === 'oefeningen' ? 'profiel' : tab;
+    for (const b of $$('.tabs button')) b.dataset.tab === lit ? b.setAttribute('aria-current', 'page') : b.removeAttribute('aria-current');
     for (const v of $$('.view[id^="v-"]')) v.hidden = v.id !== 'v-' + tab;
     if (tab === 'training') renderTraining();
+    if (tab === 'vandaag') renderToday();
     window.scrollTo(0, 0);
   }
 
@@ -197,6 +220,9 @@
     $('#example-note').hidden = !isExample();
     $$('.example-flag').forEach((e) => { e.hidden = !isExample(); });
     $('#profile-note').hidden = !!S.profile;
+    const nn = newNames().length;
+    $('#new-note').hidden = !nn;
+    if (nn) $('#new-note').innerHTML = `${nn} ${nn === 1 ? 'nieuwe oefening' : 'nieuwe oefeningen'} om te bekijken. <button class="link" type="button" data-go="oefeningen">Bekijken</button>`;
     const stale = S.workouts.length && (!S.lastBackup || now - Date.parse(S.lastBackup) > 14 * DAY);
     const bn = $('#backup-note');
     bn.hidden = !stale;
@@ -234,7 +260,7 @@
 
   // ---------- Training: choose ----------
   function resetPicks() {
-    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now(), S.archived).slice(0, 5).map((x) => x.name));
+    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now(), S.mine).slice(0, 5).map((x) => x.name));
     U.extra = [];
   }
   // Named stretches are a checklist during the training, not sets. The generic "Stretchen" keeps its muscles as an item.
@@ -243,14 +269,14 @@
     stretches: [...new Set(entries.map((e) => namedStretch(e.exercise)).filter(Boolean))],
     rest: entries.filter((e) => !namedStretch(e.exercise)),
   });
-  const ARCH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"></path></svg>';
-  const archBtn = (n) => `<button class="arch" type="button" data-confirm="archive" data-name="${esc(n)}" aria-label="${esc(n)} archiveren" title="Archiveren">${ARCH_ICON}</button>`;
+  const OFF_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M8.5 12h7"></path></svg>';
+  const offBtn = (n) => `<button class="arch" type="button" data-confirm="off" data-name="${esc(n)}" aria-label="${esc(n)} uitzetten" title="Uitzetten">${OFF_ICON}</button>`;
   function pickRow(x) {
     const t = Plan.target(x.name, S.workouts);
     const when = x.lastAt ? ago(x.lastAt) : 'nog nooit gedaan';
     return `<li><label><input type="checkbox" data-pick="${esc(x.name)}"${U.picks.has(x.name) ? ' checked' : ''}>
       <span class="name">${esc(x.name)}</span><span class="dose">${esc(targetText(t, x.kind))}</span>
-      <span class="meta">${esc(cap(when))}${x.source ? `, <span class="from">uit ${esc(sourceTitle(x.source))}</span>` : ''}</span></label>${archBtn(x.name)}</li>`;
+      <span class="meta">${esc(cap(when))}${x.source ? `, <span class="from">uit ${esc(sourceTitle(x.source))}</span>` : ''}</span></label>${offBtn(x.name)}</li>`;
   }
   function startLabel() {
     const n = $$('#chooser [data-pick]:checked').length;
@@ -261,7 +287,7 @@
     const now = Date.now();
     const rec = Plan.recommendDay(S.workouts, now);
     if (!U.day) { U.day = rec.id; resetPicks(); }
-    const main = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, now, S.archived);
+    const main = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, now, S.mine);
     const last = Plan.lastDone(S.workouts);
     const extras = U.extra.filter((n) => !main.some((x) => x.name === n))
       .map((n) => { const e = Score.findExercise(n); return { name: e?.name || n, kind: e?.kind || 'gewicht', lastAt: last[e?.name || n] || null, source: e?.source || null }; });
@@ -269,7 +295,8 @@
       <div><h2>Training</h2><p class="muted" style="margin-top:6px">Aanbevolen: <b>${esc(rec.label)}</b>. ${esc(rec.reason)}</p></div>
       <div class="daychips" role="group" aria-label="Dagtype">${Plan.DAYS.map((d) => `<button type="button" data-day="${d.id}" aria-pressed="${d.id === U.day}"${d.id === rec.id ? ' data-rec title="Aanbevolen"' : ''}>${esc(d.label)}</button>`).join('')}</div>
       <div><h3>Oefeningen</h3><p class="small">${U.day === 'mobility' ? 'Je stretches vink je aan tijdens de training.' : 'Oefeningen uit je kennis eerst, daarna wat je het langst niet hebt gedaan. Stretches vink je aan tijdens de training.'}</p>
-        <ul class="picks">${[...extras, ...main].map(pickRow).join('')}</ul></div>
+        ${extras.length || main.length ? `<ul class="picks">${[...extras, ...main].map(pickRow).join('')}</ul>`
+          : U.day === 'mobility' ? '' : '<p class="muted">Voor deze dag staat nog niets aan. <button class="link" type="button" data-go="oefeningen">Oefeningen kiezen</button></p>'}</div>
       <div class="row"><input list="all-ex" id="add-pick" placeholder="Andere oefening toevoegen" aria-label="Andere oefening toevoegen"><button class="btn ghost" type="button" id="btn-add-pick">Voeg toe</button></div>
       <button class="btn wide" type="button" id="btn-start"></button>
     </div>`;
@@ -323,14 +350,15 @@
   function stretchList(a) {
     const ticked = new Set(a.stretches || []), last = Plan.lastDone(S.workouts);
     const dayM = Plan.dayById(a.dayType)?.muscles || [];
-    const all = Score.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length && !S.archived.includes(e.name));
+    const all = Score.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length && S.mine.includes(e.name));
+    if (!all.length) return '<p class="muted">Er staan nog geen stretches aan. <button class="link" type="button" data-go="oefeningen">Stretches kiezen</button></p>';
     return [...dayM, ...Object.keys(Score.MUSCLES).filter((m) => !dayM.includes(m))].map((m) => {
       const list = all.filter((e) => e.muscles.primary[0] === m).sort((x, y) => x.name.localeCompare(y.name, 'nl'));
       if (!list.length) return '';
       const open = a.dayType === 'mobility' || dayM.includes(m) || list.some((e) => ticked.has(e.name));
       return `<details class="stretch-group"${open ? ' open' : ''}><summary>${Score.MUSCLES[m]}</summary><ul class="picks">${list.map((e) => `<li><label>
         <input type="checkbox" data-stretch="${esc(e.name)}"${ticked.has(e.name) ? ' checked' : ''}><span class="name">${esc(e.name)}</span>
-        <span class="meta">${esc(cap(last[e.name] ? ago(last[e.name]) : 'nog nooit gedaan'))}</span></label>${archBtn(e.name)}</li>`).join('')}</ul></details>`;
+        <span class="meta">${esc(cap(last[e.name] ? ago(last[e.name]) : 'nog nooit gedaan'))}</span></label>${offBtn(e.name)}</li>`).join('')}</ul></details>`;
     }).join('');
   }
   function renderActive() {
@@ -388,6 +416,7 @@
       : date === todayISO() ? new Date().toISOString() : new Date(date + 'T12:00:00').toISOString();
     const w = { id: a.editOf || uid(), date, at, dayType: a.dayType, raw: a.raw || '', entries };
     S.workouts = [...S.workouts.filter((x) => x.id !== w.id), w];
+    S.mine = [...new Set([...S.mine, ...entries.map((e) => Score.findExercise(e.exercise)?.name || e.exercise)])];
     S.active = null;
     if (!save()) return;
     toast(a.editOf ? 'Training aangepast' : 'Training opgeslagen');
@@ -526,7 +555,7 @@
         ${s.whenToUse ? `<p class="muted">${esc(s.whenToUse)}</p>` : ''}
         ${safeUrl(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${s.type === 'video' ? 'Bekijk de video' : 'Open de bron'}</a>` : ''}
         ${listBlock('Praktische regels', s.rules)}
-        ${exs.length ? `<h4>Oefeningen</h4><ul>${exs.map((x) => `<li>${esc(x.name)}${x.dose ? ': ' + esc(doseText(x.dose)) : ''}${S.archived.includes(Score.findExercise(x.name)?.name) ? ' (gearchiveerd)' : ''}</li>`).join('')}</ul>` : ''}
+        ${exs.length ? `<h4>Oefeningen</h4><ul>${exs.map((x) => `<li>${esc(x.name)}${x.dose ? ': ' + esc(doseText(x.dose)) : ''}${S.mine.includes(Score.findExercise(x.name)?.name) ? ' <span class="chip">aan</span>' : ''}</li>`).join('')}</ul>` : ''}
         ${s.keyPoints?.length ? `<details><summary class="small">Kernpunten</summary>${listBlock('', s.keyPoints)}</details>` : ''}
       </article>`;
     }).join('') || (K.failed ? '' : '<p class="muted">Nog leeg. Stuur Claude een YouTube-link of een onderzoek, dan verschijnt het hier met de oefeningen.</p>');
@@ -544,13 +573,40 @@
       $('#p-sex').value = sex();
       $('#p-goals').value = S.profile?.goals ?? '';
     }
-    $('#arch-list').innerHTML = [...S.archived].sort((a, b) => a.localeCompare(b, 'nl')).map((n) => `<li><span>${esc(n)}</span>
-      <button class="link" type="button" data-unarchive="${esc(n)}">Terugzetten</button></li>`).join('') || '<li class="muted">Nog niets gearchiveerd.</li>';
+    const on = S.mine.length;
+    $('#mine-info').textContent = on ? `${on} ${on === 1 ? 'oefening of stretch staat' : 'oefeningen en stretches staan'} aan. Alleen die komen in je trainingen.`
+      : 'Er staat nog niets aan. Kies de oefeningen en stretches die je echt doet.';
     $('#b-info').textContent = `Je trainingen staan alleen op deze telefoon. Laatste back-up: ${S.lastBackup ? ago(S.lastBackup) : 'nog nooit'}.`;
   }
 
+  // ---------- Mijn oefeningen ----------
+  const REGION = { borst: 'Borst', rug: 'Rug', trapezius: 'Rug', onderrug: 'Rug', schouders: 'Schouders', biceps: 'Armen', triceps: 'Armen', onderarmen: 'Armen', buik: 'Buik', schuine: 'Buik' };
+  const GROUPS = ['Nieuw', 'Borst', 'Rug', 'Schouders', 'Armen', 'Buik', 'Benen', 'Explosief', 'Calisthenics', 'Stretches'];
+  const groupOf = (e) => U.fresh.has(e.name) ? 'Nieuw' : e.kind === 'stretch' ? 'Stretches' : e.kind === 'skill' ? 'Calisthenics'
+    : e.kind === 'explosief' ? 'Explosief' : REGION[e.muscles.primary[0]] || 'Benen';
+  // New names are shown under Nieuw for this visit, then count as seen.
+  function openMine() {
+    U.fresh = new Set(newNames());
+    if (Array.isArray(S.seen)) { S.seen = listable().map((e) => e.name); save(); }
+    $('#o-q').value = '';
+    renderMine();
+  }
+  const countText = (on, n) => `${on} van ${n} aan`;
+  function renderMine() {
+    const q = $('#o-q').value.trim().toLowerCase();
+    const hit = (e) => !q || [e.name, ...(e.aliases || [])].some((n) => n.toLowerCase().includes(q));
+    const all = listable().filter(hit).sort((a, b) => a.name.localeCompare(b.name, 'nl'));
+    $('#o-list').innerHTML = GROUPS.map((g) => {
+      const list = all.filter((e) => groupOf(e) === g);
+      if (!list.length) return '';
+      return `<details class="stretch-group"${q || g === 'Nieuw' ? ' open' : ''}><summary>${g} <span class="small" data-count>${countText(list.filter((e) => S.mine.includes(e.name)).length, list.length)}</span></summary>
+        <ul class="picks">${list.map((e) => `<li><label><input type="checkbox" data-mine="${esc(e.name)}"${S.mine.includes(e.name) ? ' checked' : ''}>
+          <span class="name">${esc(e.name)}</span><span class="meta">${e.source ? `uit ${esc(sourceTitle(e.source))}` : esc(e.muscles.primary.map((m) => Score.MUSCLES[m]).join(', '))}</span></label></li>`).join('')}</ul></details>`;
+    }).join('') || '<p class="muted">Geen oefening gevonden.</p>';
+  }
+
   async function makeBackup() {
-    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, archived: S.archived });
+    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, mine: S.mine, seen: S.seen });
     const name = `krachtkaart-backup-${todayISO()}.json`;
     const file = new File([payload], name, { type: 'application/json' });
     try {
@@ -578,7 +634,8 @@
       if (d?.app !== 'krachtkaart' || !Array.isArray(d.workouts)) throw new Error('not a backup');
       const workouts = d.workouts.filter((w) => w && typeof w.at === 'string' && Array.isArray(w.entries)).map((w) => ({ ...w, id: w.id || uid() }));
       U.restore = { workouts, profile: d.profile && typeof d.profile === 'object' ? d.profile : null, notes: Array.isArray(d.notes) ? d.notes : [],
-        ...(Array.isArray(d.archived) && { archived: d.archived.map(String) }) };
+        ...(Array.isArray(d.archived) && { archived: d.archived.map(String) }),
+        ...(Array.isArray(d.mine) && { mine: d.mine.map(String) }), ...(Array.isArray(d.seen) && { seen: d.seen.map(String) }) };
       box.hidden = false;
       box.innerHTML = `<p>Back-up van ${esc(d.exportedAt ? fmtDay.format(new Date(d.exportedAt)) : 'onbekende datum')} met ${workouts.length} ${workouts.length === 1 ? 'training' : 'trainingen'}. Terugzetten vervangt alles wat nu op deze telefoon staat.</p>
         <div class="row"><button class="btn" type="button" id="btn-restore-go">Terugzetten</button><button class="link" type="button" id="btn-restore-no">Annuleer</button></div>`;
@@ -606,12 +663,11 @@
     if (kind === 'rm-ex') { S.active.items.splice(+t.dataset.i, 1); save(); renderActive(); }
     if (kind === 'del-w') { S.workouts = S.workouts.filter((w) => w.id !== t.dataset.id); save(); renderAll(); toast('Training verwijderd'); }
     if (kind === 'del-n') { S.notes = S.notes.filter((n) => n.id !== t.dataset.id); save(); renderKennis(); }
-    if (kind === 'archive') {
+    if (kind === 'off') {
       const n = t.dataset.name;
-      S.archived = [...new Set([...S.archived, n])];
       U.picks.delete(n);
       if (S.active) S.active.stretches = (S.active.stretches || []).filter((x) => x !== n);
-      save(); renderAll(); toast(`${n} gearchiveerd. Terugzetten kan bij Profiel.`);
+      setMine(n, false); renderAll(); toast(`${n} staat uit. Aanzetten kan bij Profiel, Mijn oefeningen.`);
     }
   }
 
@@ -667,10 +723,10 @@
       if (!t) return;
       if (t.dataset.tab) go(t.dataset.tab);
       if (t.dataset.go) go(t.dataset.go);
+      if (t.id === 'btn-mine-done') { if (U.day && !S.active) resetPicks(); renderAll(); go(U.back || 'profiel'); }
       if (t.dataset.choose) { U.day = t.dataset.choose; resetPicks(); go('training'); }
       if (t.dataset.day) { U.day = t.dataset.day; resetPicks(); renderChooser(); }
       if (t.dataset.edit) editWorkout(t.dataset.edit);
-      if (t.dataset.unarchive) { S.archived = S.archived.filter((n) => n !== t.dataset.unarchive); save(); renderAll(); toast(`${t.dataset.unarchive} is terug`); }
       if (t.dataset.act) onActiveAction(t);
       if (t.dataset.confirm) { if (t.classList.contains('armed')) confirmed(t); else arm(t); }
       if (t.id === 'btn-start') startTraining();
@@ -688,7 +744,7 @@
         }
       }
       if (t.id === 'btn-restore-go' && U.restore) {
-        S = { ...blank(), ...U.restore, lastBackup: S.lastBackup };
+        S = migrate({ ...blank(), seen: S.seen, ...U.restore, lastBackup: S.lastBackup });
         U.restore = null;
         $('#restore-confirm').hidden = true;
         if (save()) { renderAll(); toast('Back-up teruggezet'); }
@@ -703,6 +759,11 @@
         startLabel();
       }
       // No re-render, so the groups you opened stay open.
+      if (t.dataset.mine !== undefined) {
+        setMine(t.dataset.mine, t.checked);
+        const g = t.closest('details');
+        g.querySelector('[data-count]').textContent = countText(g.querySelectorAll('input[data-mine]:checked').length, g.querySelectorAll('input[data-mine]').length);
+      }
       if (t.dataset.stretch !== undefined) {
         const st = new Set(S.active.stretches || []);
         t.checked ? st.add(t.dataset.stretch) : st.delete(t.dataset.stretch);
@@ -719,6 +780,7 @@
       if (t.id === 'a-date') { S.active.date = t.value || todayISO(); save(); }
     });
 
+    $('#o-q').addEventListener('input', renderMine);
     $('#btn-backup').onclick = makeBackup;
     $('#btn-restore').onclick = () => $('#restore-file').click();
     $('#restore-file').onchange = (ev) => { const f = ev.target.files[0]; ev.target.value = ''; if (f) readRestore(f); };

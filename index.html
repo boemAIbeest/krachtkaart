@@ -227,6 +227,7 @@
   <section class="view" id="v-vandaag" aria-label="Vandaag">
     <p id="week" class="muted"></p>
     <p class="notice" id="backup-note" hidden></p>
+    <p class="notice" id="new-note" hidden></p>
     <p class="notice" id="example-note" hidden>Voorbeelddata. Je eigen training verschijnt hier na je eerste training.</p>
     <p class="notice" id="profile-note" hidden>Vul je lichaamsgewicht in, dan kloppen de krachtniveaus. <button class="link" type="button" data-go="profiel">Naar profiel</button></p>
     <section class="panel" id="today-card" aria-live="polite"></section>
@@ -288,6 +289,14 @@
     <div id="n-list"></div>
   </section>
 
+  <!-- Mijn oefeningen (no tab of its own, opened from Profiel, Vandaag or the chooser) -->
+  <section class="view" id="v-oefeningen" aria-label="Mijn oefeningen" hidden>
+    <div class="head-row"><h2>Mijn oefeningen</h2><button class="btn ghost" type="button" id="btn-mine-done">Klaar</button></div>
+    <p class="muted">Alleen wat aanstaat komt in je trainingen en je stretchlijst. Log je iets dat uit staat, dan gaat het vanzelf aan.</p>
+    <input type="search" id="o-q" placeholder="Zoek een oefening" aria-label="Zoek een oefening">
+    <div id="o-list"></div>
+  </section>
+
   <!-- Profiel -->
   <section class="view" id="v-profiel" aria-label="Profiel" hidden>
     <h2>Profiel</h2>
@@ -299,9 +308,9 @@
       <p class="status" id="p-status" role="status"></p>
     </form>
     <section class="panel" aria-labelledby="a-h">
-      <h3 id="a-h">Archief</h3>
-      <p class="muted">Gearchiveerde oefeningen en stretches komen niet meer terug in je trainingen. Archiveren doe je met het archiefje naast een oefening.</p>
-      <ul class="lifts" id="arch-list"></ul>
+      <h3 id="a-h">Mijn oefeningen</h3>
+      <p class="muted" id="mine-info"></p>
+      <div class="row"><button class="btn" type="button" data-go="oefeningen">Oefeningen kiezen</button></div>
     </section>
     <section class="panel" aria-labelledby="b-h">
       <h3 id="b-h">Back-up</h3>
