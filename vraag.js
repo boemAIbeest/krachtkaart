@@ -3,13 +3,13 @@
   const STOP = new Set(('aan al als ben bij dan dat de deze die dit doe doen doet door een en er ga gaat hebben heb heeft het hoe hoeveel ' +
     'ik in is je jij kan kun kunnen maar me meer met mij mijn moet moeten na naar niet nog of om ook op over te tijdens tot u uit ' +
     'van veel voor waarom wanneer wat welke wel wie wij wil worden wordt ze zich zij zijn zo zou zoveel beter best goed echt eigenlijk ' +
-    'iets manier mag nodig vaak lang keer beste slim slecht erg the what how is are why').split(' '));
+    'iets manier mag nodig keer beste slim slecht erg laat laten wilt willen word zal zullen kunt ben the what how is are why').split(' '));
   // Stem -> one or more canonical tokens. Compounds split into their parts so "kniepijn" meets "pijn in je knie".
   const SYN = {
     stijf: 'spierpijn', doms: 'spierpijn', spierpijnt: 'spierpijn',
     hypertrofie: 'spiergroei', spiermassa: 'spiergroei', massa: 'spiergroei', groter: 'spiergroei', groei: 'spiergroei', groeien: 'spiergroei', bulk: 'spiergroei', spieropbouw: 'spiergroei', gespierd: 'spiergroei',
     proteine: 'eiwit', protein: 'eiwit', eiwitshake: ['eiwit', 'shake'], whey: 'eiwit',
-    rekk: 'stretch', rek: 'stretch', stretching: 'stretch', lenig: 'lenigheid', flexibiliteit: 'lenigheid', flexibel: 'lenigheid', soepel: 'lenigheid', mobiliteit: 'lenigheid',
+    rekk: 'stretch', rek: 'stretch', stretching: 'stretch', lenig: 'lenigheid', leniger: 'lenigheid', flexibiliteit: 'lenigheid', flexibel: 'lenigheid', soepel: 'lenigheid', mobiliteit: 'lenigheid',
     ben: 'been', benen: 'been', knieen: 'knie', kniepijn: ['knie', 'pijn'], rugpijn: ['rug', 'pijn'], onderrugpijn: ['onderrug', 'pijn'], schouderpijn: ['schouder', 'pijn'], nekpijn: ['nek', 'pijn'],
     zeer: 'pijn', pijnlijk: 'pijn', ongemak: 'pijn', klacht: 'pijn', blessur: 'blessure', geblesseerd: 'blessure', letsel: 'blessure',
     hamstr: 'hamstring', hamstringblessure: ['hamstring', 'blessure'], lies: 'lies', liesblessure: ['lies', 'blessure'], adductor: 'lies',
@@ -36,7 +36,7 @@
     trainingsfrequentie: 'frequentie', vaak: 'frequentie', frequent: 'frequentie', keer: 'frequentie',
     schema: 'schema', programma: 'schema', periodisering: 'periodisering', deload: 'deload', rustweek: 'deload',
     overtraind: 'overtraining', overtrain: 'overtraining', vermoeid: 'moe', vermoeidheid: 'moe', uitgeput: 'moe',
-    pols: 'pols', elleboog: 'elleboog', tenniselleboog: ['elleboog', 'pijn'], golferselleboog: ['elleboog', 'pijn'],
+    pols: 'pols', elleboog: 'elleboog', tenniselleboog: ['elleboog', 'pijn'], tennisarm: ['elleboog', 'pijn'], muisarm: ['elleboog', 'pijn'], golferselleboog: ['elleboog', 'pijn'],
     schouder: 'schouder', rotator: 'schouder', cuff: 'schouder', impingement: ['schouder', 'pijn'],
     knie: 'knie', patella: 'knie', knieschijf: 'knie', runnersknee: ['knie', 'pijn'], jumpersknee: ['knie', 'pees'],
     heup: 'heup', bil: 'bil', billen: 'bil', glute: 'bil', glutes: 'bil',
@@ -86,21 +86,24 @@
     return { docs, idf };
   }
 
-  // ponytail: prefix matching catches Dutch compounds ("spiergroeitraining"); a real decompounder if it misfires.
-  const MIN = 1.2;
+  // ponytail: prefix matching catches Dutch compounds ("schouderblessure" meets "schouder"); a real decompounder if it misfires.
+  const prefix = (t, k) => (t.length >= 5 && k.startsWith(t)) || (k.length >= 6 && t.startsWith(k));
+  // An answer only counts when a query word hits its question, alternatives or tags, not just the answer text.
+  const MIN = 1.5;
   function search(idx, text, n = 3) {
     const q = [...new Set(tokens(text))];
     if (!q.length) return [];
     const res = [];
     for (const d of idx.docs) {
-      let s = 0;
+      let s = 0, top = 0;
       for (const t of q) {
         let w = d.w.get(t) || 0, idf = idx.idf.get(t) || 0;
-        if (!w && t.length >= 5) for (const [k, kw] of d.w) if (k.length >= 5 && (k.startsWith(t) || t.startsWith(k))) { w = Math.max(w, kw / 2); idf = Math.max(idf, idx.idf.get(k)); }
+        if (!w) for (const [k, kw] of d.w) if (prefix(t, k) && kw / 2 > w) { w = kw / 2; idf = idx.idf.get(k); }
         s += w * idf;
+        top = Math.max(top, w);
       }
       s /= Math.sqrt(q.length);
-      if (s >= MIN) res.push({ item: d.item, score: s });
+      if (s >= MIN && top >= 1.5) res.push({ item: d.item, score: s });
     }
     return res.sort((a, b) => b.score - a.score).slice(0, n);
   }

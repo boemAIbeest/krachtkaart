@@ -1,0 +1,4035 @@
+{
+ "updated": "2026-09-26",
+ "themes": [
+  {
+   "id": "spiergroei",
+   "label": "Spiergroei"
+  },
+  {
+   "id": "kracht",
+   "label": "Kracht"
+  },
+  {
+   "id": "explosief",
+   "label": "Explosief"
+  },
+  {
+   "id": "herstel",
+   "label": "Herstel en slaap"
+  },
+  {
+   "id": "stretchen",
+   "label": "Stretchen"
+  },
+  {
+   "id": "pijn",
+   "label": "Pijn en blessures"
+  },
+  {
+   "id": "voeding",
+   "label": "Voeding"
+  },
+  {
+   "id": "cardio",
+   "label": "Cardio en gezondheid"
+  },
+  {
+   "id": "lichaam",
+   "label": "Het lichaam"
+  }
+ ],
+ "items": [
+  {
+   "id": "volume-per-week",
+   "theme": "spiergroei",
+   "q": "Hoeveel sets per spiergroep per week heb ik nodig voor spiergroei?",
+   "alt": [
+    "hoeveel volume moet ik trainen",
+    "hoeveel sets per week",
+    "hoeveel sets per spier",
+    "meer sets meer groei"
+   ],
+   "tags": [
+    "volume",
+    "sets",
+    "week",
+    "spiergroei"
+   ],
+   "a": "Meer sets per week geeft meer spiergroei, maar elke extra set levert iets minder op dan de vorige. In de meta-analyse van Schoenfeld gaven 10 of meer sets per spiergroep per week de meeste groei. Het ACSM-standpunt uit 2026 (137 reviews) noemt ook 10 of meer sets per week voor spiergroei. Pelland (2026) laat zien dat de meeropbrengst bij kracht veel sneller afvlakt dan bij spiergroei.",
+   "doen": [
+    "Mik op minstens 10 harde sets per spiergroep per week.",
+    "Blijft een spier achter? Voeg daar eerst sets aan toe.",
+    "Tel een set voor een spier die maar meehelpt (bijv. triceps bij bankdrukken) als ongeveer een halve set."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Dose-response relationship between weekly resistance training volume and increases in muscle mass: A systematic review and meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27433992/"
+    },
+    {
+     "titel": "The Resistance Training Dose Response: Meta-Regressions Exploring the Effects of Weekly Volume and Frequency on Muscle Hypertrophy and Strength Gains",
+     "auteurs": "Pelland e.a.",
+     "jaar": 2026,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41343037/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "frequentie",
+   "theme": "spiergroei",
+   "q": "Hoe vaak per week moet ik een spiergroep trainen?",
+   "alt": [
+    "hoe vaak trainen per week",
+    "trainingsfrequentie",
+    "elke spier twee keer per week",
+    "split of full body",
+    "bro split"
+   ],
+   "tags": [
+    "frequentie",
+    "week",
+    "split",
+    "fullbody"
+   ],
+   "a": "Voor spiergroei maakt het weinig uit hoe je de sets over de week verdeelt. Een meta-analyse van 25 studies vond geen verschil tussen vaak en weinig trainen als het aantal sets gelijk was. Pelland (2026) vond ook nauwelijks effect op groei, maar wel op kracht: een lift vaker oefenen maakt je sterker, al neemt de winst af. Het ACSM noemt minstens 2 trainingen per week voor kracht.",
+   "doen": [
+    "Kies een schema dat in je week past; het totaal aantal sets telt het meest.",
+    "Doe je veel sets voor één spier, verdeel ze dan over 2 of meer dagen.",
+    "Wil je sterker worden in een lift, oefen die dan 2 tot 3 keer per week."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "How many times per week should a muscle be trained to maximize muscle hypertrophy? A systematic review and meta-analysis of studies examining the effects of resistance training frequency",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2019,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30558493/"
+    },
+    {
+     "titel": "The Resistance Training Dose Response: Meta-Regressions Exploring the Effects of Weekly Volume and Frequency on Muscle Hypertrophy and Strength Gains",
+     "auteurs": "Pelland e.a.",
+     "jaar": 2026,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41343037/"
+    },
+    {
+     "titel": "Effect of Resistance Training Frequency on Gains in Muscular Strength: A Systematic Review and Meta-Analysis",
+     "auteurs": "Grgic e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29470825/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "zwaar-of-licht",
+   "theme": "spiergroei",
+   "q": "Moet ik zwaar tillen of werkt licht gewicht ook voor spiergroei?",
+   "alt": [
+    "licht gewicht veel herhalingen",
+    "hoeveel herhalingen voor spiergroei",
+    "rep range",
+    "zware gewichten nodig",
+    "hoeveel reps"
+   ],
+   "tags": [
+    "zwaar",
+    "licht",
+    "herhaling",
+    "gewicht",
+    "spiergroei"
+   ],
+   "a": "Beide werken voor spiergroei. Meta-analyses vinden een vergelijkbare groei met lichte (60% van je max of minder, veel herhalingen) en zware gewichten, zolang je de sets tot dicht bij falen doorzet. Voor je maximale kracht (1RM) is zwaar tillen wel beter: in de netwerk-meta-analyse van Currier gaven zware schema's de meeste krachtwinst en alle schema's vergelijkbare groei.",
+   "doen": [
+    "Voor groei mag je vrij kiezen tussen weinig en veel herhalingen; zorg dat de laatste herhalingen zwaar zijn.",
+    "Wil je je max omhoog, train dan ook zwaar (boven ~80% van je max)."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Strength and Hypertrophy Adaptations Between Low- vs. High-Load Resistance Training: A Systematic Review and Meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28834797/"
+    },
+    {
+     "titel": "Resistance Training Load Effects on Muscle Hypertrophy and Strength Gain: Systematic Review and Network Meta-analysis",
+     "auteurs": "Lopez e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33433148/"
+    },
+    {
+     "titel": "Resistance training prescription for muscle strength and hypertrophy in healthy adults: a systematic review and Bayesian network meta-analysis",
+     "auteurs": "Currier e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37414459/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "tot-falen",
+   "theme": "spiergroei",
+   "q": "Moet ik mijn sets tot falen doortrekken?",
+   "alt": [
+    "tot falen trainen",
+    "hoe zwaar moet een set voelen",
+    "reps in reserve",
+    "rir",
+    "rpe",
+    "tot het niet meer gaat"
+   ],
+   "tags": [
+    "falen",
+    "rir",
+    "rpe",
+    "zwaar",
+    "set"
+   ],
+   "a": "Het hoeft niet. Een meta-analyse van 15 studies vond geen verschil in kracht of spiergroei tussen trainen tot falen en net ervoor stoppen, al gaf falen bij getrainde mensen iets meer groei. Refalo (2023) vond geen voordeel van echt falen. Robinson (2024) liet zien dat spiergroei toeneemt naarmate je dichter bij falen stopt, terwijl kracht daar nauwelijks van afhangt.",
+   "doen": [
+    "Stop de meeste sets 0 tot 3 herhalingen voor je niet meer kunt.",
+    "Tot falen gaan kan, maar is niet nodig; bij zware basisoefeningen is net ervoor stoppen veiliger voor je techniek."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Effects of resistance training performed to repetition failure or non-failure on muscular strength and hypertrophy: A systematic review and meta-analysis",
+     "auteurs": "Grgic e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33497853/"
+    },
+    {
+     "titel": "Influence of Resistance Training Proximity-to-Failure on Skeletal Muscle Hypertrophy: A Systematic Review with Meta-analysis",
+     "auteurs": "Refalo e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36334240/"
+    },
+    {
+     "titel": "Exploring the Dose-Response Relationship Between Estimated Resistance Training Proximity to Failure, Strength Gain, and Muscle Hypertrophy: A Series of Meta-Regressions",
+     "auteurs": "Robinson e.a.",
+     "jaar": 2024,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38970765/"
+    }
+   ]
+  },
+  {
+   "id": "rust-tussen-sets",
+   "theme": "spiergroei",
+   "q": "Hoe lang moet ik rusten tussen sets?",
+   "alt": [
+    "rusttijd",
+    "hoeveel pauze tussen sets",
+    "rust tussen sets",
+    "hoe lang pauze"
+   ],
+   "tags": [
+    "rust",
+    "set",
+    "minuut",
+    "pauze"
+   ],
+   "a": "In een RCT bij getrainde mannen gaf 3 minuten rust meer kracht en meer groei van het bovenbeen dan 1 minuut. Een Bayesiaanse meta-analyse uit 2024 vond weinig verschil tussen rusttijden voor spiergroei, met een lichte voorkeur voor langer dan een minuut bij armen en benen.",
+   "doen": [
+    "Rust liever te lang dan te kort: minstens 1 tot 2 minuten.",
+    "Bij zware basisoefeningen (bankdrukken, rows, pull-ups) mag je 3 minuten of langer rusten."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Longer Interset Rest Periods Enhance Muscle Strength and Hypertrophy in Resistance-Trained Men",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2016,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26605807/"
+    },
+    {
+     "titel": "Give it a rest: a systematic review with Bayesian meta-analysis on the effect of inter-set rest interval duration on muscle hypertrophy",
+     "auteurs": "Singer e.a.",
+     "jaar": 2024,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39205815/"
+    }
+   ]
+  },
+  {
+   "id": "bewegingsuitslag",
+   "theme": "spiergroei",
+   "q": "Moet ik de volledige bewegingsuitslag gebruiken?",
+   "alt": [
+    "volledige range of motion",
+    "halve herhalingen",
+    "partials",
+    "hoe diep moet ik gaan",
+    "lengthened partials",
+    "volle beweging"
+   ],
+   "tags": [
+    "bewegingsuitslag",
+    "diep",
+    "partial",
+    "volledig"
+   ],
+   "a": "Ja, als standaard. Een meta-analyse van 16 studies vond dat de volle beweging meer kracht en meer spiergroei in de benen geeft dan een gedeeltelijke. Als je toch een deel kiest, dan werkt het stuk waarin de spier gerekt is het best: bij de leg extension groeide de quadriceps meer in het gebogen deel, en de kuit groeide meer met kuitheffen onderin.",
+   "doen": [
+    "Train door de volle beweging.",
+    "Sla het zware, gerekte stuk niet over; dat is het deel dat het meest oplevert."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of range of motion on resistance training adaptations: A systematic review and meta-analysis",
+     "auteurs": "Pallarés e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34170576/"
+    },
+    {
+     "titel": "Partial range of motion training elicits favorable improvements in muscular adaptations when carried out at long muscle lengths",
+     "auteurs": "Pedrosa e.a.",
+     "jaar": 2022,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33977835/"
+    },
+    {
+     "titel": "Greater Gastrocnemius Muscle Hypertrophy After Partial Range of Motion Training Performed at Long Muscle Lengths",
+     "auteurs": "Kassiano e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37015016/"
+    },
+    {
+     "titel": "Training in the Initial Range of Motion Promotes Greater Muscle Adaptations Than at Final in the Arm Curl",
+     "auteurs": "Pedrosa e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36828324/"
+    }
+   ]
+  },
+  {
+   "id": "triceps-boven-hoofd",
+   "theme": "spiergroei",
+   "q": "Wat is de beste oefening voor grotere triceps?",
+   "alt": [
+    "triceps groter",
+    "overhead extension of pushdown",
+    "triceps oefening",
+    "armen groter"
+   ],
+   "tags": [
+    "triceps",
+    "arm",
+    "overhead",
+    "pushdown"
+   ],
+   "a": "In een RCT (12 weken, de ene arm tegen de andere) groeide de triceps 1,4 keer zoveel met extensies boven het hoofd als met extensies met de arm langs het lichaam. De lange kop groeide 28,5% tegenover 19,6%, de hele triceps 19,9% tegenover 13,9%. Boven het hoofd staat de lange kop van de triceps gerekt.",
+   "doen": [
+    "Doe voor je triceps minstens één oefening met je armen boven je hoofd."
+   ],
+   "exercises": [
+    "Overhead triceps extension"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Triceps brachii hypertrophy is substantially greater after elbow extension training performed in the overhead versus neutral arm position",
+     "auteurs": "Maeo e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35819335/"
+    }
+   ]
+  },
+  {
+   "id": "hamstrings-zittend",
+   "theme": "spiergroei",
+   "q": "Welke oefening laat mijn hamstrings het meest groeien?",
+   "alt": [
+    "hamstrings groter",
+    "zittend of liggend leg curl",
+    "beste hamstring oefening",
+    "achterkant bovenbeen"
+   ],
+   "tags": [
+    "hamstring",
+    "leg curl",
+    "zittend",
+    "liggend"
+   ],
+   "a": "In een RCT groeiden de hamstrings meer met de zittende leg curl (+14%) dan met de liggende (+9%). Bij het zitten staan de hamstrings bij de heup gerekt. Beide varianten beschermden even goed tegen spierschade bij een later zware belasting.",
+   "doen": [
+    "Kies de zittende leg curl boven de liggende als je de keuze hebt."
+   ],
+   "exercises": [
+    "Seated leg curl",
+    "Nordic hamstring curl"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Greater Hamstrings Muscle Hypertrophy but Similar Damage Protection after Training at Long versus Short Muscle Lengths",
+     "auteurs": "Maeo e.a.",
+     "jaar": 2021,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33009197/"
+    }
+   ]
+  },
+  {
+   "id": "kuiten-staand",
+   "theme": "spiergroei",
+   "q": "Hoe krijg ik grotere kuiten?",
+   "alt": [
+    "kuiten groeien niet",
+    "staand of zittend kuitheffen",
+    "calf raise",
+    "kuitspieren trainen"
+   ],
+   "tags": [
+    "kuit",
+    "calf",
+    "staand",
+    "zittend"
+   ],
+   "a": "Staand kuitheffen met gestrekte knie gaf in een RCT veel meer groei van de kuit (gastrocnemius 9 tot 12%) dan zittend (1 tot 2%); de diepere soleus groeide bij beide even weinig. In een andere RCT groeide de kuit het meest als alleen het onderste, gerekte deel van de beweging werd getraind (+15% tegenover +7% bij de volle beweging).",
+   "doen": [
+    "Doe je kuitheffen staand of met gestrekte benen.",
+    "Zak onderin diep door en blijf vooral in het onderste deel werken."
+   ],
+   "exercises": [
+    "Calf raise",
+    "Leg press calf raise"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Triceps surae muscle hypertrophy is greater after standing versus seated calf-raise training",
+     "auteurs": "Kinoshita e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38156065/"
+    },
+    {
+     "titel": "Greater Gastrocnemius Muscle Hypertrophy After Partial Range of Motion Training Performed at Long Muscle Lengths",
+     "auteurs": "Kassiano e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37015016/"
+    }
+   ]
+  },
+  {
+   "id": "billen-diep",
+   "theme": "spiergroei",
+   "q": "Wat werkt het best voor mijn bilspieren: diep squatten of hip thrusts?",
+   "alt": [
+    "billen groter",
+    "glutes trainen",
+    "hip thrust of squat",
+    "diepe squat billen"
+   ],
+   "tags": [
+    "bil",
+    "hip thrust",
+    "squat",
+    "diep"
+   ],
+   "a": "Een diepe squat gaf meer groei van bilspieren en adductoren dan een halve squat (6,7% tegenover 2,2% voor de billen). In een RCT gaven hip thrusts en squats een vergelijkbare groei van de bilspieren; de squat liet daarnaast quadriceps en adductoren meer groeien.",
+   "doen": [
+    "Kies de oefening die je het prettigst vindt; diep en zwaar is het belangrijkst.",
+    "Doe je geen squats, dan zijn hip thrusts een goed alternatief voor je billen."
+   ],
+   "exercises": [
+    "Hip thrust",
+    "Bulgarian split squat"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of squat training with different depths on lower limb muscle volumes",
+     "auteurs": "Kubo e.a.",
+     "jaar": 2019,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31230110/"
+    },
+    {
+     "titel": "Hip thrust and back squat training elicit similar gluteus muscle hypertrophy and transfer similarly to the deadlift",
+     "auteurs": "Plotkin e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37877099/"
+    }
+   ]
+  },
+  {
+   "id": "biceps-curl-rek",
+   "theme": "spiergroei",
+   "q": "Welke curl is het best voor mijn biceps?",
+   "alt": [
+    "biceps groter",
+    "preacher curl",
+    "beste bicep oefening",
+    "armen dikker"
+   ],
+   "tags": [
+    "biceps",
+    "curl",
+    "preacher",
+    "arm"
+   ],
+   "a": "In een RCT (de ene arm tegen de andere) gaf het onderste deel van de preacher curl, met de arm bijna gestrekt, meer spieraanpassing dan het bovenste deel. Het past bij het bredere onderzoek dat trainen in de gerekte positie extra groei geeft.",
+   "doen": [
+    "Laat bij curls je arm onderin helemaal uitstrekken.",
+    "Een preacher curl of curl met je arm achter je lichaam belast de biceps in de gerekte positie."
+   ],
+   "exercises": [
+    "Preacher curl",
+    "Bayesian cable curl"
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "Training in the Initial Range of Motion Promotes Greater Muscle Adaptations Than at Final in the Arm Curl",
+     "auteurs": "Pedrosa e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36828324/"
+    },
+    {
+     "titel": "Effects of range of motion on resistance training adaptations: A systematic review and meta-analysis",
+     "auteurs": "Pallarés e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34170576/"
+    }
+   ]
+  },
+  {
+   "id": "tempo",
+   "theme": "spiergroei",
+   "q": "Hoe snel of langzaam moet ik een herhaling doen?",
+   "alt": [
+    "tempo",
+    "langzaam tillen",
+    "time under tension",
+    "snelheid herhaling"
+   ],
+   "tags": [
+    "tempo",
+    "langzaam",
+    "snelheid",
+    "herhaling"
+   ],
+   "a": "Een meta-analyse vond gelijke spiergroei bij herhalingen van 0,5 tot 8 seconden. Heel langzaam tillen (meer dan 10 seconden per herhaling) lijkt juist minder te werken. Ook het ACSM vond geen consistent effect van de tijd onder spanning.",
+   "doen": [
+    "Beweeg gecontroleerd, maar tel niet bewust langzaam.",
+    "Voor explosiviteit: duw het gewicht zo snel mogelijk omhoog."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effect of repetition duration during resistance training on muscle hypertrophy: a systematic review and meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25601394/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "excentrisch",
+   "theme": "spiergroei",
+   "q": "Is het zakken (de negatieve fase) belangrijker dan het heffen?",
+   "alt": [
+    "negatieve herhalingen",
+    "excentrisch trainen",
+    "eccentric",
+    "langzaam laten zakken"
+   ],
+   "tags": [
+    "excentrisch",
+    "negatief",
+    "zakken"
+   ],
+   "a": "Een meta-analyse vond iets meer groei met excentrische (10%) dan met concentrische acties (6,8%), maar het verschil was niet significant. Beide werken dus. Het ACSM-standpunt uit 2026 noemt excentrische overbelasting als iets dat spiergroei extra kan helpen.",
+   "doen": [
+    "Laat het gewicht altijd gecontroleerd zakken.",
+    "Negatieve herhalingen (bijv. negatieve pull-ups) zijn een goede opstap naar oefeningen die je nog niet kunt."
+   ],
+   "exercises": [
+    "Negatieve pull-up"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Hypertrophic Effects of Concentric vs. Eccentric Muscle Actions: A Systematic Review and Meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28486337/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "mind-muscle",
+   "theme": "spiergroei",
+   "q": "Helpt het om tijdens het tillen aan de spier te denken?",
+   "alt": [
+    "mind muscle connection",
+    "spier voelen",
+    "focus op de spier"
+   ],
+   "tags": [
+    "focus",
+    "voelen",
+    "mind",
+    "spier"
+   ],
+   "a": "In een RCT groeide de biceps meer als mensen zich op het samentrekken van de spier richtten (12,4%) dan op de beweging (6,9%). Bij de quadriceps was er geen verschil. Het ging om ongetrainde mannen en 8 weken; het bewijs is dus beperkt.",
+   "doen": [
+    "Bij isolatieoefeningen zoals curls kun je bewust op de spier letten."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "Differential effects of attentional focus strategies during long-term resistance training",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2018,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29533715/"
+    }
+   ]
+  },
+  {
+   "id": "drop-sets",
+   "theme": "spiergroei",
+   "q": "Werken drop sets beter voor spiergroei?",
+   "alt": [
+    "dropset",
+    "drop set",
+    "tijd besparen",
+    "snel trainen"
+   ],
+   "tags": [
+    "drop",
+    "set",
+    "tijd"
+   ],
+   "a": "Een meta-analyse vond dezelfde spiergroei met drop sets als met gewone sets. Sommige drop-set-schema's kostten wel maar de helft tot een derde van de tijd.",
+   "doen": [
+    "Gebruik drop sets als je weinig tijd hebt, vooral bij isolatieoefeningen."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of Drop Sets on Skeletal Muscle Hypertrophy: A Systematic Review and Meta-analysis",
+     "auteurs": "Sødal e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37523092/"
+    }
+   ]
+  },
+  {
+   "id": "eenmaal-meer-sets",
+   "theme": "spiergroei",
+   "q": "Is één set per oefening genoeg?",
+   "alt": [
+    "een set per oefening",
+    "single set",
+    "meerdere sets"
+   ],
+   "tags": [
+    "set",
+    "enkel",
+    "meerdere"
+   ],
+   "a": "Voor spiergroei geven meerdere sets meer resultaat: in een meta-analyse gaven 2 tot 3 sets per oefening meer groei dan 1, en 4 tot 6 sets nog iets meer. Voor kracht kan één zware set al effect hebben.",
+   "doen": [
+    "Doe voor groei meestal 2 tot 4 sets per oefening."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Single vs. multiple sets of resistance exercise for muscle hypertrophy: a meta-analysis",
+     "auteurs": "Krieger",
+     "jaar": 2010,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20300012/"
+    },
+    {
+     "titel": "The Minimum Effective Training Dose Required to Increase 1RM Strength in Resistance-Trained Men: A Systematic Review and Meta-Analysis",
+     "auteurs": "Androulakis-Korakakis e.a.",
+     "jaar": 2020,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31797219/"
+    }
+   ]
+  },
+  {
+   "id": "lichaamsgewicht-vs-gewichten",
+   "theme": "spiergroei",
+   "q": "Kan ik met calisthenics net zoveel spier opbouwen als met gewichten?",
+   "alt": [
+    "calisthenics spiergroei",
+    "push-ups of bankdrukken",
+    "lichaamsgewicht genoeg",
+    "bodyweight training"
+   ],
+   "tags": [
+    "lichaamsgewicht",
+    "calisthenics",
+    "opdrukken",
+    "bankdrukken"
+   ],
+   "a": "In een RCT gaven push-ups dezelfde groei van borst en triceps en dezelfde krachtwinst als bankdrukken op 40% van de max. In een andere RCT werden getrainde mannen met steeds zwaardere push-up-varianten in 4 weken ook sterker in bankdrukken, net als de groep die bankdrukte. Een meta-analyse over lenigheid vond wel dat alleen trainen met lichaamsgewicht geen betere bewegingsuitslag gaf, en training met gewichten wel.",
+   "doen": [
+    "Maak lichaamsgewichtoefeningen steeds zwaarder (moeilijkere variant, extra gewicht) zodra je veel herhalingen haalt."
+   ],
+   "exercises": [
+    "Push-up",
+    "Archer push-up",
+    "Dips"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Low-load bench press and push-up induce similar muscle hypertrophy and strength gain",
+     "auteurs": "Kikuchi en Nakazato",
+     "jaar": 2017,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29541130/"
+    },
+    {
+     "titel": "Effect of Progressive Calisthenic Push-up Training on Muscle Strength and Thickness",
+     "auteurs": "Kotarsky e.a.",
+     "jaar": 2018,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29466268/"
+    },
+    {
+     "titel": "Resistance Training Induces Improvements in Range of Motion: A Systematic Review and Meta-Analysis",
+     "auteurs": "Alizadeh e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36622555/"
+    }
+   ]
+  },
+  {
+   "id": "vrouw-man",
+   "theme": "spiergroei",
+   "q": "Reageren vrouwen en mannen anders op krachttraining?",
+   "alt": [
+    "verschil man vrouw",
+    "vrouwen krachttraining"
+   ],
+   "tags": [
+    "vrouw",
+    "man",
+    "verschil"
+   ],
+   "a": "Een meta-analyse vond dezelfde relatieve spiergroei en krachtwinst in de benen bij mannen en vrouwen met hetzelfde schema. In het bovenlichaam werden vrouwen relatief zelfs iets sneller sterker.",
+   "doen": [
+    "Mannen en vrouwen kunnen hetzelfde schema volgen."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Sex Differences in Resistance Training: A Systematic Review and Meta-Analysis",
+     "auteurs": "Roberts e.a.",
+     "jaar": 2020,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32218059/"
+    }
+   ]
+  },
+  {
+   "id": "pauze-spiergeheugen",
+   "theme": "spiergroei",
+   "q": "Verlies ik mijn spieren als ik een paar weken niet train?",
+   "alt": [
+    "vakantie niet trainen",
+    "spiergeheugen",
+    "muscle memory",
+    "paar weken pauze",
+    "break van training"
+   ],
+   "tags": [
+    "pauze",
+    "vakantie",
+    "stoppen",
+    "spiergeheugen"
+   ],
+   "a": "Een korte pauze kost weinig. In een RCT trainde één groep 24 weken door, de andere groep nam om de 6 weken 3 weken pauze. Aan het eind waren spiergroei en kracht gelijk, omdat de pauzegroep na elke pauze snel terugkwam. Een meta-analyse laat wel zien dat kracht afneemt naarmate een pauze langer duurt, vooral bij ouderen en minder actieve mensen.",
+   "doen": [
+    "Een week of drie niet trainen is geen ramp; je bent het snel terug.",
+    "Duurt de pauze langer, train dan in elk geval af en toe."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Comparison of muscle hypertrophy following 6-month of continuous and periodic strength training",
+     "auteurs": "Ogasawara e.a.",
+     "jaar": 2013,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23053130/"
+    },
+    {
+     "titel": "Effect of training cessation on muscular performance: a meta-analysis",
+     "auteurs": "Bosquet e.a.",
+     "jaar": 2013,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23347054/"
+    }
+   ]
+  },
+  {
+   "id": "max-kracht",
+   "theme": "kracht",
+   "q": "Hoe word ik zo sterk mogelijk in een lift?",
+   "alt": [
+    "hoger 1rm",
+    "max omhoog",
+    "sterker worden bankdrukken",
+    "krachtschema",
+    "powerlifting"
+   ],
+   "tags": [
+    "kracht",
+    "1rm",
+    "max",
+    "zwaar"
+   ],
+   "a": "Het ACSM-standpunt uit 2026 vat 137 reviews samen. Maximale kracht stijgt het meest met:\n- zware gewichten, 80% van je max of meer;\n- de volle bewegingsuitslag;\n- 2 tot 3 sets;\n- de oefening aan het begin van je training;\n- minstens 2 trainingen per week.\n\nIn de netwerk-meta-analyse van Currier (178 studies) kwam zwaar, meerdere sets, 3 keer per week als beste schema voor kracht uit.",
+   "doen": [
+    "Train je hoofdlift 2 tot 3 keer per week, vooraan in je training.",
+    "Doe een deel van je sets zwaar, met 1 tot 6 herhalingen.",
+    "Rust 3 minuten of meer tussen zware sets."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    },
+    {
+     "titel": "Resistance training prescription for muscle strength and hypertrophy in healthy adults: a systematic review and Bayesian network meta-analysis",
+     "auteurs": "Currier e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37414459/"
+    },
+    {
+     "titel": "Effect of Resistance Training Frequency on Gains in Muscular Strength: A Systematic Review and Meta-Analysis",
+     "auteurs": "Grgic e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29470825/"
+    },
+    {
+     "titel": "Longer Interset Rest Periods Enhance Muscle Strength and Hypertrophy in Resistance-Trained Men",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2016,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26605807/"
+    }
+   ]
+  },
+  {
+   "id": "volume-kracht",
+   "theme": "kracht",
+   "q": "Heb ik veel sets nodig om sterker te worden?",
+   "alt": [
+    "hoeveel sets voor kracht",
+    "minimale training voor kracht",
+    "weinig tijd sterker worden",
+    "minimum effectieve dosis"
+   ],
+   "tags": [
+    "kracht",
+    "sets",
+    "minimum",
+    "weinig",
+    "tijd"
+   ],
+   "a": "Nee. In een RCT bij getrainde mannen gaven 1, 3 of 5 sets per oefening dezelfde krachtwinst, terwijl meer sets wel meer spiergroei gaven. Een meta-analyse bij getrainde mannen vond dat één zware set (ongeveer 6 tot 12 herhalingen op 70 tot 85% van je max) 2 tot 3 keer per week al genoeg is om je 1RM te laten stijgen. Voor kracht telt vooral zwaar tillen, niet veel sets.",
+   "doen": [
+    "Voor kracht: weinig sets, maar zwaar (vanaf ~80% van je max).",
+    "Wil je ook groter worden, dan heb je meer sets nodig."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Resistance Training Volume Enhances Muscle Hypertrophy but Not Strength in Trained Men",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2019,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30153194/"
+    },
+    {
+     "titel": "The Minimum Effective Training Dose Required to Increase 1RM Strength in Resistance-Trained Men: A Systematic Review and Meta-Analysis",
+     "auteurs": "Androulakis-Korakakis e.a.",
+     "jaar": 2020,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31797219/"
+    },
+    {
+     "titel": "The Resistance Training Dose Response: Meta-Regressions Exploring the Effects of Weekly Volume and Frequency on Muscle Hypertrophy and Strength Gains",
+     "auteurs": "Pelland e.a.",
+     "jaar": 2026,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41343037/"
+    }
+   ]
+  },
+  {
+   "id": "volgorde",
+   "theme": "kracht",
+   "q": "Maakt de volgorde van oefeningen uit?",
+   "alt": [
+    "welke oefening eerst",
+    "oefenvolgorde",
+    "compound eerst"
+   ],
+   "tags": [
+    "volgorde",
+    "eerst",
+    "compound"
+   ],
+   "a": "Voor spiergroei maakt de volgorde niet uit. Voor kracht word je het sterkst in de oefeningen die je aan het begin van je training doet. Het ACSM-standpunt noemt ook dat kracht meer stijgt als de oefening vooraan staat.",
+   "doen": [
+    "Zet de oefening waarin je het sterkst wilt worden vooraan."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "What influence does resistance exercise order have on muscular strength gains and muscle hypertrophy? A systematic review and meta-analysis",
+     "auteurs": "Nunes e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32077380/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "onderhoud",
+   "theme": "kracht",
+   "q": "Hoeveel moet ik trainen om mijn spieren en kracht te behouden?",
+   "alt": [
+    "behouden",
+    "onderhoudstraining",
+    "druk weinig tijd",
+    "minimaal trainen om te behouden"
+   ],
+   "tags": [
+    "behoud",
+    "onderhoud",
+    "weinig",
+    "tijd"
+   ],
+   "a": "Behouden kost veel minder dan opbouwen. In een RCT trainden mensen eerst 16 weken, 3 keer per week. Daarna hielden jongeren hun spiergroei vast met één training per week, zelfs met een negende van het oorspronkelijke volume. Bij ouderen was meer nodig om de spiermassa te houden.",
+   "doen": [
+    "Druk? Eén goede training per week houdt je spieren en kracht grotendeels vast."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Exercise dosing to retain resistance training adaptations in young and older adults",
+     "auteurs": "Bickel e.a.",
+     "jaar": 2011,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21131862/"
+    }
+   ]
+  },
+  {
+   "id": "periodisering",
+   "theme": "kracht",
+   "q": "Moet ik mijn training periodiseren?",
+   "alt": [
+    "periodisering",
+    "afwisselen zwaar en licht",
+    "undulating",
+    "lineaire periodisering",
+    "schema variëren"
+   ],
+   "tags": [
+    "periodisering",
+    "afwisselen",
+    "schema"
+   ],
+   "a": "Een meta-analyse van 35 studies vond dat periodiseren iets meer kracht gaf dan steeds hetzelfde doen, vooral met dagelijkse afwisseling bij getrainde mensen. Voor spiergroei maakte het niets uit. Het ACSM-standpunt uit 2026 vond geen consistent effect van periodisering.",
+   "doen": [
+    "Voor kracht kun je zware en lichtere dagen afwisselen; voor groei is het niet nodig."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of Periodization on Strength and Muscle Hypertrophy in Volume-Equated Resistance Training Programs: A Systematic Review and Meta-analysis",
+     "auteurs": "Moesgaard e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35044672/"
+    },
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    }
+   ]
+  },
+  {
+   "id": "autoregulatie",
+   "theme": "kracht",
+   "q": "Kan ik beter op gevoel trainen of met vaste gewichten?",
+   "alt": [
+    "op gevoel trainen",
+    "rpe gebaseerd",
+    "velocity based training",
+    "autoregulatie"
+   ],
+   "tags": [
+    "gevoel",
+    "rpe",
+    "snelheid",
+    "vast"
+   ],
+   "a": "Een meta-analyse vond geen verschil in krachtwinst tussen gewicht kiezen op gevoel of snelheid en een vast schema. Wie sets stopte bij weinig snelheidsverlies (25% of minder) won iets meer kracht maar iets minder spier.",
+   "doen": [
+    "Beide werken. Stop sets eerder als het om kracht gaat, trek ze verder door als het om groei gaat."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Effect of Load and Volume Autoregulation on Muscular Strength and Hypertrophy: A Systematic Review and Meta-Analysis",
+     "auteurs": "Hickmott e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35038063/"
+    }
+   ]
+  },
+  {
+   "id": "deload",
+   "theme": "kracht",
+   "q": "Heb ik een deload (rustweek) nodig?",
+   "alt": [
+    "deload week",
+    "rustweek",
+    "lichte week",
+    "week rust nemen"
+   ],
+   "tags": [
+    "deload",
+    "rustweek",
+    "licht"
+   ],
+   "a": "In een RCT kreeg een groep halverwege 9 weken training een week rust. Zij hadden dezelfde spiergroei maar iets minder krachtwinst dan de groep die doortrainde. Er is weinig onderzoek; een deload is dus niet nodig om vooruit te gaan.",
+   "doen": [
+    "Neem een lichte week als je je moe of pijnlijk voelt, niet standaard volgens de kalender."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations",
+     "auteurs": "Coleman e.a.",
+     "jaar": 2024,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38274324/"
+    },
+    {
+     "titel": "Prevention, diagnosis, and treatment of the overtraining syndrome: joint consensus statement of the European College of Sport Science and the American College of Sports Medicine",
+     "auteurs": "Meeusen e.a. (ECSS/ACSM)",
+     "jaar": 2013,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23247672/"
+    }
+   ]
+  },
+  {
+   "id": "isometrisch",
+   "theme": "kracht",
+   "q": "Werken statische oefeningen (vasthouden) voor kracht en spier?",
+   "alt": [
+    "isometrisch",
+    "statisch vasthouden",
+    "isometrics",
+    "houdingen vasthouden"
+   ],
+   "tags": [
+    "isometrisch",
+    "statisch",
+    "vasthouden",
+    "hold"
+   ],
+   "a": "Ja. Een systematische review vond flinke winst in kracht en spiergroei, ook bij lagere intensiteit. Vasthouden in een lange, gerekte spierpositie gaf meer groei en zet beter over naar dynamische bewegingen. Voor pezen zijn zware contracties nodig: 70% van je max of meer. Explosief aanspannen gaf meer snelkracht.",
+   "doen": [
+    "Houd isometrische oefeningen vast in de gerekte positie.",
+    "Voor peesklachten of sterke pezen: zwaar vasthouden (≥70% van je max)."
+   ],
+   "exercises": [
+    "Wall sit",
+    "L-sit",
+    "Front lever"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Isometric training and long-term adaptations: Effects of muscle length, intensity, and intent: A systematic review",
+     "auteurs": "Oranchuk e.a.",
+     "jaar": 2019,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30580468/"
+    }
+   ]
+  },
+  {
+   "id": "warming-up",
+   "theme": "kracht",
+   "q": "Moet ik opwarmen voor het trainen?",
+   "alt": [
+    "warming up",
+    "opwarmen",
+    "warm up nodig",
+    "hoe opwarmen"
+   ],
+   "tags": [
+    "warmingup",
+    "opwarmen",
+    "voor"
+   ],
+   "a": "Ja. Een meta-analyse van 32 goede studies vond dat opwarmen de prestatie verbeterde in 79% van de gemeten uitkomsten; stretchen telde daarbij niet mee als warming-up. Bij voetbal verminderde een gestructureerde warming-up met kracht-, balans- en springoefeningen (FIFA 11+) het aantal blessures met ongeveer 39%.",
+   "doen": [
+    "Warm op door eerst rustig te bewegen en daarna de oefening een paar keer licht te doen.",
+    "Voor sprinten en springen: bouw de snelheid rustig op."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Effects of warming-up on physical performance: a systematic review with meta-analysis",
+     "auteurs": "Fradkin e.a.",
+     "jaar": 2010,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19996770/"
+    },
+    {
+     "titel": "Effect of specific exercise-based football injury prevention programmes on the overall injury rate in football: a systematic review and meta-analysis of the FIFA 11 and 11+ programmes",
+     "auteurs": "Thorborg e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28087568/"
+    }
+   ]
+  },
+  {
+   "id": "hoger-springen",
+   "theme": "explosief",
+   "q": "Hoe kan ik hoger springen?",
+   "alt": [
+    "sprongkracht",
+    "verticale sprong",
+    "dunken",
+    "plyometrie",
+    "hoger springen training"
+   ],
+   "tags": [
+    "springen",
+    "sprong",
+    "plyometrie",
+    "hoger"
+   ],
+   "a": "Plyometrische training maakt je sprong hoger. Een meta-analyse vond 4,7% tot 8,7% winst, afhankelijk van het type sprong. Een tweede meta-analyse van 56 studies zag het meeste effect bij:\n- meer dan 10 weken en meer dan 20 trainingen;\n- meer dan 50 sprongen per training;\n- een mix van squat jumps, countermovement jumps en drop jumps.\n\nExtra gewicht tijdens het springen gaf geen extra winst. Olympisch gewichtheffen (cleans, snatches) verbeterde de sprong ook: 7,7% ten opzichte van niets doen, en evenveel als plyometrie.",
+   "doen": [
+    "Doe 2 keer per week verschillende sprongen, minstens 10 weken lang.",
+    "Spring zonder extra gewicht; maak het zwaarder met hogere of diepere sprongen."
+   ],
+   "exercises": [
+    "Countermovement jump",
+    "Drop jump",
+    "Depth jump",
+    "Box jump",
+    "Power clean"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Does plyometric training improve vertical jump height? A meta-analytical review",
+     "auteurs": "Markovic",
+     "jaar": 2007,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17347316/"
+    },
+    {
+     "titel": "Determining variables of plyometric training for improving vertical jump height performance: a meta-analysis",
+     "auteurs": "de Villarreal e.a.",
+     "jaar": 2009,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19197203/"
+    },
+    {
+     "titel": "Olympic weightlifting training improves vertical jump height in sportspeople: a systematic review with meta-analysis",
+     "auteurs": "Hackett e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26626268/"
+    }
+   ]
+  },
+  {
+   "id": "sneller-sprinten",
+   "theme": "explosief",
+   "q": "Word ik sneller in de sprint als ik sterker word?",
+   "alt": [
+    "sneller sprinten",
+    "sprintsnelheid",
+    "squat en sprint",
+    "harder lopen korte afstand"
+   ],
+   "tags": [
+    "sprint",
+    "snel",
+    "kracht",
+    "been"
+   ],
+   "a": "Ja. Een meta-analyse vond een sterk verband (r = −0,77) tussen hoeveel sterker iemand werd in de squat en hoeveel sneller hij sprintte. Het effect was groter bij vaker trainen per week en bij langere rust tussen sets.",
+   "doen": [
+    "Combineer zware beenoefeningen met sprinttraining."
+   ],
+   "exercises": [
+    "Sprint",
+    "Trap bar deadlift",
+    "Bulgarian split squat"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Increases in lower-body strength transfer positively to sprint performance: a systematic review with meta-analysis",
+     "auteurs": "Seitz e.a.",
+     "jaar": 2014,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25059334/"
+    }
+   ]
+  },
+  {
+   "id": "explosiever",
+   "theme": "explosief",
+   "q": "Hoe train ik voor explosiviteit en snelkracht?",
+   "alt": [
+    "explosieve kracht",
+    "power training",
+    "snelkracht trainen",
+    "snel bewegen"
+   ],
+   "tags": [
+    "explosiviteit",
+    "snelkracht",
+    "power",
+    "snel"
+   ],
+   "a": "Het ACSM-standpunt uit 2026 vond dat snelkracht het meest stijgt met:\n- gemiddelde gewichten, 30 tot 70% van je max;\n- weinig tot matig volume, tot ongeveer 24 herhalingen per oefening;\n- Olympisch gewichtheffen;\n- het gewicht zo snel mogelijk omhoog duwen.\n\nDit soort training verbeterde ook dagelijkse functies.",
+   "doen": [
+    "Kies een lichter gewicht en duw het zo snel mogelijk omhoog; stop voordat je vertraagt.",
+    "Houd explosieve sets kort en fris, niet tot falen."
+   ],
+   "exercises": [
+    "Power clean",
+    "Jump squat",
+    "Kettlebell swing",
+    "Clap push-up"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews",
+     "auteurs": "ACSM (Currier e.a.)",
+     "jaar": 2026,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/"
+    },
+    {
+     "titel": "Olympic weightlifting training improves vertical jump height in sportspeople: a systematic review with meta-analysis",
+     "auteurs": "Hackett e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26626268/"
+    }
+   ]
+  },
+  {
+   "id": "pap",
+   "theme": "explosief",
+   "q": "Spring of sprint ik beter na een zware set (post-activatie potentiatie)?",
+   "alt": [
+    "pap",
+    "post activation potentiation",
+    "contrast training",
+    "complex training",
+    "zware set voor sprong"
+   ],
+   "tags": [
+    "pap",
+    "contrast",
+    "potentiatie"
+   ],
+   "a": "Een beetje. Een meta-analyse vond na een zware of plyometrische aanloop een klein effect op springen (ES 0,29) en een matig effect op sprinten (ES 0,51). Het effect was groter bij sterkere en meer ervaren mensen, na plyometrische aanlopen, na meerdere sets en bij langere rust tussen de aanloop en de sprong.",
+   "doen": [
+    "Wil je het proberen: doe een zware set of een paar sprongen en wacht enkele minuten voor je explosieve oefening."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Factors Modulating Post-Activation Potentiation of Jump, Sprint, Throw, and Upper-Body Ballistic Performances: A Systematic Review with Meta-Analysis",
+     "auteurs": "Seitz en Haff",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26508319/"
+    }
+   ]
+  },
+  {
+   "id": "spierpijn-helpt",
+   "theme": "herstel",
+   "q": "Wat helpt tegen spierpijn?",
+   "alt": [
+    "spierpijn na training",
+    "stijve spieren",
+    "doms verhelpen",
+    "sneller herstellen spierpijn",
+    "ik ben stijf"
+   ],
+   "tags": [
+    "spierpijn",
+    "herstel",
+    "stijf",
+    "massage"
+   ],
+   "a": "Een meta-analyse van 99 studies vond dat massage het beste werkt tegen spierpijn en een vermoeid gevoel. Ook actief herstel (licht bewegen), compressiekleding, onderdompeling in water en kou verminderden spierpijn. Stretchen helpt er nauwelijks tegen: gemiddeld 1 punt op een schaal van 100. Foamrollen verminderde het pijngevoel een beetje.",
+   "doen": [
+    "Licht bewegen of massage helpt het meest.",
+    "Stretchen om spierpijn te verminderen heeft weinig zin."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "An Evidence-Based Approach for Choosing Post-exercise Recovery Techniques to Reduce Markers of Muscle Damage, Soreness, Fatigue, and Inflammation: A Systematic Review With Meta-Analysis",
+     "auteurs": "Dupuy e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29755363/"
+    },
+    {
+     "titel": "Stretching to prevent or reduce muscle soreness after exercise",
+     "auteurs": "Herbert e.a. (Cochrane)",
+     "jaar": 2011,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21735398/"
+    },
+    {
+     "titel": "A Meta-Analysis of the Effects of Foam Rolling on Performance and Recovery",
+     "auteurs": "Wiewelhove e.a.",
+     "jaar": 2019,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31024339/"
+    }
+   ]
+  },
+  {
+   "id": "ijsbad",
+   "theme": "herstel",
+   "q": "Is een ijsbad na het trainen goed?",
+   "alt": [
+    "ijsbad",
+    "koud douchen na training",
+    "cold plunge",
+    "koude onderdompeling",
+    "ijs na training"
+   ],
+   "tags": [
+    "koud",
+    "ijsbad",
+    "herstel"
+   ],
+   "a": "Na krachttraining niet als je sterker of groter wilt worden. Een meta-analyse vond dat regelmatig koud onderdompelen na krachttraining de krachtwinst verminderde, ook bij explosieve inspanningen. Na duurtraining had het geen nadelig effect. Tegen spierpijn helpt koud water wel een beetje; 11 tot 15 °C en 10 tot 15 minuten werkte het best.",
+   "doen": [
+    "Sla het ijsbad over na krachttraining.",
+    "Wil je snel herstellen voor een wedstrijd of toernooi, dan kan koud water helpen tegen spierpijn."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Effects of Regular Cold-Water Immersion Use on Training-Induced Changes in Strength and Endurance Performance: A Systematic Review with Meta-Analysis",
+     "auteurs": "Malta e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33146851/"
+    },
+    {
+     "titel": "Can Water Temperature and Immersion Time Influence the Effect of Cold Water Immersion on Muscle Soreness? A Systematic Review and Meta-Analysis",
+     "auteurs": "Machado e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26581833/"
+    }
+   ]
+  },
+  {
+   "id": "ibuprofen",
+   "theme": "herstel",
+   "q": "Kan ik ibuprofen nemen rond mijn trainingen?",
+   "alt": [
+    "ontstekingsremmers",
+    "pijnstillers en spiergroei",
+    "nsaid",
+    "ibuprofen spiergroei"
+   ],
+   "tags": [
+    "ontstekingsremmer",
+    "ibuprofen",
+    "pijnstiller"
+   ],
+   "a": "Liever niet structureel. In een RCT groeide de quadriceps bij jonge mensen die 8 weken de maximale vrij verkrijgbare dosis ibuprofen namen maar half zo veel (3,7% tegenover 7,5% met een lage dosis aspirine). Ze werden ook minder sterk.",
+   "doen": [
+    "Neem geen ontstekingsremmers om spierpijn te dempen.",
+    "Bij een blessure kan een korte kuur zinvol zijn; overleg met je huisarts of apotheker."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "High doses of anti-inflammatory drugs compromise muscle strength and hypertrophic adaptations to resistance training in young adults",
+     "auteurs": "Lilja e.a.",
+     "jaar": 2018,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28834248/"
+    },
+    {
+     "titel": "Treatment and prevention of acute and recurrent ankle sprain: an overview of systematic reviews with meta-analysis",
+     "auteurs": "Doherty e.a.",
+     "jaar": 2017,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28053200/"
+    }
+   ]
+  },
+  {
+   "id": "compressie",
+   "theme": "herstel",
+   "q": "Helpt compressiekleding bij herstel?",
+   "alt": [
+    "compressie",
+    "compressiekousen",
+    "compressiebroek"
+   ],
+   "tags": [
+    "compressie",
+    "herstel",
+    "kleding"
+   ],
+   "a": "Een beetje. Een meta-analyse vond kleine voordelen voor herstel, vooral voor kracht 2 tot 8 uur en meer dan 24 uur na krachttraining.",
+   "doen": [
+    "Handig als je twee keer op een dag of dagen achter elkaar zwaar traint; niet nodig voor normaal herstel."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Compression Garments and Recovery from Exercise: A Meta-Analysis",
+     "auteurs": "Brown e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28434152/"
+    }
+   ]
+  },
+  {
+   "id": "slaap-hoeveel",
+   "theme": "herstel",
+   "q": "Hoeveel slaap heb ik nodig voor herstel en spieropbouw?",
+   "alt": [
+    "hoeveel uur slapen",
+    "slaap en spiergroei",
+    "slecht geslapen trainen",
+    "slaaptekort"
+   ],
+   "tags": [
+    "slaap",
+    "herstel",
+    "uur",
+    "moe"
+   ],
+   "a": "Volwassenen hebben volgens de Amerikaanse slaapverenigingen minstens 7 uur per nacht nodig. Een meta-analyse vond dat slaaptekort je prestatie gemiddeld 7,6% verlaagt, ongeveer 0,4% per uur dat je langer wakker bent. Na één nacht zonder slaap was de spiereiwitaanmaak 18% lager, cortisol 21% hoger en testosteron 24% lager.",
+   "doen": [
+    "Slaap minstens 7 uur.",
+    "Na een slechte nacht: train gerust, maar verwacht geen records."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society",
+     "auteurs": "Watson e.a. (AASM/SRS)",
+     "jaar": 2015,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26039963/"
+    },
+    {
+     "titel": "Effects of Acute Sleep Loss on Physical Performance: A Systematic and Meta-Analytical Review",
+     "auteurs": "Craven e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35708888/"
+    },
+    {
+     "titel": "The effect of acute sleep deprivation on skeletal muscle protein synthesis and the hormonal environment",
+     "auteurs": "Lamon e.a.",
+     "jaar": 2021,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33400856/"
+    }
+   ]
+  },
+  {
+   "id": "cafeine-slaap",
+   "theme": "herstel",
+   "q": "Hoe laat mag ik nog koffie of pre-workout nemen zonder dat mijn slaap slechter wordt?",
+   "alt": [
+    "koffie en slaap",
+    "pre workout avond",
+    "cafeine voor het slapen",
+    "avond trainen koffie"
+   ],
+   "tags": [
+    "cafeine",
+    "slaap",
+    "koffie",
+    "avond"
+   ],
+   "a": "Een meta-analyse van 24 studies vond dat cafeïne je 45 minuten minder laat slapen, met minder diepe slaap. Om dat te voorkomen moet een kop koffie minstens 8,8 uur voor het slapengaan op zijn. Voor een gewone portie pre-workout (ongeveer 220 mg) is dat nog langer, ruim 13 uur.",
+   "doen": [
+    "Train je 's avonds, kies dan een pre-workout zonder cafeïne.",
+    "Laatste koffie rond het middaguur als je om 23:00 slaapt."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The effect of caffeine on subsequent sleep: A systematic review and meta-analysis",
+     "auteurs": "Gardiner e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36870101/"
+    }
+   ]
+  },
+  {
+   "id": "sporten-slaap",
+   "theme": "herstel",
+   "q": "Slaap ik beter als ik sport?",
+   "alt": [
+    "beter slapen door sport",
+    "slapeloosheid sport"
+   ],
+   "tags": [
+    "slaap",
+    "sport",
+    "beter"
+   ],
+   "a": "Ja. Een meta-analyse van 66 studies vond dat regelmatig sporten je slaapkwaliteit matig verbetert, je iets sneller in slaap laat vallen en iets langer laat slapen.",
+   "doen": [
+    "Regelmatig trainen helpt je slaap; zie ook de vraag over cafeïne als je 's avonds traint."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The effects of physical activity on sleep: a meta-analytic review",
+     "auteurs": "Kredlow e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25596964/"
+    }
+   ]
+  },
+  {
+   "id": "overtraining",
+   "theme": "herstel",
+   "q": "Hoe weet ik of ik overtraind ben?",
+   "alt": [
+    "overtraind",
+    "altijd moe",
+    "geen progressie en moe",
+    "te veel trainen",
+    "overreaching"
+   ],
+   "tags": [
+    "overtraining",
+    "moe",
+    "progressie",
+    "te veel"
+   ],
+   "a": "Volgens het gezamenlijke standpunt van de Europese en Amerikaanse sportgeneeskunde verloopt dit in stappen:\n- Een paar dagen minder presteren en daarna sterker terugkomen is normaal.\n- Blijft je prestatie weken achter en voel je je moe of somber, dan is er sprake van \"non-functional overreaching\".\n- Duurt het maanden, dan heet het overtrainingssyndroom.\n\nDe diagnose wordt gesteld door andere oorzaken uit te sluiten, want de klachten lijken op veel andere aandoeningen.",
+   "doen": [
+    "Presteer je al weken slechter en ben je moe of prikkelbaar: train minder en slaap meer.",
+    "Gaat het niet over, laat dan bij de huisarts andere oorzaken uitsluiten (bijv. bloedarmoede, schildklier, infectie)."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Prevention, diagnosis, and treatment of the overtraining syndrome: joint consensus statement of the European College of Sport Science and the American College of Sports Medicine",
+     "auteurs": "Meeusen e.a. (ECSS/ACSM)",
+     "jaar": 2013,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23247672/"
+    }
+   ]
+  },
+  {
+   "id": "alcohol",
+   "theme": "herstel",
+   "q": "Wat doet alcohol met mijn spierherstel?",
+   "alt": [
+    "bier na training",
+    "alcohol spiergroei",
+    "drinken na sporten",
+    "uitgaan na training"
+   ],
+   "tags": [
+    "alcohol",
+    "bier",
+    "herstel",
+    "spiergroei"
+   ],
+   "a": "In een RCT verlaagde veel alcohol na de training de spiereiwitaanmaak met 24%, ook als er genoeg eiwit bij werd gegeten. Zonder eiwit was dat 37%.",
+   "doen": [
+    "Drink je, eet dan in elk geval genoeg eiwit, en liever niet op de avond van een zware training."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "Alcohol ingestion impairs maximal post-exercise rates of myofibrillar protein synthesis following a single bout of concurrent training",
+     "auteurs": "Parr e.a.",
+     "jaar": 2014,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24533082/"
+    }
+   ]
+  },
+  {
+   "id": "ziek-trainen",
+   "theme": "herstel",
+   "q": "Mag ik trainen als ik verkouden ben?",
+   "alt": [
+    "verkouden trainen",
+    "ziek sporten",
+    "neusverkoudheid",
+    "griep trainen"
+   ],
+   "tags": [
+    "verkouden",
+    "ziek",
+    "griep"
+   ],
+   "a": "In een RCT waarbij mensen bewust verkouden werden gemaakt, maakte matig sporten de verkoudheid niet erger en ook niet langer. Het onderzoek ging over een gewone neusverkoudheid, niet over koorts of griep; daarover zegt het niets.",
+   "doen": [
+    "Bij een gewone verkoudheid mag je rustig trainen.",
+    "Heb je koorts, spierpijn over je hele lijf of voel je je echt ziek: overleg met je huisarts voor je sport."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "The effect of exercise training on the severity and duration of a viral upper respiratory illness",
+     "auteurs": "Weidner e.a.",
+     "jaar": 1998,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/9813869/"
+    }
+   ]
+  },
+  {
+   "id": "hoe-lang-stretchen",
+   "theme": "stretchen",
+   "q": "Hoe lang en hoe vaak moet ik stretchen om leniger te worden?",
+   "alt": [
+    "hoe lang een stretch aanhouden",
+    "hoe lang stretch vasthouden",
+    "hoeveel minuten stretchen",
+    "leniger worden",
+    "hoe vaak stretchen per week"
+   ],
+   "tags": [
+    "stretch",
+    "lenigheid",
+    "lang",
+    "minuut",
+    "week"
+   ],
+   "a": "Een meta-analyse vond dat de totale tijd per week telt: minstens 5 minuten per spiergroep per week, verdeeld over minstens 5 dagen. Hoe lang je in één sessie stretcht, maakte weinig uit. Volgens een grote meta-analyse uit 2024 werken statisch stretchen en PNF (aanspannen en dan dieper) beter dan dynamisch of verend stretchen. Een derde meta-analyse zag meer resultaat bij meer herhalingen en meer totale tijd.",
+   "doen": [
+    "Tel per spier: ongeveer 1 minuut per dag, 5 dagen per week.",
+    "Houd de stretch stil vast of gebruik aanspannen-en-ontspannen."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The Relation Between Stretching Typology and Stretching Duration: The Effects on Range of Motion",
+     "auteurs": "Thomas e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29506306/"
+    },
+    {
+     "titel": "Chronic effects of stretching on range of motion with consideration of potential moderating variables: A systematic review with meta-analysis",
+     "auteurs": "Konrad e.a.",
+     "jaar": 2024,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37301370/"
+    },
+    {
+     "titel": "Chronic Effects of Static Stretching Exercises on Muscle Strength and Power in Healthy Individuals Across the Lifespan: A Systematic Review with Multi-level Meta-analysis",
+     "auteurs": "Arntz e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36719536/"
+    }
+   ]
+  },
+  {
+   "id": "stretchen-voor-training",
+   "theme": "stretchen",
+   "q": "Moet ik stretchen voor het trainen?",
+   "alt": [
+    "statisch stretchen voor training",
+    "stretchen voor sporten slecht",
+    "stretchen als warming up",
+    "dynamisch stretchen"
+   ],
+   "tags": [
+    "stretch",
+    "voor",
+    "warmingup",
+    "dynamisch"
+   ],
+   "a": "Het hoeft niet, en kort kan geen kwaad. Statisch stretchen onder de 60 seconden per spier had nauwelijks effect op kracht (−1,1%), langer wel (−4,6%). Deed je daarna nog dynamische oefeningen, dan was er geen duidelijk effect meer. Dynamisch stretchen gaf een kleine verbetering (+1,3%).",
+   "doen": [
+    "Voor de training: dynamisch bewegen, bijvoorbeeld beenzwaaien en armcirkels.",
+    "Wil je toch statisch stretchen, houd het dan onder een minuut per spier en doe daarna nog iets dynamisch."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: a systematic review",
+     "auteurs": "Behm e.a.",
+     "jaar": 2016,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26642915/"
+    },
+    {
+     "titel": "Effect of acute static stretch on maximal muscle performance: a systematic review",
+     "auteurs": "Kay en Blazevich",
+     "jaar": 2012,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21659901/"
+    }
+   ]
+  },
+  {
+   "id": "stretchen-blessures",
+   "theme": "stretchen",
+   "q": "Voorkomt stretchen blessures?",
+   "alt": [
+    "stretchen blessurepreventie",
+    "blessures voorkomen door rekken",
+    "stretchen tegen blessures"
+   ],
+   "tags": [
+    "stretch",
+    "blessure",
+    "voorkomen"
+   ],
+   "a": "Nee. Een meta-analyse van 25 RCT's met meer dan 26.000 deelnemers vond geen effect van stretchen op blessures. Krachttraining verminderde blessures tot minder dan een derde, en ook balanstraining hielp.",
+   "doen": [
+    "Stretch voor je lenigheid, niet om blessures te voorkomen.",
+    "Wil je blessures voorkomen: doe krachttraining."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials",
+     "auteurs": "Lauersen e.a.",
+     "jaar": 2014,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24100287/"
+    },
+    {
+     "titel": "Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: a systematic review",
+     "auteurs": "Behm e.a.",
+     "jaar": 2016,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26642915/"
+    }
+   ]
+  },
+  {
+   "id": "stretchen-spierpijn",
+   "theme": "stretchen",
+   "q": "Helpt stretchen tegen spierpijn?",
+   "alt": [
+    "stretchen na training spierpijn",
+    "rekken tegen stijfheid"
+   ],
+   "tags": [
+    "stretch",
+    "spierpijn"
+   ],
+   "a": "Nauwelijks. Een Cochrane-review van 12 studies vond dat stretchen voor of na het sporten spierpijn met gemiddeld minder dan 1 punt op een schaal van 100 verminderde. De grootste studie (2377 mensen) vond 4 punten: meetbaar, maar te klein om te voelen.",
+   "doen": [
+    "Stretch niet om spierpijn te voorkomen; massage en licht bewegen werken beter."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Stretching to prevent or reduce muscle soreness after exercise",
+     "auteurs": "Herbert e.a. (Cochrane)",
+     "jaar": 2011,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21735398/"
+    }
+   ]
+  },
+  {
+   "id": "stretchen-na-training",
+   "theme": "stretchen",
+   "q": "Heeft stretchen na elke training zin?",
+   "alt": [
+    "stretchen na krachttraining",
+    "cooling down stretchen",
+    "na de training rekken"
+   ],
+   "tags": [
+    "stretch",
+    "na",
+    "training",
+    "cooling"
+   ],
+   "a": "Voor lenigheid wel, als je per spiergroep genoeg tijd per week haalt (zie: hoe lang stretchen). Tegen spierpijn of blessures helpt het niet. Krachttraining door de volle beweging maakt je volgens twee meta-analyses even lenig als stretchen; alleen trainen met je lichaamsgewicht gaf geen betere bewegingsuitslag.",
+   "doen": [
+    "Stretch na de training vooral de spieren waarin je leniger wilt worden.",
+    "Train je door de volle beweging, dan werk je ook al aan je lenigheid."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The Relation Between Stretching Typology and Stretching Duration: The Effects on Range of Motion",
+     "auteurs": "Thomas e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29506306/"
+    },
+    {
+     "titel": "Stretching to prevent or reduce muscle soreness after exercise",
+     "auteurs": "Herbert e.a. (Cochrane)",
+     "jaar": 2011,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21735398/"
+    },
+    {
+     "titel": "Strength Training versus Stretching for Improving Range of Motion: A Systematic Review and Meta-Analysis",
+     "auteurs": "Afonso e.a.",
+     "jaar": 2021,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33917036/"
+    },
+    {
+     "titel": "Resistance Training Induces Improvements in Range of Motion: A Systematic Review and Meta-Analysis",
+     "auteurs": "Alizadeh e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36622555/"
+    }
+   ]
+  },
+  {
+   "id": "waarom-leniger",
+   "theme": "stretchen",
+   "q": "Waarom word ik leniger van stretchen: worden mijn spieren langer?",
+   "alt": [
+    "spieren langer maken",
+    "rektolerantie",
+    "hoe werkt stretchen"
+   ],
+   "tags": [
+    "lenigheid",
+    "spier",
+    "langer",
+    "tolerantie"
+   ],
+   "a": "Waarschijnlijk vooral doordat je zenuwstelsel de rek beter verdraagt, en doordat spier en pees tijdelijk minder stijf zijn. De winst van één sessie is meestal binnen 30 minuten weer weg. Op de lange termijn vond een meta-analyse dat spiervezels iets langer worden, maar alleen bij veel en intensief stretchen. Intensief stretchen gaf ook iets dikkere spieren.",
+   "doen": [
+    "Wees geduldig: lenigheid komt van weken regelmatig stretchen.",
+    "Stretch stevig (duidelijk voelbaar, niet pijnlijk) als je echt resultaat wilt."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Acute effects of muscle stretching on physical performance, range of motion, and injury incidence in healthy active individuals: a systematic review",
+     "auteurs": "Behm e.a.",
+     "jaar": 2016,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26642915/"
+    },
+    {
+     "titel": "Muscle Architecture Adaptations to Static Stretching Training: A Systematic Review with Meta-Analysis",
+     "auteurs": "Panidi e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37318696/"
+    }
+   ]
+  },
+  {
+   "id": "stretchen-kracht",
+   "theme": "stretchen",
+   "q": "Word ik sterker of zwakker van regelmatig stretchen?",
+   "alt": [
+    "stretchen kracht verlies",
+    "maakt stretchen zwakker",
+    "stretchen en spierkracht"
+   ],
+   "tags": [
+    "stretch",
+    "kracht",
+    "zwakker"
+   ],
+   "a": "Op de lange termijn iets sterker, niet zwakker. Een meta-analyse van 41 studies vond kleine winst in kracht en snelkracht door regelmatig statisch stretchen, vooral bij mensen die weinig sporten. De lenigheid verbeterde matig tot sterk. Alleen vlak voor een prestatie kan lang stretchen (60 seconden of meer per spier) je tijdelijk iets zwakker maken.",
+   "doen": [
+    "Regelmatig stretchen kost je geen kracht."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Chronic Effects of Static Stretching Exercises on Muscle Strength and Power in Healthy Individuals Across the Lifespan: A Systematic Review with Multi-level Meta-analysis",
+     "auteurs": "Arntz e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36719536/"
+    },
+    {
+     "titel": "Effect of acute static stretch on maximal muscle performance: a systematic review",
+     "auteurs": "Kay en Blazevich",
+     "jaar": 2012,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21659901/"
+    }
+   ]
+  },
+  {
+   "id": "schouder-stretch",
+   "theme": "stretchen",
+   "q": "Welke stretch werkt het best voor een stijve achterkant van de schouder?",
+   "alt": [
+    "schouder stijf",
+    "interne rotatie schouder",
+    "sleeper stretch",
+    "cross body stretch",
+    "schouder stretch"
+   ],
+   "tags": [
+    "schouder",
+    "stretch",
+    "rotatie",
+    "stijf"
+   ],
+   "a": "In een RCT verbeterde de cross-body stretch (arm voor je borst langs trekken) de binnenwaartse draaiing van de schouder met gemiddeld 20 graden, tegenover 6 graden zonder stretchen. De sleeper stretch gaf 12 graden, maar dat verschil was niet significant.",
+   "doen": [
+    "Kies bij een stijve schouder eerst de cross-body stretch."
+   ],
+   "exercises": [
+    "Cross-body schouder stretch",
+    "Sleeper stretch"
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "A randomized controlled comparison of stretching procedures for posterior shoulder tightness",
+     "auteurs": "McClure e.a.",
+     "jaar": 2007,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17416125/"
+    }
+   ]
+  },
+  {
+   "id": "foamrollen",
+   "theme": "stretchen",
+   "q": "Heeft foamrollen zin?",
+   "alt": [
+    "foam roller",
+    "foamrollen",
+    "rollen voor training",
+    "massage roller"
+   ],
+   "tags": [
+    "foamroller",
+    "rollen"
+   ],
+   "a": "Een beetje. Voor de training gaf foamrollen direct meer bewegingsuitslag, even veel als stretchen. Het gaf ook een kleine winst in sprint (+0,7%) en lenigheid. Na de training verminderde het de spierpijn iets en het verlies van sprint- en krachtprestatie. Volgens de meta-analyse zijn de effecten klein, maar soms nuttig.",
+   "doen": [
+    "Gebruik de foamroller als je hem prettig vindt, bijvoorbeeld voor stijve kuiten of dijen voor de training."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Acute Effects of Foam Rolling on Range of Motion in Healthy Adults: A Systematic Review with Multilevel Meta-analysis",
+     "auteurs": "Wilke e.a.",
+     "jaar": 2020,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31628662/"
+    },
+    {
+     "titel": "A Meta-Analysis of the Effects of Foam Rolling on Performance and Recovery",
+     "auteurs": "Wiewelhove e.a.",
+     "jaar": 2019,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31024339/"
+    }
+   ]
+  },
+  {
+   "id": "wanneer-dokter",
+   "theme": "pijn",
+   "q": "Wanneer moet ik met pijn naar de huisarts of fysio?",
+   "alt": [
+    "wanneer naar de dokter",
+    "rode vlaggen",
+    "is mijn pijn ernstig",
+    "wanneer fysio",
+    "wanneer huisarts"
+   ],
+   "tags": [
+    "huisarts",
+    "fysio",
+    "ernstig",
+    "rode vlag",
+    "pijn"
+   ],
+   "a": "De meeste sportpijn gaat vanzelf of met goed opgebouwde oefeningen over. Laat je wel nakijken bij:\n- pijn na een val of klap waarbij je niet op je been kunt staan of het gewricht niet kunt gebruiken;\n- een gewricht dat dik, warm en rood wordt, of koorts;\n- tintelingen, gevoelloosheid of krachtverlies in een arm of been;\n- pijn die 's nachts niet minder wordt door te bewegen of te liggen;\n- pijn die na een paar weken niet minder wordt;\n- bij rugpijn: problemen met plassen of ontlasting, of een doof gevoel rond je zitvlak. Ga dan meteen.",
+   "doen": [
+    "Twijfel je, laat het nakijken. De app stelt geen diagnose."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "International Framework for Red Flags for Potential Serious Spinal Pathologies",
+     "auteurs": "Finucane e.a. (IFOMPT)",
+     "jaar": 2020,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32438853/"
+    },
+    {
+     "titel": "Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline",
+     "auteurs": "Vuurberg e.a.",
+     "jaar": 2018,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29514819/"
+    }
+   ]
+  },
+  {
+   "id": "pijn-tijdens-trainen",
+   "theme": "pijn",
+   "q": "Mag ik doortrainen als iets een beetje pijn doet?",
+   "alt": [
+    "trainen met pijn",
+    "doortrainen met blessure",
+    "pijn tijdens oefening",
+    "pijnmonitoring",
+    "hoeveel pijn mag"
+   ],
+   "tags": [
+    "pijn",
+    "doortrainen",
+    "blessure",
+    "oefening"
+   ],
+   "a": "Vaak wel, bij langdurige klachten van spieren en pezen. Een meta-analyse vond dat oefeningen die een beetje pijn doen op korte termijn iets beter werkten dan pijnvrije oefeningen, en op lange termijn even goed. Bij achillespeesklachten was doorgaan met hardlopen en springen volgens een pijnmonitoringsmodel even goed als 6 weken rust. Pijn tot 5 op 10 was toegestaan, mits die de volgende ochtend weer weg was.",
+   "doen": [
+    "Pijn tot ongeveer 5 op 10 tijdens de oefening is bij peesklachten acceptabel.",
+    "Is de pijn de volgende ochtend erger dan normaal, doe dan minder.",
+    "Scherpe pijn, zwelling of een acute blessure: stop en laat het nakijken."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Should exercises be painful in the management of chronic musculoskeletal pain? A systematic review and meta-analysis",
+     "auteurs": "Smith e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28596288/"
+    },
+    {
+     "titel": "Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study",
+     "auteurs": "Silbernagel e.a.",
+     "jaar": 2007,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17307888/"
+    }
+   ]
+  },
+  {
+   "id": "blessures-voorkomen",
+   "theme": "pijn",
+   "q": "Hoe voorkom ik blessures?",
+   "alt": [
+    "blessurepreventie",
+    "blessurevrij blijven",
+    "minder blessures",
+    "blessures voorkomen sport"
+   ],
+   "tags": [
+    "blessure",
+    "voorkomen",
+    "preventie"
+   ],
+   "a": "Met krachttraining. Een meta-analyse van 25 RCT's vond dat krachttraining sportblessures terugbracht tot minder dan een derde (RR 0,32) en overbelastingsblessures bijna halveerde; stretchen had geen effect. Een tweede meta-analyse vond dat 10% meer krachttraining het blessurerisico met meer dan 4 procentpunt verlaagde. Balanstraining hielp ook.",
+   "doen": [
+    "Blijf zwaar genoeg krachttrainen, ook als je vooral hardloopt of springt.",
+    "Doe specifieke oefeningen voor de plekken die bij jouw sport vaak geblesseerd raken: hamstrings, liezen, enkels."
+   ],
+   "exercises": [
+    "Nordic hamstring curl",
+    "Copenhagen adductie",
+    "Eenbenige balans"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials",
+     "auteurs": "Lauersen e.a.",
+     "jaar": 2014,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24100287/"
+    },
+    {
+     "titel": "Strength training as superior, dose-dependent and safe prevention of acute and overuse sports injuries: a systematic review, qualitative analysis and meta-analysis",
+     "auteurs": "Lauersen e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30131332/"
+    },
+    {
+     "titel": "Effect of specific exercise-based football injury prevention programmes on the overall injury rate in football: a systematic review and meta-analysis of the FIFA 11 and 11+ programmes",
+     "auteurs": "Thorborg e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28087568/"
+    }
+   ]
+  },
+  {
+   "id": "eenzijdig-training",
+   "theme": "pijn",
+   "q": "Mijn ene arm of been is geblesseerd. Heeft het zin om de andere kant te trainen?",
+   "alt": [
+    "cross education",
+    "andere kant trainen",
+    "arm in het gips",
+    "been geblesseerd trainen"
+   ],
+   "tags": [
+    "andere kant",
+    "eenzijdig",
+    "blessure",
+    "arm",
+    "been"
+   ],
+   "a": "Ja. Een meta-analyse van 31 studies vond dat de niet-getrainde kant gemiddeld 11,9% sterker werd als je alleen de andere kant trainde (armen 9,4%, benen 16,4%). Excentrische training gaf het grootste effect (17,7%).",
+   "doen": [
+    "Blijf de gezonde kant trainen als de andere rust moet; het helpt de geblesseerde kant een beetje mee."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Cross-education of muscular strength following unilateral resistance training: a meta-analysis",
+     "auteurs": "Manca e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28936703/"
+    }
+   ]
+  },
+  {
+   "id": "bfr",
+   "theme": "pijn",
+   "q": "Wat is bloodflow restriction training en werkt het?",
+   "alt": [
+    "bfr training",
+    "occlusietraining",
+    "afbinden",
+    "band om arm trainen"
+   ],
+   "tags": [
+    "bfr",
+    "occlusie",
+    "afbinden",
+    "revalidatie"
+   ],
+   "a": "Bij BFR train je met een band om je arm of been en een licht gewicht. Een meta-analyse in de revalidatie (o.a. na een kruisbandoperatie en bij knieartrose) vond dat licht trainen met BFR sterker maakte dan licht trainen zonder, maar minder dan zwaar trainen.",
+   "doen": [
+    "Alleen nuttig als zwaar tillen (tijdelijk) niet kan, en dan het liefst onder begeleiding van een fysio."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Blood flow restriction training in clinical musculoskeletal rehabilitation: a systematic review and meta-analysis",
+     "auteurs": "Hughes e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28259850/"
+    }
+   ]
+  },
+  {
+   "id": "hamstring-voorkomen",
+   "theme": "pijn",
+   "q": "Hoe voorkom ik een hamstringblessure?",
+   "alt": [
+    "hamstring verrekt voorkomen",
+    "nordic curl",
+    "hamstringblessure sprinten",
+    "achterkant bovenbeen scheuren"
+   ],
+   "tags": [
+    "hamstring",
+    "blessure",
+    "voorkomen",
+    "nordic",
+    "sprint"
+   ],
+   "a": "Met de Nordic hamstring curl. Een meta-analyse van 8459 sporters vond dat programma's met deze oefening hamstringblessures ongeveer halveren (−51%). In een Nederlandse RCT bij amateurvoetballers deden spelers de oefening 25 keer in 13 weken; zij kregen veel minder hamstringblessures (odds ratio 0,28).",
+   "doen": [
+    "Doe de Nordic hamstring curl 1 tot 2 keer per week, vooral als je sprint.",
+    "Bouw rustig op; de eerste keren geeft het flinke spierpijn."
+   ],
+   "exercises": [
+    "Nordic hamstring curl"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes",
+     "auteurs": "van Dyk e.a.",
+     "jaar": 2019,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30808663/"
+    },
+    {
+     "titel": "The preventive effect of the nordic hamstring exercise on hamstring injuries in amateur soccer players: a randomized controlled trial",
+     "auteurs": "van der Horst e.a.",
+     "jaar": 2015,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25794868/"
+    }
+   ]
+  },
+  {
+   "id": "hamstring-herstel",
+   "theme": "pijn",
+   "q": "Ik heb mijn hamstring verrekt. Hoe herstel ik het snelst?",
+   "alt": [
+    "hamstring verrekt",
+    "hamstringblessure revalidatie",
+    "zweepslag bovenbeen",
+    "hamstring gescheurd"
+   ],
+   "tags": [
+    "hamstring",
+    "verrekt",
+    "herstel",
+    "revalidatie"
+   ],
+   "a": "In een RCT bij elitevoetballers met een acute hamstringblessure (bevestigd met MRI) waren spelers met een programma van verlengende oefeningen gemiddeld na 28 dagen terug, tegenover 51 dagen met gewone oefeningen. De verlengende oefeningen waren \"extender\", \"diver\" en \"glider\". Blessures bij het rekken (zoals een spagaat of hoge trap) duurden langer dan blessures bij het sprinten.",
+   "doen": [
+    "Laat een verrekte hamstring beoordelen door een fysio en vraag naar een programma met verlengende oefeningen."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols",
+     "auteurs": "Askling e.a.",
+     "jaar": 2013,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23536466/"
+    }
+   ]
+  },
+  {
+   "id": "lies",
+   "theme": "pijn",
+   "q": "Hoe voorkom ik liesklachten?",
+   "alt": [
+    "liesblessure",
+    "pijn in de lies",
+    "adductoren blessure",
+    "copenhagen",
+    "lies verrekt"
+   ],
+   "tags": [
+    "lies",
+    "adductor",
+    "blessure",
+    "voorkomen"
+   ],
+   "a": "In een cluster-RCT bij 652 voetballers verminderde één oefening, de Copenhagen adductie, het risico op liesklachten met 41%. Ze deden hem 3 keer per week in de voorbereiding en 1 keer per week tijdens het seizoen, in drie moeilijkheidsniveaus.",
+   "doen": [
+    "Doe de Copenhagen adductie 1 tot 3 keer per week.",
+    "Begin met je knie gesteund (korte hefboom) en bouw op naar je enkel gesteund."
+   ],
+   "exercises": [
+    "Copenhagen adductie"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial",
+     "auteurs": "Harøy e.a.",
+     "jaar": 2019,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29891614/"
+    }
+   ]
+  },
+  {
+   "id": "enkel-verzwikt",
+   "theme": "pijn",
+   "q": "Ik heb mijn enkel verzwikt. Wat moet ik doen?",
+   "alt": [
+    "enkel omgeslagen",
+    "enkelverstuiking",
+    "enkel dik",
+    "enkelbanden"
+   ],
+   "tags": [
+    "enkel",
+    "verstuiking",
+    "verzwikt",
+    "dik"
+   ],
+   "a": "Een overzicht van systematische reviews vond sterk bewijs voor vroeg weer bewegen en voor ontstekingsremmers bij een acute verstuiking. Oefentherapie en manuele therapie hielpen ook, maar het bewijs daarvoor is matig. De Nederlandse richtlijn zegt:\n- de ernst van bandletsel is het best te beoordelen 4 tot 5 dagen na het ongeluk;\n- een korte periode immobiliseren kan pijn en zwelling verminderen;\n- daarna werkt steun met tape of een brace samen met oefentherapie het best.",
+   "doen": [
+    "Kun je na het ongeluk niet op je been staan, of is het bot drukpijnlijk: laat een breuk uitsluiten.",
+    "Ga zo snel als de pijn toelaat weer lopen en start met balansoefeningen."
+   ],
+   "exercises": [
+    "Eenbenige balans"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Treatment and prevention of acute and recurrent ankle sprain: an overview of systematic reviews with meta-analysis",
+     "auteurs": "Doherty e.a.",
+     "jaar": 2017,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28053200/"
+    },
+    {
+     "titel": "Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline",
+     "auteurs": "Vuurberg e.a.",
+     "jaar": 2018,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29514819/"
+    }
+   ]
+  },
+  {
+   "id": "enkel-voorkomen",
+   "theme": "pijn",
+   "q": "Hoe voorkom ik dat ik mijn enkel opnieuw verzwik?",
+   "alt": [
+    "enkel steeds omslaan",
+    "zwakke enkels",
+    "enkel versterken",
+    "balans trainen"
+   ],
+   "tags": [
+    "enkel",
+    "balans",
+    "voorkomen",
+    "opnieuw"
+   ],
+   "a": "Er is sterk bewijs dat een brace een nieuwe verstuiking voorkomt, en matig bewijs voor neuromusculaire training (balans- en coördinatieoefeningen). Een meta-analyse vond ook dat balanstraining sportblessures in het algemeen vermindert.",
+   "doen": [
+    "Doe een paar keer per week balansoefeningen op één been.",
+    "Draag een brace of tape bij sporten met veel draaien en springen als je al vaker bent omgeslagen."
+   ],
+   "exercises": [
+    "Eenbenige balans"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Treatment and prevention of acute and recurrent ankle sprain: an overview of systematic reviews with meta-analysis",
+     "auteurs": "Doherty e.a.",
+     "jaar": 2017,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28053200/"
+    },
+    {
+     "titel": "The effectiveness of exercise interventions to prevent sports injuries: a systematic review and meta-analysis of randomised controlled trials",
+     "auteurs": "Lauersen e.a.",
+     "jaar": 2014,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24100287/"
+    }
+   ]
+  },
+  {
+   "id": "achillespees",
+   "theme": "pijn",
+   "q": "Ik heb pijn aan mijn achillespees. Welke oefeningen helpen?",
+   "alt": [
+    "achillespees pijn",
+    "achilles tendinopathie",
+    "pijn boven de hiel",
+    "hielpees"
+   ],
+   "tags": [
+    "achillespees",
+    "pees",
+    "pijn",
+    "kuit"
+   ],
+   "a": "Zware, langzame kuitoefeningen. In een RCT bij 58 mensen met langdurige klachten werkten twee programma's even goed: excentrische hielzakkingen en zware langzame kuitheffingen (3 keer per week, ongeveer 3 seconden omhoog en 3 omlaag). Het effect hield na een jaar nog stand. De zware langzame variant werd beter volgehouden (92% tegenover 78% van de trainingen). Doorgaan met hardlopen volgens een pijnmonitoringsmodel was net zo goed als rust.",
+   "doen": [
+    "Doe 3 keer per week zware, langzame kuitheffingen of hielzakkingen, 12 weken lang.",
+    "Pijn tot 5 op 10 is oké, als die de volgende ochtend weer weg is.",
+    "Geen verbetering na een paar maanden: ga naar een fysio."
+   ],
+   "exercises": [
+    "Excentrische hielzakking",
+    "Calf raise",
+    "Single leg deficit heel raise"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Heavy Slow Resistance Versus Eccentric Training as Treatment for Achilles Tendinopathy: A Randomized Controlled Trial",
+     "auteurs": "Beyer e.a.",
+     "jaar": 2015,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26018970/"
+    },
+    {
+     "titel": "Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study",
+     "auteurs": "Silbernagel e.a.",
+     "jaar": 2007,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17307888/"
+    }
+   ]
+  },
+  {
+   "id": "patellapees",
+   "theme": "pijn",
+   "q": "Ik heb pijn onder mijn knieschijf bij springen (jumper's knee). Wat helpt?",
+   "alt": [
+    "jumpers knee",
+    "patellapees",
+    "pijn onder knieschijf",
+    "kniepees pijn springen",
+    "patellar tendinopathie"
+   ],
+   "tags": [
+    "knie",
+    "pees",
+    "springen",
+    "patella"
+   ],
+   "a": "Oefentherapie die de pees stap voor stap zwaarder belast. In een Nederlandse RCT (Erasmus MC) werkte zo'n opbouwend programma beter dan alleen excentrische oefeningen. Het begon met statisch vasthouden en eindigde met springen. Na 24 weken was de score 28 punten verbeterd, tegenover 18. In een Deense RCT werkte zware langzame training (squats, leg press) op korte en lange termijn. Een injectie werkte alleen kort; daarna kwamen de klachten terug.",
+   "doen": [
+    "Begin met statische oefeningen zoals een wall sit.",
+    "Bouw op naar zware langzame beenoefeningen en pas daarna naar springen.",
+    "Liever geen injectie: die helpt alleen kort."
+   ],
+   "exercises": [
+    "Wall sit",
+    "Leg press",
+    "Hack squat"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Effectiveness of progressive tendon-loading exercise therapy in patients with patellar tendinopathy: a randomised clinical trial",
+     "auteurs": "Breda e.a.",
+     "jaar": 2021,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33219115/"
+    },
+    {
+     "titel": "Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy",
+     "auteurs": "Kongsgaard e.a.",
+     "jaar": 2009,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19793213/"
+    }
+   ]
+  },
+  {
+   "id": "knie-voorkant",
+   "theme": "pijn",
+   "q": "Ik heb pijn aan de voorkant van mijn knie bij traplopen, squatten of lang zitten. Wat helpt?",
+   "alt": [
+    "patellofemorale pijn",
+    "runners knee",
+    "pijn rond knieschijf",
+    "knie pijn trap",
+    "knie pijn bij squatten",
+    "kniepijn"
+   ],
+   "tags": [
+    "knie",
+    "pijn",
+    "voorkant",
+    "trap",
+    "squat"
+   ],
+   "a": "Oefentherapie die zowel de heup als de knie versterkt. Een internationale consensus uit 2018 raadt aan om oefeningen voor de heup en de knie te combineren, eventueel met steunzolen voor de korte termijn. Een meta-analyse vond sterk bewijs dat heupoefeningen samen met quadricepsoefeningen op korte termijn pijn verminderen en de functie verbeteren. Losse mobilisaties en apparaten als ultrageluid raadt de consensus af.",
+   "doen": [
+    "Doe 2 tot 3 keer per week heupoefeningen (abductie, buitenwaarts draaien) plus quadricepsoefeningen.",
+    "Kies een diepte en belasting die de pijn draaglijk houden, en bouw die langzaam op."
+   ],
+   "exercises": [
+    "Clamshell",
+    "Zijlig heupabductie",
+    "Side plank hip abduction",
+    "Leg extension",
+    "Wall sit"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "2018 Consensus statement on exercise therapy and physical interventions (orthoses, taping and manual therapy) to treat patellofemoral pain: recommendations from the 5th International Patellofemoral Pain Research Retreat, Gold Coast, Australia, 2017",
+     "auteurs": "Collins e.a.",
+     "jaar": 2018,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29925502/"
+    },
+    {
+     "titel": "Proximal muscle rehabilitation is effective for patellofemoral pain: a systematic review with meta-analysis",
+     "auteurs": "Lack e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26175019/"
+    }
+   ]
+  },
+  {
+   "id": "rugpijn-acuut",
+   "theme": "pijn",
+   "q": "Ik heb acuut rugpijn. Moet ik rusten?",
+   "alt": [
+    "rug verrekt",
+    "spit",
+    "acute lage rugpijn",
+    "rugpijn rust of bewegen",
+    "rug geblokkeerd"
+   ],
+   "tags": [
+    "rug",
+    "pijn",
+    "acuut",
+    "rust",
+    "bewegen"
+   ],
+   "a": "Nee, blijf in beweging. Een Cochrane-review vond dat het advies om actief te blijven iets meer pijnverlichting en een betere functie gaf dan bedrust. De Amerikaanse richtlijn stelt dat de meeste acute rugpijn vanzelf verbetert. Als eerste stap noemt die warmte, massage, acupunctuur of manipulatie, en eventueel een ontstekingsremmer.",
+   "doen": [
+    "Blijf zoveel mogelijk normaal bewegen en wandelen.",
+    "Warmte kan de pijn verzachten.",
+    "Let op de rode vlaggen (zie: wanneer naar de huisarts)."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Advice to rest in bed versus advice to stay active for acute low-back pain and sciatica",
+     "auteurs": "Dahm e.a. (Cochrane)",
+     "jaar": 2010,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20556780/"
+    },
+    {
+     "titel": "Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain: A Clinical Practice Guideline From the American College of Physicians",
+     "auteurs": "Qaseem e.a. (ACP)",
+     "jaar": 2017,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28192789/"
+    }
+   ]
+  },
+  {
+   "id": "rugpijn-chronisch",
+   "theme": "pijn",
+   "q": "Ik heb al langer rugpijn. Helpt trainen?",
+   "alt": [
+    "chronische rugpijn",
+    "langdurige lage rugpijn",
+    "rugpijn oefeningen",
+    "onderrug pijn trainen"
+   ],
+   "tags": [
+    "rug",
+    "pijn",
+    "chronisch",
+    "oefening",
+    "onderrug"
+   ],
+   "a": "Ja. Een Cochrane-review van 249 RCT's vond dat oefentherapie de pijn bij chronische lage rugpijn gemiddeld 15 punten op 100 verminderde ten opzichte van niets of gewone zorg; dat is een klinisch belangrijk verschil. De Amerikaanse richtlijn raadt oefeningen aan als eerste behandeling, vóór medicijnen.",
+   "doen": [
+    "Blijf trainen en kies oefeningen die je prettig vindt en volhoudt.",
+    "Bouw belasting op in stappen die je rug verdraagt."
+   ],
+   "exercises": [
+    "Romanian deadlift",
+    "Plank",
+    "Cat-cow"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Exercise therapy for chronic low back pain",
+     "auteurs": "Hayden e.a. (Cochrane)",
+     "jaar": 2021,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34580864/"
+    },
+    {
+     "titel": "Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain: A Clinical Practice Guideline From the American College of Physicians",
+     "auteurs": "Qaseem e.a. (ACP)",
+     "jaar": 2017,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28192789/"
+    }
+   ]
+  },
+  {
+   "id": "rug-scan",
+   "theme": "pijn",
+   "q": "Op mijn scan staat een versleten of uitpuilende tussenwervelschijf. Is dat de oorzaak van mijn pijn?",
+   "alt": [
+    "hernia op mri",
+    "slijtage rug",
+    "uitstulping tussenwervelschijf",
+    "scan rug afwijking",
+    "versleten rug"
+   ],
+   "tags": [
+    "scan",
+    "mri",
+    "hernia",
+    "slijtage",
+    "rug"
+   ],
+   "a": "Niet per se. Een systematische review van 3110 mensen zonder rugpijn vond dezelfde afwijkingen heel vaak:\n- slijtage van de tussenwervelschijf bij 37% van de twintigers en 96% van de tachtigers;\n- een uitpuilende schijf bij 30% van de twintigers.\n\nDit soort bevindingen horen grotendeels bij normaal ouder worden en hangen vaak niet samen met pijn.",
+   "doen": [
+    "Laat een scanverslag je niet bang maken om te bewegen; bespreek het met je huisarts of fysio."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Systematic literature review of imaging features of spinal degeneration in asymptomatic populations",
+     "auteurs": "Brinjikji e.a.",
+     "jaar": 2015,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25430861/"
+    }
+   ]
+  },
+  {
+   "id": "rugpijn-voorkomen",
+   "theme": "pijn",
+   "q": "Hoe voorkom ik rugpijn?",
+   "alt": [
+    "rugpijn voorkomen",
+    "sterke rug",
+    "rugklachten voorkomen",
+    "tiltechniek"
+   ],
+   "tags": [
+    "rug",
+    "voorkomen",
+    "pijn"
+   ],
+   "a": "Met oefenen. Een meta-analyse van 21 RCT's (30.850 mensen) vond dat oefeningen samen met uitleg het risico op een nieuwe episode rugpijn met 45% verlaagden. Alleen oefenen verlaagde het risico met 35%. Alleen uitleg, steunbanden en schoenzolen hielpen niet.",
+   "doen": [
+    "Blijf regelmatig trainen, ook als je rug nu goed is."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Prevention of Low Back Pain: A Systematic Review and Meta-analysis",
+     "auteurs": "Steffens e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26752509/"
+    }
+   ]
+  },
+  {
+   "id": "ronde-rug-tillen",
+   "theme": "pijn",
+   "q": "Is tillen met een ronde rug gevaarlijk?",
+   "alt": [
+    "ronde rug deadlift",
+    "rug krommen tillen",
+    "houding en rugpijn",
+    "slechte houding"
+   ],
+   "tags": [
+    "rug",
+    "houding",
+    "tillen",
+    "rond"
+   ],
+   "a": "Het bewijs is niet eenduidig. Een overzicht van 41 systematische reviews vond wel verbanden tussen houding, bukken, tillen en rugpijn, maar geen bewijs dat die houdingen de pijn veroorzaken. Krachtsporten hebben relatief weinig blessures: bodybuilding 0,24 tot 1 blessure per 1000 uur. De rug hoort wel bij de plekken die het vaakst geblesseerd raken, samen met schouder, knie, elleboog en pols.",
+   "doen": [
+    "Til met een techniek waarbij je het gewicht onder controle hebt.",
+    "Bouw zware lifts geleidelijk op; plotseling veel meer doen is riskanter dan een iets ronde rug."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "No consensus on causality of spine postures or physical exposure and low back pain: A systematic review of systematic reviews",
+     "auteurs": "Swain e.a.",
+     "jaar": 2020,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31451200/"
+    },
+    {
+     "titel": "The Epidemiology of Injuries Across the Weight-Training Sports",
+     "auteurs": "Keogh en Winwood",
+     "jaar": 2017,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27328853/"
+    }
+   ]
+  },
+  {
+   "id": "krachttraining-blessures",
+   "theme": "pijn",
+   "q": "Hoe groot is de kans op blessures bij krachttraining?",
+   "alt": [
+    "is krachttraining gevaarlijk",
+    "blessurerisico fitness",
+    "blessures gewichtheffen"
+   ],
+   "tags": [
+    "blessure",
+    "risico",
+    "krachttraining",
+    "gevaarlijk"
+   ],
+   "a": "Klein. Een systematische review vond bij bodybuilding 0,24 tot 1 blessure per 1000 uur training. Strongman (4,5 tot 6,1) en Highland Games (7,5) scoorden het hoogst. Meestal gaat het om verrekkingen en peesklachten van schouder, onderrug, knie, elleboog en pols.",
+   "doen": [
+    "Bouw gewichten geleidelijk op en neem pijn in schouder, elleboog of pols serieus voor het erger wordt."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Epidemiology of Injuries Across the Weight-Training Sports",
+     "auteurs": "Keogh en Winwood",
+     "jaar": 2017,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27328853/"
+    }
+   ]
+  },
+  {
+   "id": "schouderpijn",
+   "theme": "pijn",
+   "q": "Ik heb pijn in mijn schouder bij drukken of armheffen. Wat helpt?",
+   "alt": [
+    "schouder impingement",
+    "pijn schouder boven hoofd",
+    "schouderpijn bankdrukken",
+    "subacromiale pijn",
+    "rotator cuff"
+   ],
+   "tags": [
+    "schouder",
+    "pijn",
+    "drukken",
+    "heffen"
+   ],
+   "a": "Oefentherapie. Een meta-analyse vond dat oefeningen de pijn duidelijk beter verminderden dan geen oefeningen, en dat specifieke schouderoefeningen beter werkten dan algemene. In de grote Britse CSAW-studie werkte een operatie (subacromiale decompressie) niet beter dan een nep-operatie. Beide waren maar een klein beetje beter dan niets doen.",
+   "doen": [
+    "Doe specifieke schouderoefeningen, zoals buitenwaartse rotatie en face pulls, en bouw ze op.",
+    "Pas drukoefeningen tijdelijk aan (minder diep, andere grip) in plaats van helemaal te stoppen.",
+    "Wordt het niet beter, laat een fysio een specifiek programma maken."
+   ],
+   "exercises": [
+    "Cable external rotation",
+    "Face pull"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Effectiveness of conservative interventions including exercise, manual therapy and medical management in adults with shoulder impingement: a systematic review and meta-analysis of RCTs",
+     "auteurs": "Steuri e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28630217/"
+    },
+    {
+     "titel": "Arthroscopic subacromial decompression for subacromial shoulder pain (CSAW): a multicentre, pragmatic, parallel group, placebo-controlled, three-group, randomised surgical trial",
+     "auteurs": "Beard e.a.",
+     "jaar": 2018,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29169668/"
+    }
+   ]
+  },
+  {
+   "id": "tenniselleboog",
+   "theme": "pijn",
+   "q": "Ik heb pijn aan de buitenkant van mijn elleboog (tenniselleboog). Wat helpt?",
+   "alt": [
+    "tenniselleboog",
+    "pijn buitenkant elleboog",
+    "elleboog pijn bij grijpen",
+    "epicondylitis",
+    "muisarm"
+   ],
+   "tags": [
+    "elleboog",
+    "pijn",
+    "pols",
+    "grijpen"
+   ],
+   "a": "Geduld en oefeningen, geen injectie. In een RCT hielp fysiotherapie met oefeningen de eerste 6 weken beter dan afwachten. Na een jaar was bijna iedereen hersteld, ook de groep die afwachtte. Een corticosteroïd-injectie hielp kort, maar gaf na een jaar minder herstel (83% tegenover 96%) en veel meer terugval (54% tegenover 12%). Een excentrische polsoefening met een buigzame staaf (de Tyler twist) gaf in een kleine RCT een veel grotere verbetering.",
+   "doen": [
+    "Doe dagelijks de Tyler twist of excentrische polsstrekkingen.",
+    "Vermijd een injectie; die helpt alleen kort."
+   ],
+   "exercises": [
+    "Tyler twist"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial",
+     "auteurs": "Bisset e.a.",
+     "jaar": 2006,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17012266/"
+    },
+    {
+     "titel": "Effect of corticosteroid injection, physiotherapy, or both on clinical outcomes in patients with unilateral lateral epicondylalgia: a randomized controlled trial",
+     "auteurs": "Coombes e.a.",
+     "jaar": 2013,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23385272/"
+    },
+    {
+     "titel": "Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial",
+     "auteurs": "Tyler e.a.",
+     "jaar": 2010,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20579907/"
+    }
+   ]
+  },
+  {
+   "id": "nekpijn",
+   "theme": "pijn",
+   "q": "Helpen oefeningen tegen nekpijn?",
+   "alt": [
+    "nek pijn",
+    "stijve nek",
+    "nek en schouders gespannen",
+    "nekklachten"
+   ],
+   "tags": [
+    "nek",
+    "pijn",
+    "schouder",
+    "oefening"
+   ],
+   "a": "Bij langdurige nekpijn wel. Een Cochrane-review vond matig bewijs dat krachttraining van nek, schouders en armen de pijn matig tot sterk vermindert. Bij acute nekpijn is er geen bewijs voor of tegen oefeningen.",
+   "doen": [
+    "Train je nek-, schouder- en bovenrugspieren, bijvoorbeeld met shrugs, face pulls en rows."
+   ],
+   "exercises": [
+    "Face pull",
+    "Shrugs",
+    "Barbell row"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Exercises for mechanical neck disorders",
+     "auteurs": "Gross e.a. (Cochrane)",
+     "jaar": 2015,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25629215/"
+    }
+   ]
+  },
+  {
+   "id": "knieartrose",
+   "theme": "pijn",
+   "q": "Mag ik trainen met knieartrose?",
+   "alt": [
+    "artrose knie",
+    "slijtage knie",
+    "versleten knie sporten"
+   ],
+   "tags": [
+    "artrose",
+    "knie",
+    "slijtage"
+   ],
+   "a": "Ja, het helpt. Een Cochrane-review van 54 studies vond dat oefenen de pijn met 12 punten op 100 verminderde en de functie met 10 punten verbeterde. Dat is een matig effect, en het hield na de behandeling nog een paar maanden aan.",
+   "doen": [
+    "Blijf je benen trainen; kies oefeningen en een diepte die je knie verdraagt."
+   ],
+   "exercises": [
+    "Leg press",
+    "Leg extension"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Exercise for osteoarthritis of the knee: a Cochrane systematic review",
+     "auteurs": "Fransen e.a. (Cochrane)",
+     "jaar": 2015,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26405113/"
+    }
+   ]
+  },
+  {
+   "id": "hardlopen-knieen",
+   "theme": "pijn",
+   "q": "Is hardlopen slecht voor mijn knieën?",
+   "alt": [
+    "hardlopen slijtage",
+    "rennen en knieen",
+    "lopen artrose"
+   ],
+   "tags": [
+    "loop",
+    "hardlopen",
+    "knie",
+    "artrose"
+   ],
+   "a": "Voor recreatieve lopers niet. Een meta-analyse van meer dan 100.000 mensen vond heup- of knieartrose bij 3,5% van de recreatieve lopers, 10,2% van de niet-lopers en 13,3% van de wedstrijdlopers. Oorzaak en gevolg konden niet worden vastgesteld.",
+   "doen": [
+    "Recreatief hardlopen is geen reden tot zorg voor je knieën."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Association of Recreational and Competitive Running With Hip and Knee Osteoarthritis: A Systematic Review and Meta-analysis",
+     "auteurs": "Alentorn-Geli e.a.",
+     "jaar": 2017,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28504066/"
+    }
+   ]
+  },
+  {
+   "id": "hielpijn",
+   "theme": "pijn",
+   "q": "Ik heb pijn onder mijn hiel bij de eerste stappen 's ochtends (fasciitis plantaris). Wat helpt?",
+   "alt": [
+    "fasciitis plantaris",
+    "hielspoor",
+    "pijn onder de voet",
+    "hielpijn ochtend"
+   ],
+   "tags": [
+    "hiel",
+    "voet",
+    "pijn",
+    "fasciitis"
+   ],
+   "a": "In een RCT werkten zware kuitheffingen op één been met een opgerolde handdoek onder de tenen, om de dag, na 3 maanden beter dan dagelijks stretchen van de voetzool (29 punten beter op een voetfunctieschaal). Na een jaar was het verschil weg. Beide groepen droegen ook steunzolen.",
+   "doen": [
+    "Doe om de dag zware eenbenige kuitheffingen met een handdoek onder je tenen."
+   ],
+   "exercises": [
+    "Hielheffing met handdoek"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "High-load strength training improves outcome in patients with plantar fasciitis: A randomized controlled trial with 12-month follow-up",
+     "auteurs": "Rathleff e.a.",
+     "jaar": 2015,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25145882/"
+    }
+   ]
+  },
+  {
+   "id": "ijs-blessure",
+   "theme": "pijn",
+   "q": "Moet ik ijs op een blessure leggen?",
+   "alt": [
+    "ijs op blessure",
+    "koelen",
+    "rice",
+    "ijs op verstuiking"
+   ],
+   "tags": [
+    "ijs",
+    "koud",
+    "blessure",
+    "koelen"
+   ],
+   "a": "Het bewijs is zwak. Een systematische review van 22 RCT's (gemiddelde kwaliteit 3,4 op 10) vond alleen beperkt bewijs dat ijs samen met oefeningen helpt na een enkelverstuiking of operatie. Voor de beste manier of duur van koelen is geen bewijs.",
+   "doen": [
+    "IJs mag voor de pijn, maar vervangt geen bewegen en oefenen."
+   ],
+   "bewijs": "beperkt",
+   "bronnen": [
+    {
+     "titel": "The use of ice in the treatment of acute soft-tissue injury: a systematic review of randomized controlled trials",
+     "auteurs": "Bleakley e.a.",
+     "jaar": 2004,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/14754753/"
+    }
+   ]
+  },
+  {
+   "id": "eiwit-hoeveel",
+   "theme": "voeding",
+   "q": "Hoeveel eiwit heb ik per dag nodig?",
+   "alt": [
+    "hoeveel proteine",
+    "eiwit per kilo",
+    "gram eiwit per dag",
+    "eiwitbehoefte"
+   ],
+   "tags": [
+    "eiwit",
+    "gram",
+    "kilo",
+    "dag"
+   ],
+   "a": "Een meta-analyse van 49 studies vond dat extra eiwit meer spier en kracht geeft bij krachttraining, maar boven ongeveer 1,6 gram per kilo lichaamsgewicht per dag kwam er geen extra spiermassa bij. De ISSN noemt 1,4 tot 2,0 g/kg per dag genoeg voor de meeste sporters. Tijdens afvallen is meer nodig.",
+   "doen": [
+    "Mik op ongeveer 1,6 g eiwit per kilo lichaamsgewicht per dag (bij 80 kg: ~130 g).",
+    "Ga je afvallen, dan mag het meer zijn (zie: eiwit tijdens afvallen)."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults",
+     "auteurs": "Morton e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+    },
+    {
+     "titel": "International Society of Sports Nutrition Position Stand: protein and exercise",
+     "auteurs": "Jäger e.a. (ISSN)",
+     "jaar": 2017,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/"
+    }
+   ]
+  },
+  {
+   "id": "eiwit-per-maaltijd",
+   "theme": "voeding",
+   "q": "Hoeveel eiwit kan mijn lichaam per maaltijd opnemen?",
+   "alt": [
+    "maximaal 30 gram eiwit",
+    "eiwit per maaltijd",
+    "te veel eiwit in een keer"
+   ],
+   "tags": [
+    "eiwit",
+    "maaltijd",
+    "keer",
+    "gram"
+   ],
+   "a": "Meer dan vaak wordt gedacht. In een RCT met isotopen gaf 100 gram eiwit na de training een grotere en langere (meer dan 12 uur) aanmaak van spiereiwit dan 25 gram; het extra eiwit werd niet simpelweg verbrand. Het idee dat je maar 20 tot 30 gram per keer kunt gebruiken klopt dus niet.",
+   "doen": [
+    "Verdeel je eiwit zoals het jou uitkomt; het totaal per dag telt het meest."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The anabolic response to protein ingestion during recovery from exercise has no upper limit in magnitude and duration in vivo in humans",
+     "auteurs": "Trommelen e.a.",
+     "jaar": 2023,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38118410/"
+    },
+    {
+     "titel": "A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults",
+     "auteurs": "Morton e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/"
+    }
+   ]
+  },
+  {
+   "id": "eiwit-timing",
+   "theme": "voeding",
+   "q": "Moet ik direct na de training eiwit nemen (anabool venster)?",
+   "alt": [
+    "anabool venster",
+    "eiwitshake direct na training",
+    "wanneer eiwit innemen",
+    "timing eiwit"
+   ],
+   "tags": [
+    "eiwit",
+    "timing",
+    "na",
+    "training",
+    "venster"
+   ],
+   "a": "Nee. Een meta-analyse vond geen effect van eiwit rond de training zodra de totale eiwitinname per dag werd meegenomen. Het totaal per dag bepaalde het effect op spiergroei.",
+   "doen": [
+    "Zorg vooral dat je over de dag genoeg eiwit binnenkrijgt; het exacte moment maakt weinig uit."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "The effect of protein timing on muscle strength and hypertrophy: a meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2013,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24299050/"
+    }
+   ]
+  },
+  {
+   "id": "eiwit-voor-slapen",
+   "theme": "voeding",
+   "q": "Helpt eiwit voor het slapengaan?",
+   "alt": [
+    "kwark voor het slapen",
+    "caseine voor slapen",
+    "eiwit avond"
+   ],
+   "tags": [
+    "eiwit",
+    "slaap",
+    "avond",
+    "kwark"
+   ],
+   "a": "In een Maastrichtse RCT kregen jonge mannen die 12 weken trainden elke avond 27,5 gram eiwit of een placebo. De eiwitgroep werd sterker (totale kracht +164 tegenover +130 kg) en de quadriceps groeide meer (+8,4 tegenover +4,8 cm²). Waarschijnlijk komt dat vooral doordat ze meer eiwit per dag kregen.",
+   "doen": [
+    "Kwark of een caseïneshake voor het slapen is een makkelijke manier om aan je eiwit te komen."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Protein Ingestion before Sleep Increases Muscle Mass and Strength Gains during Prolonged Resistance-Type Exercise Training in Healthy Young Men",
+     "auteurs": "Snijders e.a.",
+     "jaar": 2015,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25926415/"
+    }
+   ]
+  },
+  {
+   "id": "plantaardig-eiwit",
+   "theme": "voeding",
+   "q": "Is plantaardig eiwit even goed als whey of vlees?",
+   "alt": [
+    "soja eiwit",
+    "vegan eiwit",
+    "plantaardig eiwit spiergroei",
+    "vegetarisch spieren"
+   ],
+   "tags": [
+    "plantaardig",
+    "soja",
+    "vegan",
+    "eiwit"
+   ],
+   "a": "Een meta-analyse van 9 studies vond geen verschil in kracht of spiermassa tussen soja-eiwit en dierlijk eiwit (whey, rund, melk) bij krachttraining.",
+   "doen": [
+    "Plantaardig eten is geen probleem voor spiergroei, zolang je genoeg eiwit per dag haalt."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "No Difference Between the Effects of Supplementing With Soy Protein Versus Animal Protein on Gains in Muscle Mass and Strength in Response to Resistance Exercise",
+     "auteurs": "Messina e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29722584/"
+    }
+   ]
+  },
+  {
+   "id": "creatine",
+   "theme": "voeding",
+   "q": "Werkt creatine en is het veilig?",
+   "alt": [
+    "creatine",
+    "kreatine",
+    "creatine monohydraat",
+    "creatine bijwerkingen",
+    "creatine nieren"
+   ],
+   "tags": [
+    "creatine",
+    "supplement",
+    "veilig"
+   ],
+   "a": "Ja. Volgens het standpunt van de ISSN verhoogt creatine de hoeveelheid creatine in je spieren en verbetert het de prestatie bij korte, zware inspanningen. Daardoor boek je ook meer trainingsresultaat. Het is een van de best onderzochte supplementen. Bij gezonde mensen zijn in de aanbevolen dosis geen schadelijke effecten gevonden, ook bij langdurig gebruik niet.",
+   "doen": [
+    "Neem 3 tot 5 gram creatine monohydraat per dag; een laadfase is niet nodig.",
+    "Heb je een nierziekte, overleg dan eerst met je arts."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "International Society of Sports Nutrition position stand: safety and efficacy of creatine supplementation in exercise, sport, and medicine",
+     "auteurs": "Kreider e.a. (ISSN)",
+     "jaar": 2017,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28615996/"
+    }
+   ]
+  },
+  {
+   "id": "cafeine-prestatie",
+   "theme": "voeding",
+   "q": "Helpt cafeïne (koffie, pre-workout) bij het trainen?",
+   "alt": [
+    "koffie voor training",
+    "pre workout werkt het",
+    "cafeine kracht",
+    "energy drink sporten"
+   ],
+   "tags": [
+    "cafeine",
+    "koffie",
+    "prestatie"
+   ],
+   "a": "Ja. Volgens de ISSN geeft cafeïne kleine tot matige verbeteringen in kracht, spieruithoudingsvermogen, snelheid, springen en sprinten. Duursport profiteert het meest. Een overzicht van 21 meta-analyses bevestigt dit. De werkzame dosis is 3 tot 6 mg per kilo lichaamsgewicht, meestal 60 minuten voor de inspanning.",
+   "doen": [
+    "Bij 80 kg: 240 tot 480 mg (2 à 4 koppen koffie) ongeveer een uur voor je training.",
+    "Train je 's avonds, denk dan aan je slaap (zie: koffie en slaap)."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "International society of sports nutrition position stand: caffeine and exercise performance",
+     "auteurs": "Guest e.a. (ISSN)",
+     "jaar": 2021,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33388079/"
+    },
+    {
+     "titel": "Wake up and smell the coffee: caffeine supplementation and exercise performance-an umbrella review of 21 published meta-analyses",
+     "auteurs": "Grgic e.a.",
+     "jaar": 2020,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30926628/"
+    }
+   ]
+  },
+  {
+   "id": "afvallen-spieren-houden",
+   "theme": "voeding",
+   "q": "Kan ik afvallen en tegelijk spieren opbouwen?",
+   "alt": [
+    "recompositie",
+    "droogtrainen",
+    "vet verliezen spieren houden",
+    "cutten",
+    "afvallen zonder spierverlies"
+   ],
+   "tags": [
+    "afvallen",
+    "vet",
+    "spier",
+    "tekort",
+    "calorie"
+   ],
+   "a": "Deels. Een meta-analyse vond dat een energietekort de spiergroei remt, maar de krachtwinst niet. Bij een tekort van ongeveer 500 kcal per dag stopte de spiergroei gemiddeld. In een RCT bij sporters behielden mensen die langzaam afvielen (0,7% van hun gewicht per week) niet alleen hun spieren, ze bouwden er zelfs 2,1% bij. Wie twee keer zo snel afviel, bouwde niets op.",
+   "doen": [
+    "Val langzaam af: ongeveer 0,5 tot 0,7% van je gewicht per week.",
+    "Houd je tekort kleiner dan ~500 kcal per dag en blijf zwaar trainen."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Energy deficiency impairs resistance training gains in lean mass but not strength: A meta-analysis and meta-regression",
+     "auteurs": "Murphy en Koehler",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34623696/"
+    },
+    {
+     "titel": "Effect of two different weight-loss rates on body composition and strength and power-related performance in elite athletes",
+     "auteurs": "Garthe e.a.",
+     "jaar": 2011,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21558571/"
+    }
+   ]
+  },
+  {
+   "id": "eiwit-afvallen",
+   "theme": "voeding",
+   "q": "Heb ik meer eiwit nodig als ik afval?",
+   "alt": [
+    "eiwit tijdens cut",
+    "eiwit bij afvallen",
+    "eiwit droogtrainen"
+   ],
+   "tags": [
+    "eiwit",
+    "afvallen",
+    "tekort"
+   ],
+   "a": "Ja. Een systematische review bij slanke, getrainde krachtsporters kwam uit op 2,3 tot 3,1 gram eiwit per kilo vetvrije massa, meer naarmate je slanker bent en je tekort groter is. De ISSN noemt ook hogere inname tijdens afvallen.",
+   "doen": [
+    "Verhoog je eiwit tijdens afvallen naar ruwweg 2,3 tot 3,1 g per kg vetvrije massa."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "A systematic review of dietary protein during caloric restriction in resistance trained lean athletes: a case for higher intakes",
+     "auteurs": "Helms e.a.",
+     "jaar": 2014,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24092765/"
+    },
+    {
+     "titel": "International Society of Sports Nutrition Position Stand: protein and exercise",
+     "auteurs": "Jäger e.a. (ISSN)",
+     "jaar": 2017,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/"
+    }
+   ]
+  },
+  {
+   "id": "koolhydraten-kracht",
+   "theme": "voeding",
+   "q": "Heb ik koolhydraten nodig voor krachttraining?",
+   "alt": [
+    "koolhydraatarm trainen",
+    "keto krachttraining",
+    "koolhydraten voor training",
+    "low carb sporten"
+   ],
+   "tags": [
+    "koolhydraat",
+    "keto",
+    "kracht"
+   ],
+   "a": "Voor gewone krachttraining weinig. Een systematische review van 49 studies vond dat meer koolhydraten de prestatie meestal niet verbeterde bij trainingen tot ongeveer 10 sets per spiergroep, zolang je niet nuchter traint. Bij veel volume of twee keer trainen op een dag kunnen ze wel helpen.",
+   "doen": [
+    "Kies je koolhydraten naar smaak; bij lange of dubbele trainingen helpen ze wel."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Effect of Carbohydrate Intake on Strength and Resistance Training Performance: A Systematic Review",
+     "auteurs": "Henselmans e.a.",
+     "jaar": 2022,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35215506/"
+    }
+   ]
+  },
+  {
+   "id": "maaltijdfrequentie",
+   "theme": "voeding",
+   "q": "Moet ik vaak kleine maaltijden eten om af te vallen of spier op te bouwen?",
+   "alt": [
+    "zes keer per dag eten",
+    "vaak eten metabolisme",
+    "intermittent fasting",
+    "aantal maaltijden"
+   ],
+   "tags": [
+    "maaltijd",
+    "frequentie",
+    "eten",
+    "metabolisme"
+   ],
+   "a": "Nee. Een meta-analyse van 15 studies leek eerst een klein voordeel van vaker eten te vinden, maar dat kwam door één enkele studie. Zonder die studie was er geen effect op vet- of spiermassa.",
+   "doen": [
+    "Eet zo vaak als je prettig vindt; het totaal telt."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of meal frequency on weight loss and body composition: a meta-analysis",
+     "auteurs": "Schoenfeld e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26024494/"
+    }
+   ]
+  },
+  {
+   "id": "vitamine-d",
+   "theme": "voeding",
+   "q": "Heeft vitamine D zin voor mijn spieren?",
+   "alt": [
+    "vitamine d spierkracht",
+    "vitamine d supplement",
+    "zonlicht spieren"
+   ],
+   "tags": [
+    "vitamine",
+    "supplement",
+    "kracht"
+   ],
+   "a": "Een beetje. Een meta-analyse van RCT's vond een klein positief effect van vitamine D op spierkracht, maar niet op spiermassa of snelkracht. Het effect was groter bij mensen met een tekort en bij ouderen.",
+   "doen": [
+    "Zinvol als je weinig buiten komt of een tekort hebt; geen wondermiddel voor spiergroei."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The effects of vitamin D on skeletal muscle strength, muscle mass, and muscle power: a systematic review and meta-analysis of randomized controlled trials",
+     "auteurs": "Beaudart e.a.",
+     "jaar": 2014,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25033068/"
+    }
+   ]
+  },
+  {
+   "id": "drinken",
+   "theme": "voeding",
+   "q": "Hoeveel moet ik drinken tijdens het sporten?",
+   "alt": [
+    "water drinken sporten",
+    "uitdroging",
+    "hoeveel water",
+    "dorst tijdens training"
+   ],
+   "tags": [
+    "vocht",
+    "water",
+    "drinken",
+    "uitdroging"
+   ],
+   "a": "Volgens het ACSM-standpunt moet je voorkomen dat je meer dan 2% van je lichaamsgewicht aan vocht verliest, want dan gaat je prestatie achteruit. Zweetverlies verschilt sterk per persoon. Weeg jezelf voor en na een lange training; elke kilo verschil is ongeveer een liter vocht.",
+   "doen": [
+    "Bij een gewone krachttraining: drink op dorst.",
+    "Bij lange of warme trainingen: weeg je voor en na, en drink het verschil bij."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "American College of Sports Medicine position stand. Exercise and fluid replacement",
+     "auteurs": "ACSM (Sawka e.a.)",
+     "jaar": 2007,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17277604/"
+    }
+   ]
+  },
+  {
+   "id": "beweegrichtlijn",
+   "theme": "cardio",
+   "q": "Hoeveel moet ik bewegen om gezond te blijven?",
+   "alt": [
+    "beweegrichtlijn",
+    "hoeveel sporten per week",
+    "wat is genoeg bewegen",
+    "who richtlijn"
+   ],
+   "tags": [
+    "bewegen",
+    "week",
+    "gezond",
+    "richtlijn"
+   ],
+   "a": "Volgens de WHO-richtlijn: 150 tot 300 minuten matig intensief of 75 tot 150 minuten intensief bewegen per week, plus spierversterkende activiteiten. De Nederlandse Beweegrichtlijnen (Gezondheidsraad) zeggen hetzelfde en voegen toe: elke extra beweging helpt, en zit niet te veel. Een meta-analyse vond de grootste gezondheidswinst bij 30 tot 60 minuten krachttraining per week.",
+   "doen": [
+    "Minstens 150 minuten per week bewegen plus 2 keer per week kracht."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "World Health Organization 2020 guidelines on physical activity and sedentary behaviour",
+     "auteurs": "Bull e.a. (WHO)",
+     "jaar": 2020,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33239350/"
+    },
+    {
+     "titel": "The 2017 Dutch Physical Activity Guidelines",
+     "auteurs": "Weggemans e.a. (Gezondheidsraad)",
+     "jaar": 2018,
+     "soort": "richtlijn",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29940977/"
+    },
+    {
+     "titel": "Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies",
+     "auteurs": "Momma e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35228201/"
+    }
+   ]
+  },
+  {
+   "id": "cardio-en-kracht",
+   "theme": "cardio",
+   "q": "Kost cardio mij spiergroei of kracht?",
+   "alt": [
+    "interferentie effect",
+    "cardio en spieropbouw",
+    "hardlopen en krachttraining combineren",
+    "concurrent training"
+   ],
+   "tags": [
+    "conditie",
+    "cardio",
+    "kracht",
+    "spiergroei",
+    "combineren"
+   ],
+   "a": "Nauwelijks. Een meta-analyse van 43 studies vond geen effect van cardio erbij op spiergroei of maximale kracht, wel op explosieve kracht, vooral als beide in dezelfde training zaten. Een eerdere meta-analyse vond dat hardlopen meer interfereerde dan fietsen, en dat vaker en langer duurtraining meer kostte.",
+   "doen": [
+    "Doe gerust cardio naast je krachttraining.",
+    "Train je explosiviteit, zet dan minstens 3 uur tussen cardio en je spring- of sprinttraining.",
+    "Wil je de beenspieren sparen: fietsen interfereert minder dan hardlopen."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function: An Updated Systematic Review and Meta-Analysis",
+     "auteurs": "Schumann e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34757594/"
+    },
+    {
+     "titel": "Concurrent training: a meta-analysis examining interference of aerobic and resistance exercises",
+     "auteurs": "Wilson e.a.",
+     "jaar": 2012,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22002517/"
+    }
+   ]
+  },
+  {
+   "id": "cardio-volgorde",
+   "theme": "cardio",
+   "q": "Moet ik eerst kracht of eerst cardio doen?",
+   "alt": [
+    "eerst cardio of eerst kracht",
+    "volgorde cardio kracht",
+    "cardio na krachttraining"
+   ],
+   "tags": [
+    "volgorde",
+    "conditie",
+    "cardio",
+    "kracht",
+    "eerst"
+   ],
+   "a": "Voor kracht in je benen: eerst kracht. Een meta-analyse vond 6,9% meer dynamische beenkracht als je eerst krachttraining deed en daarna cardio. Voor spiergroei, conditie en vetpercentage maakte de volgorde niet uit.",
+   "doen": [
+    "Doe kracht eerst als sterker worden je doel is."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The Role of Intra-Session Exercise Sequence in the Interference Effect: A Systematic Review with Meta-Analysis",
+     "auteurs": "Eddens e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28917030/"
+    }
+   ]
+  },
+  {
+   "id": "hiit-conditie",
+   "theme": "cardio",
+   "q": "Wat is beter voor mijn conditie: intervaltraining of rustige duurtraining?",
+   "alt": [
+    "hiit of duurtraining",
+    "vo2max verbeteren",
+    "zone 2",
+    "conditie opbouwen",
+    "intervallen"
+   ],
+   "tags": [
+    "conditie",
+    "hiit",
+    "interval",
+    "duur",
+    "vo2max"
+   ],
+   "a": "Beide werken. Een meta-analyse vond dat duurtraining de VO2max met gemiddeld 4,9 ml/kg/min verhoogde en intervaltraining met 5,5, met iets meer winst voor intervallen bij mensen met een lagere conditie en bij langere programma's.",
+   "doen": [
+    "Kies wat je volhoudt; intervallen leveren per minuut iets meer op."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effectiveness of High-Intensity Interval Training (HIT) and Continuous Endurance Training for VO2max Improvements: A Systematic Review and Meta-Analysis of Controlled Trials",
+     "auteurs": "Milanović e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26243014/"
+    }
+   ]
+  },
+  {
+   "id": "conditie-gezondheid",
+   "theme": "cardio",
+   "q": "Hoe belangrijk is conditie voor mijn gezondheid?",
+   "alt": [
+    "vo2max en levensduur",
+    "conditie en sterfte",
+    "waarom cardio"
+   ],
+   "tags": [
+    "conditie",
+    "gezondheid",
+    "sterfte",
+    "vo2max"
+   ],
+   "a": "Heel belangrijk. Een meta-analyse van 33 studies vond dat een betere conditie samenhangt met een lagere kans op overlijden en hart- en vaatziekten. Mensen onder de 7,9 MET (een bescheiden conditie) hadden duidelijk meer risico dan mensen daarboven.",
+   "doen": [
+    "Doe naast krachttraining ook iets voor je conditie."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis",
+     "auteurs": "Kodama e.a.",
+     "jaar": 2009,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19454641/"
+    }
+   ]
+  },
+  {
+   "id": "hardlopers-kracht",
+   "theme": "cardio",
+   "q": "Word ik een betere hardloper van krachttraining?",
+   "alt": [
+    "krachttraining voor lopers",
+    "loopeconomie",
+    "hardlopen sneller door kracht"
+   ],
+   "tags": [
+    "loop",
+    "hardlopen",
+    "kracht",
+    "economie"
+   ],
+   "a": "Ja. Een meta-analyse bij goed getrainde midden- en langeafstandslopers vond een groot effect op de loopeconomie (hoeveel energie het lopen kost). De programma's duurden 8 tot 12 weken, 2 tot 3 keer per week, en bestonden uit krachtoefeningen voor de benen plus sprongen en korte sprints.",
+   "doen": [
+    "Doe als loper 2 keer per week beenkracht plus wat sprongen."
+   ],
+   "exercises": [
+    "Bulgarian split squat",
+    "Calf raise",
+    "Pogo hops"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effects of Strength Training on Running Economy in Highly Trained Runners: A Systematic Review With Meta-Analysis of Controlled Trials",
+     "auteurs": "Balsalobre-Fernández e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26694507/"
+    }
+   ]
+  },
+  {
+   "id": "stappen",
+   "theme": "cardio",
+   "q": "Hoeveel stappen per dag heb ik nodig?",
+   "alt": [
+    "10000 stappen",
+    "stappen per dag",
+    "wandelen gezondheid"
+   ],
+   "tags": [
+    "stap",
+    "wandelen",
+    "dag"
+   ],
+   "a": "Een meta-analyse van 15 cohorten (47.471 volwassenen) vond dat meer stappen samengaan met een lagere sterftekans. Het voordeel vlakte af rond 6000 tot 8000 stappen bij mensen boven de 60, en rond 8000 tot 10.000 bij jongere volwassenen.",
+   "doen": [
+    "Onder de 60: mik op 8000 tot 10.000 stappen per dag."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Daily steps and all-cause mortality: a meta-analysis of 15 international cohorts",
+     "auteurs": "Paluch e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35247352/"
+    }
+   ]
+  },
+  {
+   "id": "zitten",
+   "theme": "cardio",
+   "q": "Is veel zitten slecht, ook als ik train?",
+   "alt": [
+    "zitten ongezond",
+    "kantoorbaan en sporten",
+    "lang zitten"
+   ],
+   "tags": [
+    "zitten",
+    "bewegen",
+    "gezond"
+   ],
+   "a": "Een meta-analyse van meer dan een miljoen mensen vond dat veel zitten (meer dan 8 uur per dag) samengaat met een hogere sterftekans. Maar bij de meest actieve groep (ongeveer 60 tot 75 minuten matig bewegen per dag) was dat verband weg.",
+   "doen": [
+    "Zit je veel, beweeg dan extra: wandelen, fietsen, trap nemen."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women",
+     "auteurs": "Ekelund e.a.",
+     "jaar": 2016,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27475271/"
+    }
+   ]
+  },
+  {
+   "id": "bloeddruk",
+   "theme": "cardio",
+   "q": "Welke training verlaagt mijn bloeddruk het meest?",
+   "alt": [
+    "hoge bloeddruk sporten",
+    "bloeddruk verlagen",
+    "isometrische training bloeddruk",
+    "wall sit bloeddruk"
+   ],
+   "tags": [
+    "bloeddruk",
+    "isometrisch",
+    "hart"
+   ],
+   "a": "Een netwerk-meta-analyse van 270 RCT's vond dat alle soorten training de bloeddruk verlagen. Isometrische training (statisch vasthouden, bijvoorbeeld een wall sit of handknijper) werkte het best: −8,2/−4,0 mmHg. Duurtraining gaf −4,5/−2,5 en krachttraining −4,6/−3,0.",
+   "doen": [
+    "Heb je een hoge bloeddruk, voeg dan een paar keer per week isometrische oefeningen toe, zoals de wall sit."
+   ],
+   "exercises": [
+    "Wall sit"
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Exercise training and resting blood pressure: a large-scale pairwise and network meta-analysis of randomised controlled trials",
+     "auteurs": "Edwards e.a.",
+     "jaar": 2023,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37491419/"
+    }
+   ]
+  },
+  {
+   "id": "stemming",
+   "theme": "cardio",
+   "q": "Helpt sporten tegen somberheid, depressie of stress?",
+   "alt": [
+    "depressie sporten",
+    "angst en sport",
+    "stress verminderen",
+    "mentale gezondheid sport",
+    "somber"
+   ],
+   "tags": [
+    "stemming",
+    "depressie",
+    "stress",
+    "angst"
+   ],
+   "a": "Ja. Een netwerk-meta-analyse van 218 studies vond matige verbeteringen bij depressie door wandelen of joggen, yoga en krachttraining. Het effect was groter naarmate de training intensiever was. Een overzicht van 97 reviews vond ook een effect op angst en stress.",
+   "doen": [
+    "Krachttraining telt ook als medicijn voor je hoofd; intensiever werkt beter.",
+    "Bij depressie: sporten helpt, maar zoek ook hulp bij je huisarts."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Effect of exercise for depression: systematic review and network meta-analysis of randomised controlled trials",
+     "auteurs": "Noetel e.a.",
+     "jaar": 2024,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38355154/"
+    },
+    {
+     "titel": "Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews",
+     "auteurs": "Singh e.a.",
+     "jaar": 2023,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36796860/"
+    }
+   ]
+  },
+  {
+   "id": "kracht-levensduur",
+   "theme": "lichaam",
+   "q": "Leef ik langer als ik sterk ben?",
+   "alt": [
+    "kracht en sterfte",
+    "spierkracht gezondheid",
+    "waarom krachttraining gezond"
+   ],
+   "tags": [
+    "kracht",
+    "gezondheid",
+    "sterfte",
+    "leven"
+   ],
+   "a": "Er is een duidelijk verband. Een meta-analyse vond dat sterkere mensen, in boven- en onderlichaam, een lagere kans op overlijden hebben, ongeacht leeftijd. Een andere meta-analyse vond 10 tot 17% lagere sterfte en minder hart- en vaatziekten, kanker en diabetes bij mensen die aan krachttraining doen. Het meeste voordeel lag rond 30 tot 60 minuten per week.",
+   "doen": [
+    "Blijf je leven lang krachttrainen, ook als je doel verandert."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Muscular Strength as a Predictor of All-Cause Mortality in an Apparently Healthy Population: A Systematic Review and Meta-Analysis of Data From Approximately 2 Million Men and Women",
+     "auteurs": "García-Hermoso e.a.",
+     "jaar": 2018,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29425700/"
+    },
+    {
+     "titel": "Muscle-strengthening activities are associated with lower risk and mortality in major non-communicable diseases: a systematic review and meta-analysis of cohort studies",
+     "auteurs": "Momma e.a.",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35228201/"
+    }
+   ]
+  },
+  {
+   "id": "ouder-worden",
+   "theme": "lichaam",
+   "q": "Heeft krachttraining zin als ik ouder word?",
+   "alt": [
+    "ouderen krachttraining",
+    "spierverlies ouder worden",
+    "sarcopenie",
+    "op latere leeftijd spieren"
+   ],
+   "tags": [
+    "leeftijd",
+    "ouder",
+    "spierverlies"
+   ],
+   "a": "Ja. Meta-analyses bij ouderen vonden krachtwinst van 24 tot 33% en gemiddeld 1,1 kg extra spiermassa, vooral bij zwaardere en omvangrijkere programma's. De Europese consensus over sarcopenie (spierverlies bij ouder worden) gebruikt spierkracht als eerste maatstaf.",
+   "doen": [
+    "Train op elke leeftijd; zwaarder werkt ook bij ouderen beter."
+   ],
+   "bewijs": "sterk",
+   "bronnen": [
+    {
+     "titel": "Resistance exercise for muscular strength in older adults: a meta-analysis",
+     "auteurs": "Peterson e.a.",
+     "jaar": 2010,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20385254/"
+    },
+    {
+     "titel": "Influence of resistance exercise on lean body mass in aging adults: a meta-analysis",
+     "auteurs": "Peterson e.a.",
+     "jaar": 2011,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20543750/"
+    },
+    {
+     "titel": "Sarcopenia: revised European consensus on definition and diagnosis",
+     "auteurs": "Cruz-Jentoft e.a. (EWGSOP2)",
+     "jaar": 2019,
+     "soort": "standpunt",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31081853/"
+    }
+   ]
+  },
+  {
+   "id": "botten",
+   "theme": "lichaam",
+   "q": "Worden mijn botten sterker van krachttraining?",
+   "alt": [
+    "botdichtheid",
+    "osteoporose sporten",
+    "sterke botten",
+    "botontkalking"
+   ],
+   "tags": [
+    "bot",
+    "dichtheid",
+    "osteoporose"
+   ],
+   "a": "Ja, vooral van zwaar en stotend belasten. In de LIFTMOR-RCT deden vrouwen met een lage botdichtheid 8 maanden twee keer per week zware krachttraining (5×5 op meer dan 85% van hun max) plus sprongoefeningen. Hun botdichtheid in de onderrug steeg met 2,9%, terwijl die in de controlegroep daalde met 1,2%. Er was maar één lichte blessure.",
+   "doen": [
+    "Zware lifts en sprongen zijn goed voor je botten."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "High-Intensity Resistance and Impact Training Improves Bone Mineral Density and Physical Function in Postmenopausal Women With Osteopenia and Osteoporosis: The LIFTMOR Randomized Controlled Trial",
+     "auteurs": "Watson e.a.",
+     "jaar": 2018,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28975661/"
+    }
+   ]
+  },
+  {
+   "id": "pezen",
+   "theme": "lichaam",
+   "q": "Worden mijn pezen ook sterker van training?",
+   "alt": [
+    "pezen sterker",
+    "peesaanpassing",
+    "hoe lang duurt het voor pezen sterker zijn"
+   ],
+   "tags": [
+    "pees",
+    "sterker",
+    "aanpassing"
+   ],
+   "a": "Ja, maar ze hebben zware belasting en tijd nodig. Een meta-analyse vond dat pezen stijver en sterker werden door training, vooral bij hoge intensiteit. Programma's van 12 weken of langer leken meer effect te hebben. Het soort spiercontractie maakte niet uit.",
+   "doen": [
+    "Bouw explosieve training (sprongen, sprints) geleidelijk op; pezen passen zich trager aan dan spieren.",
+    "Gebruik ook zware gewichten, niet alleen licht werk."
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "Human tendon adaptation in response to mechanical loading: a systematic review and meta-analysis of exercise intervention studies on healthy adults",
+     "auteurs": "Bohm e.a.",
+     "jaar": 2015,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27747846/"
+    },
+    {
+     "titel": "Isometric training and long-term adaptations: Effects of muscle length, intensity, and intent: A systematic review",
+     "auteurs": "Oranchuk e.a.",
+     "jaar": 2019,
+     "soort": "systematische review",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30580468/"
+    }
+   ]
+  },
+  {
+   "id": "buikvet-weg",
+   "theme": "lichaam",
+   "q": "Verlies ik buikvet door buikspieroefeningen?",
+   "alt": [
+    "plaatselijk vet verbranden",
+    "sixpack krijgen",
+    "spot reduction",
+    "buikvet kwijt"
+   ],
+   "tags": [
+    "buik",
+    "vet",
+    "sixpack",
+    "plaatselijk"
+   ],
+   "a": "Nee. In een RCT deden mensen 6 weken lang 5 dagen per week buikspieroefeningen. Hun buikvet nam niet meer af dan in de controlegroep; alleen het uithoudingsvermogen van hun buikspieren verbeterde. Vet verlies je over je hele lichaam, via een energietekort.",
+   "doen": [
+    "Voor een zichtbare buik: afvallen (zie: afvallen en spieren houden) plus buikspiertraining voor de spieren zelf."
+   ],
+   "exercises": [
+    "Hanging leg raise",
+    "Ab wheel",
+    "Cable crunch"
+   ],
+   "bewijs": "redelijk",
+   "bronnen": [
+    {
+     "titel": "The effect of abdominal exercise on abdominal fat",
+     "auteurs": "Vispute e.a.",
+     "jaar": 2011,
+     "soort": "RCT",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21804427/"
+    },
+    {
+     "titel": "Energy deficiency impairs resistance training gains in lean mass but not strength: A meta-analysis and meta-regression",
+     "auteurs": "Murphy en Koehler",
+     "jaar": 2022,
+     "soort": "meta-analyse",
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34623696/"
+    }
+   ]
+  }
+ ]
+}

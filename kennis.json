@@ -426,6 +426,109 @@
         "Butcher's block: kun je hem 30 s houden, voeg dan 5–7 kg toe.",
         "Hangen ontlast je rug en versterkt je grip. Met je schouders omlaag en naar achter wordt een dead hang een actieve hang."
       ]
+    },
+    {
+      "id": "onderzoek-trainingsregels",
+      "type": "onderzoek",
+      "title": "Sets, gewicht, rust en falen: wat onderzoek zegt",
+      "source": "ACSM-standpunt 2026 (137 reviews) en meta-analyses",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41843416/",
+      "days": ["push", "pull", "benen", "calisthenics", "upper", "lower", "borst-rug", "armen-schouders", "fullbody"],
+      "whenToUse": "Bij het kiezen van sets, gewicht en rust voor je training.",
+      "rules": [
+        "Spiergroei: minstens 10 harde sets per spiergroep per week; meer sets geeft iets meer, met afnemend rendement.",
+        "Kracht: zwaar tillen (vanaf ~80% van je max), 2 tot 3 sets, de lift vooraan in je training en minstens 2 keer per week.",
+        "Licht en zwaar gewicht geven even veel spiergroei, zolang de sets dicht bij falen komen.",
+        "Stop de meeste sets 0 tot 3 herhalingen voor falen; tot falen gaan is niet nodig.",
+        "Rust liever te lang dan te kort: minstens 1 tot 2 minuten, bij zware basisoefeningen 3 minuten of meer.",
+        "Train door de volle bewegingsuitslag; het gerekte deel van de beweging levert het meest op."
+      ]
+    },
+    {
+      "id": "onderzoek-gerekte-positie",
+      "type": "onderzoek",
+      "title": "Meer spiergroei in de gerekte positie",
+      "source": "RCT's (Maeo 2021 en 2023, Kinoshita 2023, Kassiano 2023, Kubo 2019)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35819335/",
+      "days": ["push", "pull", "benen", "upper", "lower", "armen-schouders"],
+      "whenToUse": "Bij het kiezen van isolatieoefeningen voor armen, hamstrings en kuiten.",
+      "rules": [
+        "Triceps: extensies boven het hoofd gaven 1,4 keer zoveel groei als pushdowns.",
+        "Hamstrings: de zittende leg curl gaf meer groei dan de liggende (+14% tegenover +9%).",
+        "Kuiten: staand kuitheffen met gestrekte knie groeit de kuit veel meer dan zittend; werk vooral onderin.",
+        "Billen: een diepe squat gaf meer groei van billen en adductoren dan een halve squat."
+      ]
+    },
+    {
+      "id": "onderzoek-blessurepreventie",
+      "type": "onderzoek",
+      "title": "Blessures voorkomen met krachttraining",
+      "source": "Meta-analyses en RCT's (Lauersen 2014 en 2018, van Dyk 2019, Harøy 2019, Doherty 2017)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30808663/",
+      "days": ["benen", "lower", "fullbody"],
+      "whenToUse": "Als je veel sprint, springt of hardloopt en blessurevrij wilt blijven.",
+      "rules": [
+        "Krachttraining bracht sportblessures terug tot minder dan een derde; stretchen had geen effect.",
+        "De Nordic hamstring curl halveert hamstringblessures.",
+        "De Copenhagen adductie verminderde liesklachten met 41% (3 keer per week in de voorbereiding, daarna 1 keer per week).",
+        "Balanstraining voorkomt nieuwe enkelverstuikingen."
+      ]
+    },
+    {
+      "id": "onderzoek-pezen",
+      "type": "onderzoek",
+      "title": "Peesklachten: zwaar en langzaam belasten",
+      "source": "RCT's (Beyer 2015, Silbernagel 2007, Kongsgaard 2009, Breda 2021, Rathleff 2015)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26018970/",
+      "days": ["benen", "lower"],
+      "whenToUse": "Bij pijn aan je achillespees, onder je knieschijf of onder je hiel.",
+      "rules": [
+        "Achillespees: zware langzame kuitheffingen of excentrische hielzakkingen, 12 weken; beide werken even goed.",
+        "Patellapees: begin met statisch vasthouden, bouw op naar zware langzame beenoefeningen en daarna naar springen.",
+        "Hielpijn: zware eenbenige kuitheffingen met een handdoek onder je tenen, om de dag.",
+        "Pijn tot 5 op 10 tijdens de oefening mag, als die de volgende ochtend weer weg is."
+      ]
+    },
+    {
+      "id": "onderzoek-knie-heup",
+      "type": "onderzoek",
+      "title": "Pijn voor in de knie: heup en knie samen versterken",
+      "source": "Consensus 2018 (Collins) en meta-analyse (Lack 2015)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29925502/",
+      "days": ["benen", "lower"],
+      "whenToUse": "Bij pijn rond je knieschijf bij traplopen, squatten of lang zitten.",
+      "rules": [
+        "Combineer heupoefeningen (abductie, buitenwaarts draaien) met quadricepsoefeningen.",
+        "Kies een diepte en belasting die de pijn draaglijk houden en bouw langzaam op."
+      ]
+    },
+    {
+      "id": "onderzoek-elleboog",
+      "type": "onderzoek",
+      "title": "Tenniselleboog: oefenen in plaats van een injectie",
+      "source": "RCT's (Tyler 2010, Bisset 2006, Coombes 2013)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20579907/",
+      "days": ["pull", "armen-schouders"],
+      "whenToUse": "Bij pijn aan de buitenkant van je elleboog bij grijpen en trekken.",
+      "rules": [
+        "Een excentrische polsoefening (Tyler twist) gaf veel meer verbetering dan de standaardbehandeling alleen.",
+        "Een injectie helpt kort, maar geeft na een jaar minder herstel en meer terugval."
+      ]
+    },
+    {
+      "id": "onderzoek-stretchen",
+      "type": "onderzoek",
+      "title": "Stretchen: wat het wel en niet doet",
+      "source": "Meta-analyses (Thomas 2018, Konrad 2024, Behm 2016, Lauersen 2014, Herbert 2011)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37301370/",
+      "days": ["mobility"],
+      "whenToUse": "Bij je stretches na de training en op mobility-dagen.",
+      "rules": [
+        "Leniger worden: minstens 5 minuten per spiergroep per week, verdeeld over 5 of meer dagen.",
+        "Statisch stretchen en aanspannen-en-ontspannen (PNF) werken beter dan verend stretchen.",
+        "Stretchen voorkomt geen blessures en helpt nauwelijks tegen spierpijn.",
+        "Voor de training: onder een minuut per spier, of dynamisch bewegen."
+      ]
     }
   ],
   "records": [
@@ -1273,6 +1376,88 @@
       "dose": { "sets": 3, "sec": 30 },
       "source": "e3rehab-lopers",
       "note": "3 × 30–60 s. Handen op je heupen, snel diagonaal springen op beide voeten met bijna gestrekte knieën, zo kort mogelijk op de grond. Begin klein en spring steeds hoger."
+    },
+    {
+      "name": "Copenhagen adductie",
+      "aliases": ["copenhagen", "copenhagen adduction", "copenhagen plank", "kopenhagen"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["adductoren"], "secondary": ["schuine", "buik"] },
+      "days": ["benen", "lower", "fullbody"],
+      "dose": { "sets": 3, "reps": "6-12" },
+      "source": "onderzoek-blessurepreventie",
+      "note": "Lig op je zij met je bovenste been op een bank, til je heup op en breng het onderste been naar de bank. Knie op de bank is makkelijk, enkel op de bank is zwaar. 41% minder liesklachten in een RCT bij voetballers."
+    },
+    {
+      "name": "Eenbenige balans",
+      "aliases": ["single leg balance", "balans op een been", "wiebelplank", "balansoefening"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["kuiten"], "secondary": ["billen"] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "sec": 30 },
+      "source": "onderzoek-blessurepreventie",
+      "note": "Sta op één been met je knie licht gebogen. Zwaarder: ogen dicht, op een kussen of een wiebelplank. Balanstraining voorkomt nieuwe enkelverstuikingen."
+    },
+    {
+      "name": "Excentrische hielzakking",
+      "aliases": ["eccentric heel drop", "heel drop", "alfredson", "hielzakking"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "15" },
+      "source": "onderzoek-pezen",
+      "note": "Sta met je voorvoet op een traptrede, kom op twee benen omhoog en zak op één been langzaam zo diep mogelijk. Doe hem met gestrekte en met licht gebogen knie. Tegen achillespeesklachten, 12 weken."
+    },
+    {
+      "name": "Wall sit",
+      "aliases": ["wall squat", "muurzit", "stoeltje tegen de muur", "muurzitten"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["quadriceps"], "secondary": ["billen"] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 4, "sec": 45 },
+      "source": "onderzoek-pezen",
+      "note": "Zit met je rug tegen de muur, knieën ongeveer 90 graden, en houd vast. Eerste stap bij patellapeesklachten. Isometrische training verlaagt ook de bloeddruk het meest."
+    },
+    {
+      "name": "Hielheffing met handdoek",
+      "aliases": ["heel raise towel", "kuitheffing handdoek", "rathleff"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "8-12" },
+      "source": "onderzoek-pezen",
+      "note": "Eenbenige kuitheffing met een opgerolde handdoek onder je tenen, zwaar en langzaam, om de dag. Tegen hielpijn (fasciitis plantaris)."
+    },
+    {
+      "name": "Clamshell",
+      "aliases": ["clam", "clams", "schelp"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["billen"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "10-15" },
+      "source": "onderzoek-knie-heup",
+      "note": "Lig op je zij, knieën gebogen en voeten tegen elkaar, en draai je bovenste knie open; zwaarder met een band. Heupoefening bij pijn voor in de knie."
+    },
+    {
+      "name": "Zijlig heupabductie",
+      "aliases": ["side lying hip abduction", "zijwaarts been heffen", "heupabductie liggend"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["billen"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "dose": { "sets": 3, "reps": "10-15" },
+      "source": "onderzoek-knie-heup",
+      "note": "Lig op je zij, onderste been gebogen, bovenste been gestrekt en iets naar achteren, en til het op. Heupoefening bij pijn voor in de knie."
+    },
+    {
+      "name": "Tyler twist",
+      "aliases": ["flexbar", "reverse tyler twist", "tennisarm oefening", "flexbar twist"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["onderarmen"], "secondary": [] },
+      "days": ["pull", "armen-schouders"],
+      "dose": { "sets": 3, "reps": "15" },
+      "source": "onderzoek-elleboog",
+      "note": "Met een buigzame staaf (FlexBar): draai de staaf met je gezonde hand op en laat de pols aan de pijnlijke kant langzaam terugbuigen. Excentrische oefening tegen tenniselleboog."
     }
   ]
 }
