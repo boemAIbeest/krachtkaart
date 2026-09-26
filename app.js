@@ -55,7 +55,7 @@
     if (!persistAsked && navigator.storage?.persist) { persistAsked = true; navigator.storage.persist().catch(() => {}); }
     return true;
   }
-  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null, tab: 'vandaag', back: null, fresh: new Set() };
+  const U = { mode: 'kracht', sel: null, day: null, picks: new Set(), extra: [], ex: null, restore: null, tab: 'vandaag', back: null, fresh: new Set(), theme: null };
 
   // Shown on Vandaag and Voortgang until the first real training; never saved.
   const EXAMPLE = (() => {
@@ -98,8 +98,19 @@
 
   // ---------- knowledge file ----------
   let K = { sources: [], exercises: [], records: [], updated: null, failed: false };
+  let Q = { themes: [], items: [], idx: null, failed: false };
   const sourceTitle = (id) => K.sources.find((s) => s.id === id)?.title || id;
+  async function loadVragen() {
+    try {
+      const res = await fetch('vragen.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error(String(res.status));
+      const d = await res.json();
+      const items = Array.isArray(d.items) ? d.items : [];
+      Q = { themes: Array.isArray(d.themes) ? d.themes : [], items, idx: Vraag.index(items), failed: false };
+    } catch { Q.failed = true; }
+  }
   async function loadKennis() {
+    const vragen = loadVragen();
     try {
       const res = await fetch('kennis.json', { cache: 'no-cache' });
       if (!res.ok) throw new Error(String(res.status));
@@ -110,6 +121,7 @@
       Score.setRecords(K.records);
       if (!Array.isArray(S.seen)) { S.seen = listable().filter((e) => !isResearch(e)).map((e) => e.name); save(); }
     } catch { K.failed = true; }
+    await vragen;
     fillDatalist();
     renderAll();
   }
@@ -441,25 +453,26 @@
 
   // ---------- speech ----------
   let listening = null;
-  function toggleMic() {
+  // A question replaces the field and stops by itself; a spoken workout keeps adding until you press Stop.
+  function toggleMic(btn, ta, st, question) {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const btn = $('#btn-mic'), ta = $('#sp-text');
     if (listening) { listening.stop(); return; }
     const rec = new SR();
-    rec.lang = 'nl-NL'; rec.continuous = true; rec.interimResults = true;
-    const before = ta.value.trim() ? ta.value.trim() + ' ' : '';
-    rec.onresult = (ev) => { ta.value = before + Array.from(ev.results, (r) => r[0].transcript).join(' '); };
+    rec.lang = 'nl-NL'; rec.continuous = !question; rec.interimResults = true;
+    const before = !question && ta.value.trim() ? ta.value.trim() + ' ' : '';
+    rec.onresult = (ev) => { ta.value = before + Array.from(ev.results, (r) => r[0].transcript).join(' '); ta.dispatchEvent(new Event('input')); };
     rec.onerror = (ev) => {
-      status($('#sp-status'), ev.error === 'not-allowed' || ev.error === 'service-not-allowed'
+      status(st, ev.error === 'not-allowed' || ev.error === 'service-not-allowed'
         ? 'Geef de app toegang tot je microfoon, of gebruik de microfoon van je toetsenbord.'
         : ev.error === 'no-speech' ? 'Ik hoorde niets. Probeer het nog eens.' : 'Inspreken lukte niet. Gebruik de microfoon van je toetsenbord.', true);
     };
-    rec.onend = () => { listening = null; btn.classList.remove('rec'); btn.querySelector('span').textContent = 'Inspreken'; };
+    const label = btn.querySelector('span');
+    rec.onend = () => { listening = null; btn.classList.remove('rec'); if (label) label.textContent = 'Inspreken'; };
     try { rec.start(); } catch { return; }
     listening = rec;
     btn.classList.add('rec');
-    btn.querySelector('span').textContent = 'Stop';
-    status($('#sp-status'), '');
+    if (label) label.textContent = 'Stop';
+    status(st, '');
   }
 
   function parseSpoken() {
@@ -543,7 +556,45 @@
   }
 
   // ---------- Kennis ----------
+  const BEWIJS = { sterk: 'Sterk bewijs', redelijk: 'Redelijk bewijs', beperkt: 'Beperkt bewijs' };
+  const themeLabel = (id) => Q.themes.find((t) => t.id === id)?.label || '';
+  // Answer text: blank line = new paragraph, lines starting with "- " = a list.
+  const richText = (a) => String(a).split(/\n\s*\n/).map((block) => {
+    const lines = block.split('\n'), items = lines.filter((l) => l.startsWith('- '));
+    const lead = lines.filter((l) => !l.startsWith('- ')).join(' ');
+    return (lead ? `<p>${esc(lead)}</p>` : '') + (items.length ? `<ul>${items.map((l) => `<li>${esc(l.slice(2))}</li>`).join('')}</ul>` : '');
+  }).join('');
+  function answerBody(it) {
+    const exs = (it.exercises || []).map((n) => Score.findExercise(n)?.name).filter(Boolean);
+    return `${richText(it.a)}
+      ${listBlock('Wat je ermee doet', it.doen)}
+      ${exs.length ? `<h4>Oefeningen</h4><ul class="lifts">${exs.map((n) => `<li><span>${esc(n)}</span>
+        <button class="link" type="button" data-on="${esc(n)}">${S.mine.includes(n) ? 'Staat aan' : 'Zet aan'}</button></li>`).join('')}</ul>` : ''}
+      <details><summary class="small">Bronnen (${it.bronnen.length})</summary><ul>${it.bronnen.map((b) => `<li>${safeUrl(b.url)
+        ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.auteurs)} (${esc(b.jaar)})</a>` : `${esc(b.auteurs)} (${esc(b.jaar)})`}, ${esc(b.soort)}. ${esc(b.titel)}</li>`).join('')}</ul></details>`;
+  }
+  const answerType = (it) => `<span class="k-type">${esc(themeLabel(it.theme))}, ${esc(BEWIJS[it.bewijs] || '')}</span>`;
+  const folded = (it) => `<details class="stretch-group"><summary>${esc(it.q)}</summary>
+    <div class="k-item" style="border:0;padding-top:0">${answerType(it)}${answerBody(it)}</div></details>`;
+  // Typed question: the best answer open and up to two more folded, themes hidden. Otherwise the chosen theme's questions, folded.
+  function renderAsk() {
+    const text = $('#q-in').value.trim();
+    $('#q-themes').hidden = !!text;
+    $('#q-themes').innerHTML = Q.themes.map((t) => `<button type="button" data-theme="${esc(t.id)}" aria-pressed="${!text && U.theme === t.id}">${esc(t.label)}</button>`).join('');
+    if (Q.failed) return void ($('#q-res').innerHTML = '<p class="muted">De kennisbank kon niet geladen worden. Open de app een keer met internet.</p>');
+    if (text) {
+      const hits = Q.idx ? Vraag.search(Q.idx, text) : [];
+      const [best, ...more] = hits.map((h) => h.item);
+      $('#q-res').innerHTML = best ? `<article class="k-item">${answerType(best)}<h3>${esc(best.q)}</h3>${answerBody(best)}</article>
+        ${more.length ? `<h4 style="margin-top:18px">Ook relevant</h4>${more.map(folded).join('')}` : ''}`
+        : '<p class="muted">Dit staat nog niet in je kennisbank. Vraag het Claude, dan komt het erbij.</p>';
+      return;
+    }
+    const list = Q.items.filter((it) => it.theme === U.theme);
+    $('#q-res').innerHTML = list.map(folded).join('');
+  }
   function renderKennis() {
+    renderAsk();
     $('#k-meta').textContent = K.failed ? 'Je kennisbestand kon niet geladen worden. Open de app een keer met internet.'
       : K.updated ? `Bijgewerkt op ${fmtDate.format(new Date(K.updated))}.` : '';
     $('#k-list').innerHTML = K.sources.map((s) => {
@@ -559,6 +610,8 @@
         ${s.keyPoints?.length ? `<details><summary class="small">Kernpunten</summary>${listBlock('', s.keyPoints)}</details>` : ''}
       </article>`;
     }).join('') || (K.failed ? '' : '<p class="muted">Nog leeg. Stuur Claude een YouTube-link of een onderzoek, dan verschijnt het hier met de oefeningen.</p>');
+    $('#k-count').textContent = K.sources.length ? `(${K.sources.length})` : '';
+    $('#n-count').textContent = S.notes.length ? `(${S.notes.length})` : '';
     $('#n-list').innerHTML = [...S.notes].reverse().map((n) => `<article class="k-item">
       <h3>${esc(n.title)}</h3>${n.text ? `<p>${esc(n.text)}</p>` : ''}
       ${safeUrl(n.url) ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">Open de link</a>` : ''}
@@ -713,8 +766,12 @@
     $('#ex-select').onchange = (ev) => { U.ex = ev.target.value; renderProgress(); };
     $('#btn-parse').onclick = parseSpoken;
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SR) $('#btn-mic').onclick = toggleMic;
-    else { $('#btn-mic').hidden = true; $('#mic-hint').hidden = false; }
+    if (SR) {
+      $('#btn-mic').onclick = () => toggleMic($('#btn-mic'), $('#sp-text'), $('#sp-status'));
+      $('#q-mic').onclick = () => toggleMic($('#q-mic'), $('#q-in'), $('#q-status'), true);
+    } else { $('#btn-mic').hidden = true; $('#q-mic').hidden = true; $('#mic-hint').hidden = false; }
+    let askTimer;
+    $('#q-in').addEventListener('input', () => { clearTimeout(askTimer); askTimer = setTimeout(renderAsk, 250); });
     $('#sp-date').value = todayISO();
     $('#sp-date').max = todayISO();
 
@@ -723,6 +780,8 @@
       if (!t) return;
       if (t.dataset.tab) go(t.dataset.tab);
       if (t.dataset.go) go(t.dataset.go);
+      if (t.dataset.theme) { U.theme = U.theme === t.dataset.theme ? null : t.dataset.theme; $('#q-in').value = ''; renderAsk(); }
+      if (t.dataset.on) { const n = t.dataset.on, on = !S.mine.includes(n); setMine(n, on); renderAll(); toast(on ? `${n} staat aan` : `${n} staat uit`); }
       if (t.id === 'btn-mine-done') { if (U.day && !S.active) resetPicks(); renderAll(); go(U.back || 'profiel'); }
       if (t.dataset.choose) { U.day = t.dataset.choose; resetPicks(); go('training'); }
       if (t.dataset.day) { U.day = t.dataset.day; resetPicks(); renderChooser(); }

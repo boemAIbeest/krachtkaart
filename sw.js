@@ -1,11 +1,12 @@
 // Offline cache: app files and fonts are served from cache and refreshed in the background;
-// kennis.json goes to the network first so new videos show up as soon as there is a connection.
-const CACHE = 'krachtkaart-v1';
-const SHELL = ['./', 'index.html', 'score.js', 'body.js', 'parse.js', 'plan.js', 'app.js', 'kennis.json',
+// kennis.json and vragen.json go to the network first so new knowledge shows up as soon as there is a connection.
+const CACHE = 'krachtkaart-v2';
+const SHELL = ['./', 'index.html', 'score.js', 'body.js', 'parse.js', 'plan.js', 'vraag.js', 'app.js', 'kennis.json', 'vragen.json',
   'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)));
+  // 'reload' skips the browser's HTTP cache, so a new version never installs yesterday's files.
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' })))));
   self.skipWaiting();
 });
 
@@ -28,7 +29,7 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== self.location.origin && !fonts) return;
   // 'no-cache' makes the refresh ask the server instead of the browser's HTTP cache, so a deploy arrives on the next open.
   const fresh = () => fetch(req, fonts ? {} : { cache: 'no-cache' });
-  if (url.pathname.endsWith('/kennis.json')) {
+  if (/\/(kennis|vragen)\.json$/.test(url.pathname)) {
     e.respondWith(fresh().then((res) => store(req, res)).catch(() => caches.match(req, { ignoreSearch: true })));
     return;
   }
