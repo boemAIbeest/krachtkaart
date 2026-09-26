@@ -128,7 +128,7 @@
   function addExercises(list) {
     for (const raw of Array.isArray(list) ? list : []) {
       if (!raw || !raw.name) continue;
-      const extra = { fromKennis: true, days: strs(raw.days), ...(raw.dose && { dose: raw.dose }), ...(raw.source && { source: String(raw.source) }), ...(raw.note && { note: String(raw.note) }) };
+      const extra = { fromKennis: true, days: strs(raw.days), ...(raw.dose && { dose: raw.dose }), ...(raw.source && { source: String(raw.source) }), ...(raw.note && { note: String(raw.note) }), ...(raw.hold && { hold: true }) };
       let e = findExercise(raw.name);
       if (e) {
         Object.assign(e, extra, { days: [...new Set([...(e.days || []), ...extra.days])] });

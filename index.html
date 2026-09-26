@@ -146,7 +146,11 @@
   /* Exercise tick-list */
   .stretch-group > summary { font-weight: 700; font-size: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
   .picks { list-style: none; margin: 0; padding: 0; }
-  .picks li { border-top: 1px solid var(--line); }
+  .picks li { border-top: 1px solid var(--line); display: flex; align-items: center; gap: 4px; }
+  .picks li > label { flex: 1; min-width: 0; }
+  .arch { flex: none; display: grid; place-items: center; min-width: 40px; height: 40px; border: 0; border-radius: 8px; background: none; color: var(--steel); cursor: pointer; font: 650 13px/1 var(--font); }
+  .arch svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .arch.armed { color: #fff; background: var(--bad); padding-inline: 10px; }
   .picks label { display: grid; grid-template-columns: 26px 1fr auto; gap: 2px 12px; align-items: center; padding: 11px 0; font: inherit; cursor: pointer; }
   .picks input { width: 22px; height: 22px; margin: 0; accent-color: var(--ink); grid-row: span 2; }
   .picks .name { font-weight: 700; font-size: 16px; }
@@ -294,6 +298,11 @@
       <div class="row"><button class="btn" type="submit">Profiel opslaan</button></div>
       <p class="status" id="p-status" role="status"></p>
     </form>
+    <section class="panel" aria-labelledby="a-h">
+      <h3 id="a-h">Archief</h3>
+      <p class="muted">Gearchiveerde oefeningen en stretches komen niet meer terug in je trainingen. Archiveren doe je met het archiefje naast een oefening.</p>
+      <ul class="lifts" id="arch-list"></ul>
+    </section>
     <section class="panel" aria-labelledby="b-h">
       <h3 id="b-h">Back-up</h3>
       <p class="muted" id="b-info"></p>

@@ -27,7 +27,8 @@
 
   // ---------- storage (this phone only) ----------
   const KEY = 'krachtkaart.v1';
-  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null });
+  // Squat and deadlift start archived: the user never does them (older saves without the field get this too).
+  const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, archived: ['Squat', 'Deadlift'] });
   function load() {
     try {
       const d = JSON.parse(localStorage.getItem(KEY) || 'null');
@@ -130,6 +131,7 @@
   function targetText(t, kind) {
     if (kind === 'stretch') return `${t.sets > 1 ? t.sets + ' × ' : ''}${t.sec} s`;
     if (kind === 'skill') return `${t.sets} × stap ${t.step}${t.sec ? `, ${t.sec} s` : t.reps ? `, ${t.reps} herh.` : ''}`;
+    if (t.sec != null && t.reps == null) return `${t.sets} × ${t.sec} s`;
     return `${t.sets} × ${t.reps}${t.kg ? ` met ${kind === 'lichaamsgewicht' ? '+' : ''}${nlNum(t.kg)} kg` : ''}`;
   }
   const doseText = (d) => [d.sets && `${d.sets} sets`, d.reps && `${d.reps} herh.`, d.sec && `${d.sec} s`, d.step && `stap ${d.step}`].filter(Boolean).join(', ');
@@ -232,7 +234,7 @@
 
   // ---------- Training: choose ----------
   function resetPicks() {
-    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now()).slice(0, 5).map((x) => x.name));
+    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now(), S.archived).slice(0, 5).map((x) => x.name));
     U.extra = [];
   }
   // Named stretches are a checklist during the training, not sets. The generic "Stretchen" keeps its muscles as an item.
@@ -241,12 +243,14 @@
     stretches: [...new Set(entries.map((e) => namedStretch(e.exercise)).filter(Boolean))],
     rest: entries.filter((e) => !namedStretch(e.exercise)),
   });
+  const ARCH_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"></path></svg>';
+  const archBtn = (n) => `<button class="arch" type="button" data-confirm="archive" data-name="${esc(n)}" aria-label="${esc(n)} archiveren" title="Archiveren">${ARCH_ICON}</button>`;
   function pickRow(x) {
     const t = Plan.target(x.name, S.workouts);
     const when = x.lastAt ? ago(x.lastAt) : 'nog nooit gedaan';
     return `<li><label><input type="checkbox" data-pick="${esc(x.name)}"${U.picks.has(x.name) ? ' checked' : ''}>
       <span class="name">${esc(x.name)}</span><span class="dose">${esc(targetText(t, x.kind))}</span>
-      <span class="meta">${esc(cap(when))}${x.source ? `, <span class="from">uit ${esc(sourceTitle(x.source))}</span>` : ''}</span></label></li>`;
+      <span class="meta">${esc(cap(when))}${x.source ? `, <span class="from">uit ${esc(sourceTitle(x.source))}</span>` : ''}</span></label>${archBtn(x.name)}</li>`;
   }
   function startLabel() {
     const n = $$('#chooser [data-pick]:checked').length;
@@ -257,7 +261,7 @@
     const now = Date.now();
     const rec = Plan.recommendDay(S.workouts, now);
     if (!U.day) { U.day = rec.id; resetPicks(); }
-    const main = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, now);
+    const main = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, now, S.archived);
     const last = Plan.lastDone(S.workouts);
     const extras = U.extra.filter((n) => !main.some((x) => x.name === n))
       .map((n) => { const e = Score.findExercise(n); return { name: e?.name || n, kind: e?.kind || 'gewicht', lastAt: last[e?.name || n] || null, source: e?.source || null }; });
@@ -278,6 +282,7 @@
   function fieldsFor(it) {
     if (it.kind === 'stretch') return ['sec'];
     if (it.kind === 'skill') return ['step', it.target?.sec != null || it.sets.some((s) => s.sec) ? 'sec' : 'reps'];
+    if (it.target?.sec != null || it.sets.some((s) => s.sec)) return ['sec'];
     return ['reps', 'kg'];
   }
   function makeItem(name, fromParse) {
@@ -318,14 +323,14 @@
   function stretchList(a) {
     const ticked = new Set(a.stretches || []), last = Plan.lastDone(S.workouts);
     const dayM = Plan.dayById(a.dayType)?.muscles || [];
-    const all = Score.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length);
+    const all = Score.CATALOG.filter((e) => e.kind === 'stretch' && e.muscles.primary.length && !S.archived.includes(e.name));
     return [...dayM, ...Object.keys(Score.MUSCLES).filter((m) => !dayM.includes(m))].map((m) => {
       const list = all.filter((e) => e.muscles.primary[0] === m).sort((x, y) => x.name.localeCompare(y.name, 'nl'));
       if (!list.length) return '';
       const open = a.dayType === 'mobility' || dayM.includes(m) || list.some((e) => ticked.has(e.name));
       return `<details class="stretch-group"${open ? ' open' : ''}><summary>${Score.MUSCLES[m]}</summary><ul class="picks">${list.map((e) => `<li><label>
         <input type="checkbox" data-stretch="${esc(e.name)}"${ticked.has(e.name) ? ' checked' : ''}><span class="name">${esc(e.name)}</span>
-        <span class="meta">${esc(cap(last[e.name] ? ago(last[e.name]) : 'nog nooit gedaan'))}</span></label></li>`).join('')}</ul></details>`;
+        <span class="meta">${esc(cap(last[e.name] ? ago(last[e.name]) : 'nog nooit gedaan'))}</span></label>${archBtn(e.name)}</li>`).join('')}</ul></details>`;
     }).join('');
   }
   function renderActive() {
@@ -521,7 +526,7 @@
         ${s.whenToUse ? `<p class="muted">${esc(s.whenToUse)}</p>` : ''}
         ${safeUrl(s.url) ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${s.type === 'video' ? 'Bekijk de video' : 'Open de bron'}</a>` : ''}
         ${listBlock('Praktische regels', s.rules)}
-        ${exs.length ? `<h4>Oefeningen</h4><ul>${exs.map((x) => `<li>${esc(x.name)}${x.dose ? ': ' + esc(doseText(x.dose)) : ''}</li>`).join('')}</ul>` : ''}
+        ${exs.length ? `<h4>Oefeningen</h4><ul>${exs.map((x) => `<li>${esc(x.name)}${x.dose ? ': ' + esc(doseText(x.dose)) : ''}${S.archived.includes(Score.findExercise(x.name)?.name) ? ' (gearchiveerd)' : ''}</li>`).join('')}</ul>` : ''}
         ${s.keyPoints?.length ? `<details><summary class="small">Kernpunten</summary>${listBlock('', s.keyPoints)}</details>` : ''}
       </article>`;
     }).join('') || (K.failed ? '' : '<p class="muted">Nog leeg. Stuur Claude een YouTube-link of een onderzoek, dan verschijnt het hier met de oefeningen.</p>');
@@ -539,11 +544,13 @@
       $('#p-sex').value = sex();
       $('#p-goals').value = S.profile?.goals ?? '';
     }
+    $('#arch-list').innerHTML = [...S.archived].sort((a, b) => a.localeCompare(b, 'nl')).map((n) => `<li><span>${esc(n)}</span>
+      <button class="link" type="button" data-unarchive="${esc(n)}">Terugzetten</button></li>`).join('') || '<li class="muted">Nog niets gearchiveerd.</li>';
     $('#b-info').textContent = `Je trainingen staan alleen op deze telefoon. Laatste back-up: ${S.lastBackup ? ago(S.lastBackup) : 'nog nooit'}.`;
   }
 
   async function makeBackup() {
-    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes });
+    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, archived: S.archived });
     const name = `krachtkaart-backup-${todayISO()}.json`;
     const file = new File([payload], name, { type: 'application/json' });
     try {
@@ -570,7 +577,8 @@
       const d = JSON.parse(await file.text());
       if (d?.app !== 'krachtkaart' || !Array.isArray(d.workouts)) throw new Error('not a backup');
       const workouts = d.workouts.filter((w) => w && typeof w.at === 'string' && Array.isArray(w.entries)).map((w) => ({ ...w, id: w.id || uid() }));
-      U.restore = { workouts, profile: d.profile && typeof d.profile === 'object' ? d.profile : null, notes: Array.isArray(d.notes) ? d.notes : [] };
+      U.restore = { workouts, profile: d.profile && typeof d.profile === 'object' ? d.profile : null, notes: Array.isArray(d.notes) ? d.notes : [],
+        ...(Array.isArray(d.archived) && { archived: d.archived.map(String) }) };
       box.hidden = false;
       box.innerHTML = `<p>Back-up van ${esc(d.exportedAt ? fmtDay.format(new Date(d.exportedAt)) : 'onbekende datum')} met ${workouts.length} ${workouts.length === 1 ? 'training' : 'trainingen'}. Terugzetten vervangt alles wat nu op deze telefoon staat.</p>
         <div class="row"><button class="btn" type="button" id="btn-restore-go">Terugzetten</button><button class="link" type="button" id="btn-restore-no">Annuleer</button></div>`;
@@ -587,10 +595,10 @@
 
   // ---------- events ----------
   function arm(t) {
-    t.dataset.label = t.textContent;
+    t.dataset.label = t.innerHTML;
     t.classList.add('armed');
     t.textContent = 'Zeker?';
-    setTimeout(() => { if (t.isConnected && t.classList.contains('armed')) { t.classList.remove('armed'); t.textContent = t.dataset.label; } }, 3000);
+    setTimeout(() => { if (t.isConnected && t.classList.contains('armed')) { t.classList.remove('armed'); t.innerHTML = t.dataset.label; } }, 3000);
   }
   function confirmed(t) {
     const kind = t.dataset.confirm;
@@ -598,6 +606,13 @@
     if (kind === 'rm-ex') { S.active.items.splice(+t.dataset.i, 1); save(); renderActive(); }
     if (kind === 'del-w') { S.workouts = S.workouts.filter((w) => w.id !== t.dataset.id); save(); renderAll(); toast('Training verwijderd'); }
     if (kind === 'del-n') { S.notes = S.notes.filter((n) => n.id !== t.dataset.id); save(); renderKennis(); }
+    if (kind === 'archive') {
+      const n = t.dataset.name;
+      S.archived = [...new Set([...S.archived, n])];
+      U.picks.delete(n);
+      if (S.active) S.active.stretches = (S.active.stretches || []).filter((x) => x !== n);
+      save(); renderAll(); toast(`${n} gearchiveerd. Terugzetten kan bij Profiel.`);
+    }
   }
 
   // A new value also fills the later, unticked sets that still had the old value, so you enter a weight once.
@@ -655,6 +670,7 @@
       if (t.dataset.choose) { U.day = t.dataset.choose; resetPicks(); go('training'); }
       if (t.dataset.day) { U.day = t.dataset.day; resetPicks(); renderChooser(); }
       if (t.dataset.edit) editWorkout(t.dataset.edit);
+      if (t.dataset.unarchive) { S.archived = S.archived.filter((n) => n !== t.dataset.unarchive); save(); renderAll(); toast(`${t.dataset.unarchive} is terug`); }
       if (t.dataset.act) onActiveAction(t);
       if (t.dataset.confirm) { if (t.classList.contains('armed')) confirmed(t); else arm(t); }
       if (t.id === 'btn-start') startTraining();

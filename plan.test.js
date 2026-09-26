@@ -58,4 +58,14 @@ assert.equal(Plan.guessDay([E('Duivenhouding'), E('Spagaat')]), 'mobility');
 assert.equal(Plan.guessDay([E('Pull-up'), E('Barbell row'), E('Face pull'), E('Hamstring stretch')]), 'pull');
 assert.equal(Plan.guessDay([E('Front lever'), E('Handstand'), E('Pull-up')]), 'calisthenics');
 
+// archived exercises never come back, not even from history
+const lowerNames = (arch) => Plan.pool('lower', [w(24, 'lower', [{ exercise: 'Squat', sets: [{ reps: 5, kg: 100 }] }])], now, arch).map((x) => x.name);
+assert.ok(lowerNames([]).includes('Squat'));
+assert.ok(!lowerNames(['Squat', 'Deadlift']).some((n) => n === 'Squat' || n === 'Deadlift'));
+
+// holds are timed: dose seconds first, then the best time from last session
+Score.addExercises([{ name: 'Frog stand test', kind: 'lichaamsgewicht', muscles: { primary: ['schouders'] }, days: ['calisthenics'], hold: true, dose: { sets: 3, sec: 20 } }]);
+assert.deepEqual(Plan.target('Frog stand test', []), { sets: 3, sec: 20 });
+assert.deepEqual(Plan.target('Frog stand test', [w(24, 'calisthenics', [{ exercise: 'Frog stand test', sets: [{ sec: 25 }, { sec: 30 }] }])]), { sets: 3, sec: 30 });
+
 console.log('plan.js: all checks passed');

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "sources": [
     {
       "id": "huberman-spier",
@@ -125,7 +125,7 @@
         "Weinig herhalingen is de bedoeling: zo train je onder meer peesstijfheid, wat je met duurlopen niet krijgt."
       ],
       "keyPoints": [
-        "Plyometrie optie A: diagonale pogo jumps, 3 × 30–60 s. Handen op de heupen, knieën bijna gestrekt, zo kort mogelijk op de grond; begin klein en spring steeds hoger.",
+        "Plyometrie optie A: diagonale pogo jumps (3 × 30–60 s), optie B: drop jumps.",
         "Bij rustig tempo leveren kuit (soleus) en quadriceps de meeste kracht; richting sprint worden heupbuigers en hamstrings belangrijker, tot zo'n 9 keer je lichaamsgewicht.",
         "Sneller lopen gaat eerst via langere passen (afzet vanuit de kuit), bij sprinten via een hogere pasfrequentie (vanuit de heup).",
         "Krachttraining verbetert vooral je loopeconomie, topsnelheid en anaerobe capaciteit. Dat het blessures voorkomt, is nog niet bewezen.",
@@ -178,7 +178,7 @@
         "Single leg bounds: 4 sets van 4–5 per been. Power clean: 2–5 sets van 3–5 met perfecte techniek."
       ],
       "keyPoints": [
-        "Back squat staat ook in de video (3–5 sets van 1–7 op 80–90%, 2–3 keer per week); die is hier weggelaten.",
+        "Back squat: 3–5 sets van 1–7 op 80–90% van je 1RM, 2–3 keer per week.",
         "Veel hardlopers hebben 15–20% krachtverschil tussen hun benen. Eenbenige oefeningen helpen daartegen en verbeteren je balansgevoel.",
         "De achillespees werkt als een veer: een stijvere pees slaat meer energie op en geeft die terug.",
         "Met gestrekte knie train je vooral de gastrocnemius, met gebogen knie (zittend) vooral de soleus.",
@@ -249,11 +249,182 @@
       ],
       "keyPoints": [
         "Dag 1: dumbbell bankdrukken (1 × 4–6 en 1 × 8–10), dumbbell RDL (2 × 8–10), lat pulldown (2 × 10–12), step-up (1 × 8–10 per been), overhead triceps extension, lateral raise en kuitheffen op de leg press (elk 1 × 12–15 plus dropset).",
-        "Dag 2: hack squat (1 × 4–6 en 1 × 8–10, hier weggelaten), incline Smith press plus T-bar row als superset (2 × 10–12), seated leg curl (1 × 10–12 plus dropset), EZ-bar curl (1 × 12–15 plus myo-reps) en cable crunch (1 × 12–15 plus twee dropsets).",
+        "Dag 2: hack squat (1 × 4–6 en 1 × 8–10), incline Smith press plus T-bar row als superset (2 × 10–12), seated leg curl (1 × 10–12 plus dropset), EZ-bar curl (1 × 12–15 plus myo-reps) en cable crunch (1 × 12–15 plus twee dropsets).",
         "Overhead triceps extensions gaven in een onderzoek uit 2022 zo'n 40% meer groei dan pushdowns.",
         "Zittende leg curls gaven meer hamstringgroei dan liggende, waarschijnlijk door de grotere rek.",
         "De laatste herhalingen vlak voor falen zijn het meest effectief voor spiergroei.",
         "Knieën over je tenen bij squatten is veilig."
+      ]
+    },
+    {
+      "id": "tennyson-nippard-spieren",
+      "type": "video",
+      "title": "The Best Exercises For Every Muscle ft. Jeff Nippard",
+      "source": "Will Tennyson",
+      "url": "https://www.youtube.com/watch?v=XFpT41748hM",
+      "days": ["push", "pull", "benen", "upper", "lower", "borst-rug", "armen-schouders"],
+      "whenToUse": "Bij het kiezen van de beste oefening per spier voor spiergroei.",
+      "rules": [
+        "Een goede oefening heeft drie dingen: veel spanning in de gerekte stand, voelt goed (in de spier, niet in je gewrichten) en je kunt blijven opbouwen in gewicht of herhalingen.",
+        "Rug: doe zowel een verticale trek (pulldown of pull-up) als een horizontale trek (roeien).",
+        "Lat pulldown: smalle neutrale greep en ellebogen recht naar beneden (naar je broekzakken) voor je lats; iets achterover leunen en ellebogen naar achter voor je middelste trapezius.",
+        "Borst-ondersteund roeien: laat je schouderbladen uit elkaar gaan en knijp ze samen; blijf steeds op dezelfde manier tegen het kussen.",
+        "Bij oefeningen met veel herhalingen, zoals cable flys: neem minstens één set echt tot falen.",
+        "Cable lateral raise en Bayesian curl: zet de kabel hoger, zodat de meeste spanning in de gerekte stand valt (90 graden tussen arm en kabel).",
+        "Een herhaling mag 2 tot 8 seconden duren. Heel snel stuiteren of heel langzaam is minder goed; controleer het zakken.",
+        "Vooruitgang is ook één herhaling meer in je laatste set.",
+        "Triceps: overhead extension voor de rek van de lange kop, kickback met je arm achter je lichaam voor de samentrekking."
+      ],
+      "keyPoints": [
+        "Top per spier: Smith machine squat (quads en billen), seated leg curl (hamstrings), schuine bankdrukken op 45 graden (hele borst), cable fly, borst-ondersteund roeien plus lat pulldown (rug), cable lateral raise, reverse pec deck zijwaarts (achterkant schouders), Bayesian cable curl, overhead extension en kickback. Geen kuiten of buik in de lijst.",
+        "Seated leg curl gaf in 12 weken zo'n 1,5 keer zoveel groei als liggend. Alleen de kop die niet over de heup loopt groeide niet meer, dus het komt waarschijnlijk door de rek.",
+        "Schuine bankdrukken groeide in een onderzoek de midden- en onderkant van de borst even goed als plat, en de bovenkant beter.",
+        "Drie sets per week voor je borst geeft al zo'n 60% van de maximale groei.",
+        "Squatten traint je hamstrings nauwelijks: ze worden aan de ene kant gerekt en aan de andere kant korter.",
+        "Lengthened partials: halve herhalingen alleen in de gerekte helft, bijvoorbeeld onderin een squat."
+      ]
+    },
+    {
+      "id": "hussein-nippard-rug",
+      "type": "video",
+      "title": "The ULTIMATE Science-Based Back Workout (ft. Jeff Nippard & Julian Fitzgerald)",
+      "source": "Hussein",
+      "url": "https://www.youtube.com/watch?v=SpJwyAbwDBk",
+      "days": ["pull", "borst-rug", "upper"],
+      "whenToUse": "Voor een rugtraining: welke oefeningen, hoe zwaar en hoe dicht bij falen.",
+      "rules": [
+        "Elke rugtraining: een verticale trek en een horizontale trek. Begin met de verticale.",
+        "Warm op en doe kabel-externe rotaties (8–10 rustige herhalingen) voor je rotator cuff. De kabel moet zijwaarts trekken, niet naar beneden.",
+        "Set 1 met 1–2 herhalingen over, je laatste set tot falen. Mensen schatten vaak veel te veel herhalingen over in.",
+        "Middelste trapezius: cable row met brede greep, 12–15 herhalingen, lichter, 1–2 s knijpen bovenin.",
+        "Reverse pec deck zijwaarts of schuin: veeg het gewicht naar buiten ('zoveel mogelijk vloer schoonvegen') voor een grotere rek van je achterste schouders.",
+        "Kabels, machines en vrije gewichten geven evenveel groei als je tot falen gaat. Combineer ze en kies een programma dat je leuk vindt.",
+        "Tijdens een cut: weinig volume (1–2 zware sets per oefening), maar de inzet hoog houden.",
+        "Gebruik trekbanden zodat je grip je rug niet beperkt."
+      ],
+      "keyPoints": [
+        "Weighted pull-ups: 6–8 zware herhalingen met een gewichtsriem.",
+        "Bij een plate-loaded roeimachine bepaalt waar je het gewicht hangt welk deel het zwaarst is. Je rug is het sterkst in de gerekte stand, dus laad die.",
+        "In een onderzoek was 1/9 van het normale volume genoeg om spiermassa te behouden.",
+        "Bij beginners gaf trainen in de gerekte stand duidelijk meer groei; bij ervaren sporters vond Nippard geen verschil tussen volledig bereik en lengthened partials."
+      ]
+    },
+    {
+      "id": "movement-system-plyo",
+      "type": "video",
+      "title": "A Coaches Guide to Plyometric Training",
+      "source": "The Movement System",
+      "url": "https://www.youtube.com/watch?v=xeR4RprByc4",
+      "days": ["benen"],
+      "whenToUse": "Bij het kiezen van sprongoefeningen: welke je sterker, sneller of explosiever maken.",
+      "rules": [
+        "Kracht is de basis: je kunt niet snel kracht zetten als je te weinig kracht hebt. Sterkere sporters reageren sneller op sprongtraining.",
+        "Sprongen met lang grondcontact (box jump, broad jump, split jumps, loaded jumps: 0,5–0,7 s) trainen snel kracht opbouwen en landen, maar maken je niet veel sneller.",
+        "Trage rek-verkortingscyclus (0,25–0,5 s: bounding, eenbenig hoppen, countermovement jumps, hoge hurdle hops, depth jumps) is goed voor acceleratie en wendingen. Laat het zo'n 10–30% van je sprongtraining zijn.",
+        "Snelle rek-verkortingscyclus (0,1–0,25 s: drop jumps, pogo hops, hurdle hops, skips) traint peesstijfheid en topsnelheid. Hoge intentie, weinig vermoeidheid, redelijke aantallen.",
+        "Om het grondcontact kort te houden: 60%, dan 70%, dan 80% inspanning op de volgende herhalingen.",
+        "Sprinten zelf is niet te vervangen: bouw het geleidelijk en consequent op.",
+        "Sterke kuiten door volledig bereik (zoals de Johnson calf raise) en isometrische enkeloefeningen (ankle iso push, ankle iso switch) zijn een goede basis voor sprinten."
+      ],
+      "keyPoints": [
+        "Het spectrum naar grondcontacttijd: maximale kracht (0,7–3 s), springen (0,5–0,7 s), trage rek-verkortingscyclus (0,25–0,5 s), snelle rek-verkortingscyclus (0,1–0,25 s) en maximale reactiviteit (sprinten, onder 0,1 s).",
+        "Een depth jump met kort grondcontact werkt vooral via de achillespees; met langer contact en dieper zakken gaan je spieren het werk doen.",
+        "Bij sprinten blijven je spieren bijna even lang; je achillespees rekt 5–10 keer meer dan de spier.",
+        "Na sprongtraining spannen je spieren eerder aan vlak voor de landing, dus zet je meer kracht in minder tijd.",
+        "Box jumps en broad jumps toevoegen aan een spiergroeiprogramma maakt je nog geen atleet.",
+        "Ook genoemd, zonder uitleg: yielding en oscillatory jumps."
+      ]
+    },
+    {
+      "id": "nippard-upper-jaar",
+      "type": "video",
+      "title": "The Upper Body Workout I Followed For My 1 Year Transformation",
+      "source": "Jeff Nippard",
+      "url": "https://www.youtube.com/watch?v=928aRhhPP8I",
+      "days": ["upper", "push", "pull", "armen-schouders", "borst-rug"],
+      "whenToUse": "Als upper body training voor spiergroei, met zijn techniektips per oefening.",
+      "rules": [
+        "Laatste set van elke oefening tot falen, zonder spotter; gebruik veiligheidssteunen.",
+        "Vooruitgang telt alleen met dezelfde techniek: niet stuiteren, gecontroleerd zakken, kort pauzeren.",
+        "Schuine bankdrukken op 45 graden met een iets smallere greep; druk omhoog en iets naar achter.",
+        "Seated cable fly: ellebogen hoog, alsof je een boom omarmt, en zwaai in een boog terug naar buiten.",
+        "Weighted pull-ups: borst naar de stang, ellebogen naar beneden en naar binnen. Nog geen gewicht? Met band, machine of alleen zakken vanaf een box.",
+        "High cable lateral raise: 2–3 sets van 8–10. Zwaai naar buiten, niet omhoog, en haal je schouders niet op.",
+        "Deficit Pendlay row: op een bumperplaat, romp horizontaal, explosief omhoog en langzaam zakken; laatste set gevolgd door lengthened partials.",
+        "Overhead triceps extension: zet de kabel hoog en gebruik je benen om in positie te komen.",
+        "Gebruik krijt of trekbanden bij pull-ups en rows."
+      ],
+      "keyPoints": [
+        "Een jaar lang deze upper body training gaf hem 1,2 kg spiermassa erbij, na 15 jaar trainen.",
+        "Schuine bankdrukken groeide de midden- en onderkant van de borst even goed als plat, en de bovenkant beter.",
+        "Vrije gewichten hebben nog steeds veel waarde, ook voor spiergroei.",
+        "Cable en dumbbell lateral raises gaven in 8 weken evenveel groei (5 sets tot falen, 2 keer per week).",
+        "Overhead extensions gaven 50% meer groei van de lange kop en 40% meer van de hele triceps dan pushdowns.",
+        "Bayesian curl en preacher curl: geen significant verschil. Op zijn pull-dag doet hij preacher curls en hammer curls.",
+        "Hij ging van 14 kg naar 27 kg extra bij 6 weighted pull-ups."
+      ]
+    },
+    {
+      "id": "cf-beginner",
+      "type": "video",
+      "title": "10 Best Exercises To Start Calisthenics | + Beginner Workout Routine",
+      "source": "Calisthenics Family",
+      "url": "https://www.youtube.com/watch?v=RoxKbyst0To",
+      "days": ["calisthenics", "fullbody"],
+      "whenToUse": "Als je begint met calisthenics: de 10 basisoefeningen.",
+      "rules": [
+        "Als beginner 3 keer per week een full body training.",
+        "Te zwaar? Pike push-up: negatieven. Pull-up en chin-up: band of negatieven. Hollow hold: benen schuin. Frog stand: eerst alleen opwippen. Dips: bench dips. Plank: op je knieën. Pistol squat: met hulp. Skin the cat: eerst ondersteboven hangen. L-sit: tuck L-sit."
+      ],
+      "keyPoints": [
+        "De 10: pike push-up, pull-up, hollow hold, frog stand, dips aan de brug, plank, chin-up, pistol squat, skin the cat en L-sit.",
+        "De pike push-up is de enige verticale duw en de basis voor de handstand (push-up).",
+        "Kun je geen frog stand, dan lukt een handstand ook niet.",
+        "Skin the cat verbetert schoudermobiliteit en kracht met gestrekte armen (voor front en back lever) en haalt de angst voor ondersteboven hangen weg.",
+        "De L-sit traint compressie van je romp en het omlaag duwen van je schouderbladen.",
+        "Het weekschema met sets en herhalingen staat alleen in beeld."
+      ]
+    },
+    {
+      "id": "cf-intermediate",
+      "type": "video",
+      "title": "20 Best Intermediate Calisthenics Exercises | + Workout Plan",
+      "source": "Calisthenics Family",
+      "url": "https://www.youtube.com/watch?v=yq0QvBaDBKk",
+      "days": ["calisthenics"],
+      "whenToUse": "Als de basis lukt en je naar het volgende niveau wil.",
+      "rules": [
+        "3–5 keer per week full body, met 24–48 uur rust tussen de trainingen.",
+        "Vier groepen: duwen (borst, schouders, triceps), trekken (lats, biceps, bovenrug), core en benen.",
+        "Goede vorm en consequent blijven."
+      ],
+      "keyPoints": [
+        "De 20 oefeningen en hun doelherhalingen staan alleen in beeld, niet in de gesproken tekst. Genoemd worden: explosieve pull-ups, clap push-ups, archer pull-ups en German hang rotations.",
+        "Sterke, soepele benen helpen ook bij back lever, front lever en handstand."
+      ]
+    },
+    {
+      "id": "striqfit-skills",
+      "type": "video",
+      "title": "Every Calisthenics Skill to Learn in Order for your First Year",
+      "source": "STRIQfit",
+      "url": "https://www.youtube.com/watch?v=J2JHDavNZB4",
+      "days": ["calisthenics"],
+      "whenToUse": "Als stappenplan voor je eerste jaar calisthenics-skills.",
+      "rules": [
+        "Leer de skills bij voorkeur in deze volgorde, maar je hoeft niet alles in één jaar.",
+        "Frog stand: ellebogen tegen je knieën, handen iets naar buiten. Elke tussenstap tot je hem 20 s kunt houden: wippen, vasthouden, been tikken, verhoogd.",
+        "Handen iets naar buiten draaien helpt tegen polspijn (frog stand, planche lean, elbow lever).",
+        "Balans op je handen via je vingertoppen, eeltplekken en handpalm: val je naar voren, druk met je vingers; val je naar achter, druk met je palm.",
+        "Handstand: tegen de muur oefenen, 10–15 minuten met sets van 10–20 s. Uitvallen: houd één hand aan de grond en draai weg.",
+        "Kracht in je voorste schouders is de basis: pseudo planche lean, pseudo planche push-up en tuck planche.",
+        "Muscle-up: leer eerst de knie-drive vanuit een hollow positie, eventueel met een band."
+      ],
+      "keyPoints": [
+        "Volgorde: hollow body hang, frog stand, hollow body hold, pseudo planche lean, pseudo planche push-up, tuck front lever, elbow lever, German hang, butcher's block, pistol squat, tuck back lever, compact leg lifts, pike push-up, L-sit, archer push-up, tuck planche, reverse Nordic, straddle sit, shoulder stand, muscle-up, handstand en handstand push-up.",
+        "Hollow body hold: beheersing is 45 s.",
+        "Butcher's block: kun je hem 30 s houden, voeg dan 5–7 kg toe.",
+        "Hangen ontlast je rug en versterkt je grip. Met je schouders omlaag en naar achter wordt een dead hang een actieve hang."
       ]
     }
   ],
@@ -590,6 +761,518 @@
       "muscles": { "primary": ["borst", "schouders"], "secondary": [] },
       "days": ["mobility"],
       "source": "upright-stretch"
+    },
+    {
+      "name": "Smith machine squat",
+      "aliases": ["smith squat", "smith machine squats"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["adductoren"] },
+      "days": ["benen", "lower"],
+      "source": "tennyson-nippard-spieren",
+      "note": "Voor quads en billen. Je kunt dichter bij falen zonder het risico van een vrije squat. Probeer aan het eind lengthened partials: alleen de onderste helft."
+    },
+    {
+      "name": "Chest supported row",
+      "aliases": ["chest-supported row", "borst-ondersteund roeien", "chest supported rows"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["rug", "trapezius"], "secondary": ["biceps", "schouders"] },
+      "days": ["pull", "borst-rug", "upper"],
+      "source": "tennyson-nippard-spieren",
+      "note": "Laat je schouderbladen uit elkaar gaan en knijp ze samen. Blijf steeds op dezelfde manier tegen het kussen, anders is je vooruitgang nep."
+    },
+    {
+      "name": "Reverse pec deck",
+      "aliases": ["rear delt fly", "reverse fly", "reverse pec deck fly"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["schouders"], "secondary": ["trapezius"] },
+      "days": ["pull", "armen-schouders", "upper"],
+      "dose": { "reps": "12-15" },
+      "source": "tennyson-nippard-spieren",
+      "note": "Ga er zijwaarts (of schuin) naast zitten, zodat je arm over je borst rekt. Veeg het gewicht naar buiten."
+    },
+    {
+      "name": "Triceps kickback",
+      "aliases": ["kickback", "kickbacks", "tricep kickback"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["triceps"], "secondary": [] },
+      "days": ["push", "armen-schouders"],
+      "source": "tennyson-nippard-spieren",
+      "note": "Leun iets achterover zodat je arm achter je lichaam komt: daar knijpt de lange kop het hardst."
+    },
+    {
+      "name": "Cable external rotation",
+      "aliases": ["external rotation", "cable external rotations", "externe rotatie"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["schouders"], "secondary": [] },
+      "days": ["pull", "armen-schouders"],
+      "dose": { "reps": "8-10" },
+      "source": "hussein-nippard-rug",
+      "note": "Voor je rotator cuff, als warming-up. Rustig en gecontroleerd; de kabel moet zijwaarts trekken, niet naar beneden."
+    },
+    {
+      "name": "Machine row",
+      "aliases": ["plate loaded row", "machine rows"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["rug"], "secondary": ["trapezius", "biceps"] },
+      "days": ["pull", "borst-rug"],
+      "source": "hussein-nippard-rug",
+      "note": "Hang het gewicht zo dat de gerekte stand het zwaarst is: daar is je rug het sterkst."
+    },
+    {
+      "name": "Seated cable row",
+      "aliases": ["cable row", "seated row", "wide grip cable row", "kabel roeien"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["trapezius", "rug"], "secondary": ["schouders", "biceps"] },
+      "days": ["pull", "borst-rug"],
+      "dose": { "reps": "12-15" },
+      "source": "hussein-nippard-rug",
+      "note": "Brede greep voor je middelste trapezius. Lichter gewicht, voorover leunen voor de rek, borst omhoog en 1–2 s knijpen bovenin."
+    },
+    {
+      "name": "Trap bar deadlift",
+      "aliases": ["hex bar deadlift", "trapbar deadlift"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["quadriceps", "billen", "hamstrings"], "secondary": ["onderrug", "trapezius", "onderarmen"] },
+      "days": ["benen", "lower"],
+      "source": "movement-system-plyo",
+      "note": "Maximale kracht: de basis voor sprongen en sprinten."
+    },
+    {
+      "name": "Split jump",
+      "aliases": ["split jumps", "lunge jump", "lunge jumps"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["kuiten"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Springtraining met lang grondcontact: traint snel kracht opbouwen en landen."
+    },
+    {
+      "name": "Jump squat",
+      "aliases": ["loaded jump", "loaded jumps"],
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Met gewicht heet het een loaded jump: springtraining met lang grondcontact die snel kracht opbouwen en landen traint."
+    },
+    {
+      "name": "Countermovement jump",
+      "aliases": ["countermovement jumps", "cmj"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": ["kuiten"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Trage rek-verkortingscyclus: goed voor acceleratie en wendingen."
+    },
+    {
+      "name": "Depth jump",
+      "aliases": ["depth jumps"],
+      "kind": "explosief",
+      "muscles": { "primary": ["quadriceps", "billen", "kuiten"], "secondary": [] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Van een box, dieper landen en dan zo hoog mogelijk: meer spierwerk dan een drop jump, die kort en veerkrachtig is."
+    },
+    {
+      "name": "Single leg hops",
+      "aliases": ["single leg hop", "single leg hopping", "eenbenig hoppen"],
+      "kind": "explosief",
+      "muscles": { "primary": ["kuiten", "billen"], "secondary": ["quadriceps"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Maximaal hoppen op één been: trage rek-verkortingscyclus, voor acceleratie en wendingen."
+    },
+    {
+      "name": "Hurdle hops",
+      "aliases": ["hurdle hop", "high hurdle hops", "hordesprongen"],
+      "kind": "explosief",
+      "muscles": { "primary": ["kuiten", "quadriceps"], "secondary": ["billen"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Hoge hordes met langer contact trainen kracht; lage, snelle hordes trainen veerkracht en peesstijfheid."
+    },
+    {
+      "name": "Bounding",
+      "aliases": ["max effort bounding"],
+      "kind": "explosief",
+      "muscles": { "primary": ["billen", "hamstrings"], "secondary": ["kuiten", "quadriceps"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Grote sprongpassen van been naar been. Maximaal voor kracht en acceleratie, sneller en lichter voor veerkracht."
+    },
+    {
+      "name": "Skips",
+      "aliases": ["skipping", "a-skips", "a skips", "huppelen"],
+      "kind": "explosief",
+      "muscles": { "primary": ["kuiten"], "secondary": ["quadriceps", "hamstrings"] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Snelle rek-verkortingscyclus: kort grondcontact, traint peesstijfheid."
+    },
+    {
+      "name": "Sprint",
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Niet te vervangen: bouw sprinten geleidelijk en consequent op. Bij topsnelheid komt de kracht vooral uit je achillespees en voor-activatie."
+    },
+    {
+      "name": "Johnson calf raise",
+      "aliases": ["johnson calf raises"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen", "lower"],
+      "source": "movement-system-plyo",
+      "note": "Kuitheffen door het volledige bereik: sterke kuiten als basis voor sprinten."
+    },
+    {
+      "name": "Ankle iso push",
+      "aliases": ["ankle iso", "ankle isometric push"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Isometrisch: veel kracht in een vaste enkelhoek, specifiek voor sprinten."
+    },
+    {
+      "name": "Ankle iso switch",
+      "aliases": ["ankle isometric switch"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["kuiten"], "secondary": [] },
+      "days": ["benen"],
+      "source": "movement-system-plyo",
+      "note": "Gevorderde, sprintspecifieke variant van de ankle iso push."
+    },
+    {
+      "name": "Schuine bankdrukken",
+      "days": ["upper"],
+      "source": "nippard-upper-jaar",
+      "note": "Nippard: 45 graden, iets smallere greep, gecontroleerd zakken en kort pauzeren; druk omhoog en iets naar achter. Laatste set tot falen, met veiligheidssteunen."
+    },
+    {
+      "name": "Cable fly",
+      "aliases": ["seated cable fly", "cable flyes", "kabel fly"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["borst"], "secondary": ["schouders"] },
+      "days": ["push", "borst-rug", "upper"],
+      "source": "nippard-upper-jaar",
+      "note": "Zittend, bank ver voor de kabels. Ellebogen hoog en samenbrengen (niet alleen je handen), dan in een brede boog terug, zo diep als je schouders toelaten."
+    },
+    {
+      "name": "Pull-up",
+      "days": ["upper"],
+      "source": "nippard-upper-jaar",
+      "note": "Nippard: met gewicht, borst naar de stang, ellebogen naar beneden en naar binnen. Krijt en trekbanden mogen. Nog te zwaar: band, machine of alleen zakken."
+    },
+    {
+      "name": "Cable lateral raise",
+      "aliases": ["high cable lateral raise", "cable side raise", "kabel lateral raise"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["schouders"], "secondary": [] },
+      "days": ["push", "armen-schouders", "upper"],
+      "dose": { "sets": 2, "reps": "8-10" },
+      "source": "nippard-upper-jaar",
+      "note": "2–3 sets. Kabel hoog, veeg naar buiten en niet omhoog, en haal je schouders niet op. Voelen? Duw je arm zijwaarts tegen een muur."
+    },
+    {
+      "name": "Deficit Pendlay row",
+      "aliases": ["pendlay row", "pendlay rows", "deficit pendlay rows"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["rug", "trapezius"], "secondary": ["onderrug", "biceps"] },
+      "days": ["pull", "upper", "borst-rug"],
+      "source": "nippard-upper-jaar",
+      "note": "Op een bumperplaat voor meer rek. Romp horizontaal, explosief omhoog en langzaam zakken. Laatste set: daarna nog 3–4 lengthened partials."
+    },
+    {
+      "name": "Bayesian cable curl",
+      "aliases": ["bayesian curl", "bayesian curls"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["biceps"], "secondary": [] },
+      "days": ["pull", "armen-schouders", "upper"],
+      "source": "nippard-upper-jaar",
+      "note": "Kabel achter je, op handhoogte: de meeste spanning als je biceps gerekt is."
+    },
+    {
+      "name": "Preacher curl",
+      "aliases": ["preacher curls", "scott curl"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["biceps"], "secondary": [] },
+      "days": ["pull", "armen-schouders"],
+      "source": "nippard-upper-jaar",
+      "note": "Groeide in een onderzoek ongeveer even goed als de Bayesian curl. Laatste set tot falen."
+    },
+    {
+      "name": "Hammer curl",
+      "days": ["pull"],
+      "source": "nippard-upper-jaar",
+      "note": "Nippard doet ze op zijn pull-dag, laatste set tot falen."
+    },
+    {
+      "name": "Dips",
+      "days": ["calisthenics"],
+      "source": "cf-beginner",
+      "note": "Aan de brug: de beste oefening voor duwkracht en spiermassa op borst, schouders en triceps. Te zwaar: bench dips."
+    },
+    {
+      "name": "Plank",
+      "hold": true,
+      "days": ["calisthenics"],
+      "source": "cf-beginner",
+      "note": "Traint buik, onderrug en billen, en leert je je bekken kantelen en je schouderbladen naar voren duwen. Te zwaar: op je knieën."
+    },
+    {
+      "name": "Chin-up",
+      "days": ["calisthenics", "pull"],
+      "source": "cf-beginner",
+      "note": "Onderhandse greep: meer biceps, en een sterkere grip en ellebogen. Te zwaar: band of negatieven."
+    },
+    {
+      "name": "Skin the cat",
+      "aliases": ["skin the cats"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["rug", "schouders"], "secondary": ["buik", "biceps"] },
+      "days": ["calisthenics", "pull"],
+      "source": "cf-beginner",
+      "note": "Voor schoudermobiliteit en kracht met gestrekte armen. Te zwaar: eerst ondersteboven hangen."
+    },
+    {
+      "name": "Explosieve pull-up",
+      "aliases": ["explosive pull-up", "explosive pull ups", "explosieve pull ups"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["rug"], "secondary": ["biceps", "onderarmen"] },
+      "days": ["calisthenics", "pull"],
+      "source": "cf-intermediate",
+      "note": "Zo hoog en snel mogelijk omhoog trekken. Opstap naar de muscle-up."
+    },
+    {
+      "name": "Clap push-up",
+      "aliases": ["clap push-ups", "clapping push-up", "klap push-up", "klap push ups"],
+      "kind": "explosief",
+      "muscles": { "primary": ["borst", "triceps"], "secondary": ["schouders"] },
+      "days": ["calisthenics", "push"],
+      "source": "cf-intermediate",
+      "note": "Duw jezelf zo explosief omhoog dat je in de lucht kunt klappen."
+    },
+    {
+      "name": "Archer pull-up",
+      "aliases": ["archer pull-ups", "archer pullup"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["rug", "biceps"], "secondary": ["onderarmen"] },
+      "days": ["calisthenics", "pull"],
+      "source": "cf-intermediate",
+      "note": "Trek naar één kant met de andere arm bijna gestrekt. Een band kan helpen."
+    },
+    {
+      "name": "Hollow body hang",
+      "aliases": ["active hang", "actieve hang", "hollow hang"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["rug", "onderarmen"], "secondary": ["buik"] },
+      "days": ["calisthenics", "pull"],
+      "source": "striqfit-skills",
+      "note": "Schouders omlaag en naar achter, buik en dijen aanspannen. Te zwaar: hang met een band om de stang en gebruik steeds een lichtere band."
+    },
+    {
+      "name": "Frog stand",
+      "aliases": ["frogstand", "frog stands", "kikkerhouding"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["schouders", "onderarmen"], "secondary": ["triceps", "buik"] },
+      "days": ["calisthenics"],
+      "dose": { "sec": 20 },
+      "source": "striqfit-skills",
+      "note": "Ellebogen tegen je knieën, handen iets naar buiten. Elke tussenstap tot 20 s: wippen, vasthouden, been tikken, verhoogd. Een kussen voor je hoofd mag."
+    },
+    {
+      "name": "Hollow body hold",
+      "aliases": ["hollow hold", "hollow body holds", "hollow body"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["buik"], "secondary": ["billen", "onderrug"] },
+      "days": ["calisthenics"],
+      "dose": { "sec": 45 },
+      "source": "striqfit-skills",
+      "note": "Druk je onderrug in de grond, schouders en benen los van de grond. Te zwaar: benen dichter naar je toe (of schuin). Beheersing is 45 s."
+    },
+    {
+      "name": "Planche",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Pseudo planche lean: schouderbladen naar voren, handen iets naar buiten, heupen boven je polsen, niet inzakken. Tuck planche: knieën naar je borst, begin met afwisselend been tikken."
+    },
+    {
+      "name": "Pseudo planche push-up",
+      "aliases": ["pseudo planche push-ups", "pseudo planche pushup"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["schouders", "borst"], "secondary": ["triceps", "buik"] },
+      "days": ["calisthenics", "push"],
+      "source": "striqfit-skills",
+      "note": "Een push-up waarbij je in de planche lean blijft. Te zwaar: leun alleen naar voren tijdens het omhoog duwen."
+    },
+    {
+      "name": "Front lever",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Tuck: armen gestrekt, knieën naar je borst, omhoog tot je enkels de stang raken en gecontroleerd terug naar horizontaal."
+    },
+    {
+      "name": "Elbow lever",
+      "aliases": ["elbow levers"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["buik", "triceps"], "secondary": ["schouders", "onderarmen"] },
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Ellebogen tegen je buik, handen naar buiten of helemaal gedraaid. Leun naar voren en til je benen op: eerst gebogen, dan straddle, dan gesloten."
+    },
+    {
+      "name": "German hang",
+      "aliases": ["german hangs", "duitse hang"],
+      "kind": "stretch",
+      "muscles": { "primary": ["schouders", "borst"], "secondary": ["biceps"] },
+      "days": ["mobility"],
+      "source": "striqfit-skills",
+      "note": "Schoudermobiliteit. Begin met een bank of blok onder je voeten en laat die steeds verder los."
+    },
+    {
+      "name": "Butcher's block",
+      "aliases": ["butchers block", "butcher block"],
+      "kind": "stretch",
+      "muscles": { "primary": ["rug", "triceps"], "secondary": ["schouders"] },
+      "days": ["mobility"],
+      "source": "striqfit-skills",
+      "note": "Ellebogen dicht bij elkaar, heupen laten zakken en buik aanspannen. Begin op je knieën; na 30 s houden kan er 5–7 kg bij."
+    },
+    {
+      "name": "Pistol squat",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Knie naar buiten, ander been gestrekt. Opbouw: op een box of bank, langzaam zakken vanaf een bank en explosief terug, dan met hulp."
+    },
+    {
+      "name": "Back lever",
+      "aliases": ["back levers", "tuck back lever"],
+      "kind": "skill",
+      "ladder": ["German hang", "Tuck", "Advanced tuck", "Straddle", "Volledig"],
+      "muscles": { "primary": ["rug", "schouders"], "secondary": ["biceps", "buik"] },
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Tuck back lever: net als de tuck front lever, maar voorbij de stang; stop net voor de German hang en houd je horizontaal."
+    },
+    {
+      "name": "Compact leg lifts",
+      "aliases": ["compact leg lift", "compression leg lifts"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["buik"], "secondary": ["quadriceps"] },
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Handen rond je knieën, benen gestrekt en zo hoog mogelijk optillen. Te zwaar: één been, of leun met je rug tegen een muur. Te makkelijk: handen bij je enkels."
+    },
+    {
+      "name": "Pike push-up",
+      "aliases": ["pike push-ups", "pike pushup", "pike push ups", "pike opdrukken"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["schouders", "triceps"], "secondary": ["borst"] },
+      "days": ["calisthenics", "push", "armen-schouders"],
+      "source": "striqfit-skills",
+      "note": "Hoofd zakt vóór je handen, ellebogen ingetrokken en duw omhoog én uit je schouders. Maak de pike langer om het zwaarder te maken; te zwaar: negatieven."
+    },
+    {
+      "name": "L-sit",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Schouderbladen omlaag drukken, heupen optillen en met compact leg lifts je benen omhoog. Oefen eerst met afwisselend één been, of een tuck L-sit."
+    },
+    {
+      "name": "Archer push-up",
+      "aliases": ["archer push-ups", "archer pushup"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["borst", "triceps"], "secondary": ["schouders"] },
+      "days": ["calisthenics", "push"],
+      "source": "striqfit-skills",
+      "note": "Opstap naar een eenarmige push-up. Begin met je 'rechte' arm nog licht gebogen."
+    },
+    {
+      "name": "Reverse Nordic",
+      "aliases": ["reverse nordics", "reverse nordic curl"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["quadriceps"], "secondary": ["buik", "billen"] },
+      "days": ["calisthenics", "benen", "lower"],
+      "source": "striqfit-skills",
+      "note": "Knieën op schouderbreedte, billen aanspannen en gecontroleerd achterover zakken in een rechte lijn, zonder te stuiteren. Te zwaar: voeten verhoogd of met een band."
+    },
+    {
+      "name": "Straddle sit",
+      "aliases": ["straddle l-sit"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["buik"], "secondary": ["triceps", "adductoren"] },
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Handen naar buiten, instappen vanuit een hurkzit. Oefen de soepelheid met straddle leg lifts."
+    },
+    {
+      "name": "Shoulder stand",
+      "aliases": ["shoulder stand tegen de muur"],
+      "kind": "lichaamsgewicht",
+      "hold": true,
+      "muscles": { "primary": ["schouders", "triceps"], "secondary": [] },
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Tegen de muur, vanuit een frog stand eerst één been omhoog, dan twee. Kracht in de onderste stand van de handstand push-up. Blijf ademen."
+    },
+    {
+      "name": "Muscle-up",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Hollow positie, geen holle rug. Leer eerst de knie-drive: spring op, laat je voeten naar voren zwaaien en trek je knieën naar je borst terwijl je explosief optrekt. Een band helpt."
+    },
+    {
+      "name": "Handstand",
+      "days": ["calisthenics"],
+      "source": "striqfit-skills",
+      "note": "Schouders over je oren, armen op slot. 10–15 minuten tegen de muur met sets van 10–20 s. Uitvallen: één hand aan de grond houden en wegdraaien."
+    },
+    {
+      "name": "Handstand push-up",
+      "aliases": ["handstand push-ups", "hspu", "handstand pushup"],
+      "kind": "lichaamsgewicht",
+      "muscles": { "primary": ["schouders", "triceps"], "secondary": ["trapezius"] },
+      "days": ["calisthenics", "push", "armen-schouders"],
+      "source": "striqfit-skills",
+      "note": "Combineert de shoulder stand en de pike push-up. Oefen tegen de muur."
+    },
+    {
+      "name": "Hack squat",
+      "aliases": ["hacksquat", "hack squats"],
+      "kind": "gewicht",
+      "muscles": { "primary": ["quadriceps", "billen"], "secondary": [] },
+      "days": ["fullbody", "lower"],
+      "dose": { "sets": 2, "reps": "4-6" },
+      "source": "nippard-minimalist",
+      "note": "Eerst 1 zware set van 4–6 (1 herhaling voor falen), 3 minuten rust, dan een lichtere set van 8–10 met gecontroleerd zakken. Volledige diepte; je knieën mogen over je tenen."
+    },
+    {
+      "name": "Squat",
+      "days": ["benen"],
+      "source": "rossner-lopers",
+      "note": "Voor hardlopers (Røssner): 3–5 sets van 1–7 op 80–90% van je 1RM, 2–3 keer per week."
+    },
+    {
+      "name": "Deadlift",
+      "days": ["fullbody"],
+      "source": "galpin-kracht",
+      "note": "Het heupscharnier van je full body. Voor kracht: 3–5 sets van 3–5 herhalingen op 85%+, 3–5 minuten rust."
+    },
+    {
+      "name": "Diagonale pogo jumps",
+      "aliases": ["diagonal pogo jumps", "diagonal pogo"],
+      "kind": "explosief",
+      "hold": true,
+      "muscles": { "primary": ["kuiten"], "secondary": ["quadriceps"] },
+      "days": ["benen"],
+      "dose": { "sets": 3, "sec": 30 },
+      "source": "e3rehab-lopers",
+      "note": "3 × 30–60 s. Handen op je heupen, snel diagonaal springen op beide voeten met bijna gestrekte knieën, zo kort mogelijk op de grond. Begin klein en spring steeds hoger."
     }
   ]
 }

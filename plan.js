@@ -5,14 +5,14 @@
   const DAYS = [
     { id: 'push', label: 'Push', muscles: ['borst', 'schouders', 'triceps'], defaults: ['Bankdrukken', 'Schuine bankdrukken', 'Overhead press', 'Dips', 'Lateral raise', 'Triceps pushdown'] },
     { id: 'pull', label: 'Pull', muscles: ['rug', 'biceps', 'trapezius', 'onderarmen'], defaults: ['Pull-up', 'Barbell row', 'Lat pulldown', 'Face pull', 'Biceps curl', 'Hammer curl'] },
-    { id: 'benen', label: 'Benen (explosief)', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'], defaults: ['Box jump', 'Jump squat', 'Broad jump', 'Romanian deadlift', 'Bulgarian split squat', 'Calf raise'] },
+    { id: 'benen', label: 'Benen (explosief)', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'], defaults: ['Box jump', 'Jump squat', 'Broad jump', 'Squat', 'Romanian deadlift', 'Bulgarian split squat', 'Calf raise'] },
     { id: 'mobility', label: 'Mobility', muscles: [], defaults: [] },
     { id: 'calisthenics', label: 'Calisthenics', muscles: ['rug', 'schouders', 'buik', 'triceps'], defaults: ['Front lever', 'Handstand', 'Muscle-up', 'L-sit', 'Planche', 'Pistol squat', 'Pull-up', 'Dips', 'Push-up'] },
     { id: 'upper', label: 'Upper', muscles: ['borst', 'rug', 'schouders', 'biceps', 'triceps'], defaults: ['Bankdrukken', 'Pull-up', 'Overhead press', 'Barbell row', 'Dips', 'Biceps curl'] },
-    { id: 'lower', label: 'Lower', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten'], defaults: ['Hip thrust', 'Leg curl', 'Leg extension', 'Calf raise'] },
+    { id: 'lower', label: 'Lower', muscles: ['quadriceps', 'hamstrings', 'billen', 'kuiten'], defaults: ['Squat', 'Deadlift', 'Hip thrust', 'Leg curl', 'Leg extension', 'Calf raise'] },
     { id: 'borst-rug', label: 'Borst & rug', muscles: ['borst', 'rug'], defaults: ['Bankdrukken', 'Pull-up', 'Schuine bankdrukken', 'Barbell row', 'Dips', 'Lat pulldown'] },
     { id: 'armen-schouders', label: 'Armen & schouders', muscles: ['schouders', 'biceps', 'triceps', 'onderarmen'], defaults: ['Overhead press', 'Lateral raise', 'Face pull', 'Biceps curl', 'Triceps pushdown', 'Hammer curl'] },
-    { id: 'fullbody', label: 'Full body', muscles: ['borst', 'rug', 'schouders', 'quadriceps', 'hamstrings', 'billen'], defaults: ['Bankdrukken', 'Pull-up', 'Romanian deadlift', 'Overhead press', 'Plank'] },
+    { id: 'fullbody', label: 'Full body', muscles: ['borst', 'rug', 'schouders', 'quadriceps', 'hamstrings', 'billen'], defaults: ['Squat', 'Bankdrukken', 'Pull-up', 'Romanian deadlift', 'Overhead press', 'Plank'] },
   ];
   const LEGS = ['quadriceps', 'hamstrings', 'billen', 'kuiten', 'adductoren'];
   const dayById = (id) => DAYS.find((d) => d.id === id);
@@ -63,11 +63,11 @@
   }
   const age = (x, now) => x.lastAt ? now - Date.parse(x.lastAt) : 1e15;
 
-  // Knowledge exercises for this day first, then the longest rested.
-  function pool(dayId, workouts, now) {
+  // Knowledge exercises for this day first, then the longest rested. Archived names never come back.
+  function pool(dayId, workouts, now, archived = []) {
     const S = Sc(), d = dayById(dayId), last = lastDone(workouts), seen = new Map();
     const stretchDay = dayId === 'mobility';
-    const add = (e) => { if (e && !seen.has(e.name) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
+    const add = (e) => { if (e && !seen.has(e.name) && !archived.includes(e.name) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
     S.CATALOG.filter((e) => e.fromKennis && (e.days || []).includes(dayId)).forEach(add);
     (stretchDay ? S.CATALOG.filter((e) => e.kind === 'stretch') : d.defaults.map((n) => S.findExercise(n))).forEach(add);
     workouts.filter((w) => w.dayType === dayId).forEach((w) => (w.entries || []).forEach((en) => add(S.findExercise(en.exercise))));
@@ -98,6 +98,8 @@
       if (sec) t.sec = sec; else if (reps) t.reps = reps;
       return t;
     }
+    // Holds (plank, frog stand) are logged in seconds.
+    if (e?.hold) return { sets, sec: (last && maxOf(last.sets, 'sec')) || +dose.sec || 20 };
     if (!last) return { sets, reps: range ? range[0] : 8 };
     const kg = maxOf(last.sets, 'kg');
     const top = last.sets.filter((s) => (+s.kg || 0) === kg);
