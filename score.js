@@ -29,7 +29,7 @@
     ex('Lateral raise', 'gewicht', ['schouders'], [], { aliases: ['side raise', 'zijwaarts heffen'] }),
     ex('Face pull', 'gewicht', ['schouders'], ['trapezius'], { aliases: ['facepull'] }),
     ex('Shoulder halo', 'gewicht', ['schouders'], ['trapezius'], { aliases: ['halo'] }),
-    ex('Band extensions', 'gewicht', ['schouders'], [], {}),
+    ex('External band rotation', 'gewicht', ['schouders'], [], { aliases: ['band external rotation', 'band extensions', 'externe rotatie met band'] }),
     ex('Pull-up', 'lichaamsgewicht', ['rug'], ['biceps', 'onderarmen', 'trapezius'], { std: [1.15, 1.35, 1.65, 2], region: 'boven', aliases: ['pullup', 'optrekken'] }),
     ex('Chin-up', 'lichaamsgewicht', ['rug', 'biceps'], ['onderarmen'], { std: [1.15, 1.35, 1.65, 2], region: 'boven', aliases: ['chinup'] }),
     ex('Lat pulldown', 'gewicht', ['rug'], ['biceps'], { std: [0.75, 1, 1.3, 1.6], region: 'boven', aliases: ['pulldown', 'lat pull down'] }),

@@ -55,9 +55,17 @@
     return out;
   }
 
+  const CORE = ['buik', 'schuine'];
+  const isCore = (e) => !!e && e.kind !== 'stretch' && e.muscles.primary.some((m) => CORE.includes(m));
+  // Abs twice a week, the app picks the day: not in the last ~3 days and fewer than twice in the past week.
+  function absDue(workouts, now) {
+    const ago = workouts.filter((w) => (w.entries || []).some((en) => isCore(Sc().findExercise(en.exercise)))).map((w) => (now - Date.parse(w.at)) / DAY);
+    return !ago.some((d) => d < 2.5) && ago.filter((d) => d < 6.5).length < 2;
+  }
+
   function item(e, dayId, last) {
     return {
-      name: e.name, kind: e.kind, fromKennis: !!e.fromKennis && (e.days || []).includes(dayId),
+      name: e.name, kind: e.kind, core: isCore(e), fromKennis: !!e.fromKennis && (e.days || []).includes(dayId),
       source: e.source || null, dose: e.dose || null, note: e.note || '', lastAt: last[e.name] || null,
     };
   }
@@ -70,8 +78,11 @@
     const add = (e) => { if (e && !seen.has(e.name) && (!mine || mine.includes(e.name)) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
     S.CATALOG.filter((e) => e.fromKennis && (e.days || []).includes(dayId)).forEach(add);
     (stretchDay ? S.CATALOG.filter((e) => e.kind === 'stretch') : d.defaults.map((n) => S.findExercise(n))).forEach(add);
-    // Switched-on exercises also come up on every day that trains their main muscle.
-    if (mine && !stretchDay) S.CATALOG.filter((e) => mine.includes(e.name) && e.muscles.primary.some((m) => d.muscles.includes(m))).forEach(add);
+    // Switched-on exercises also come up on every day that trains their main muscle, and abs on any day they are due.
+    if (mine && !stretchDay) {
+      const abs = absDue(workouts, now);
+      S.CATALOG.filter((e) => mine.includes(e.name) && e.muscles.primary.some((m) => d.muscles.includes(m) || (abs && CORE.includes(m)))).forEach(add);
+    }
     workouts.filter((w) => w.dayType === dayId).forEach((w) => (w.entries || []).forEach((en) => add(S.findExercise(en.exercise))));
     return [...seen.values()].map((e) => item(e, dayId, last))
       .sort((a, b) => (b.fromKennis - a.fromKennis) || (age(b, now) - age(a, now)));
@@ -141,7 +152,7 @@
     return best.id;
   }
 
-  const api = { DAYS, dayById, recommendDay, pool, target, guessDay, lastDone };
+  const api = { DAYS, dayById, recommendDay, pool, target, guessDay, lastDone, absDue, isCore };
   root.Plan = api;
   if (typeof module !== 'undefined') module.exports = api;
 })(typeof window !== 'undefined' ? window : globalThis);

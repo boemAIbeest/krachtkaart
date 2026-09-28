@@ -74,4 +74,15 @@ assert.deepEqual(Plan.target('Frog stand test', [w(24, 'calisthenics', [{ exerci
 // plank is timed without kennis.json too
 assert.deepEqual(Plan.target('Plank', []), { sets: 2, sec: 20 });
 
+// abs twice a week: due when none in the last ~3 days and fewer than 2 in the past week
+const absAt = (h) => w(h, 'push', [{ exercise: 'Plank', sets: [{ sec: 60 }] }]);
+assert.equal(Plan.absDue([], now), true);
+assert.equal(Plan.absDue([absAt(48)], now), false);
+assert.equal(Plan.absDue([absAt(80)], now), true);
+assert.equal(Plan.absDue([absAt(80), absAt(150)], now), false);
+assert.equal(Plan.absDue([absAt(80), absAt(170)], now), true);
+// when due, switched-on abs come up on any training day; otherwise not
+assert.ok(Plan.pool('borst-rug', [], now, ['Plank', 'Bankdrukken']).some((x) => x.name === 'Plank' && x.core));
+assert.ok(!Plan.pool('borst-rug', [absAt(24)], now, ['Plank', 'Bankdrukken']).some((x) => x.name === 'Plank'));
+
 console.log('plan.js: all checks passed');

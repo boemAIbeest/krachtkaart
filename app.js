@@ -32,7 +32,7 @@
   const MIJN_LIJST = [
     'Incline dumbbell press', 'Machine press', 'Pec deck fly', 'Clap push-up', 'Bankdrukken',
     'Barbell row', 'Lat pulldown', 'Pull-up', 'Machine row',
-    'Lateral raise', 'Cable lateral raise', 'Shoulder halo', 'Band extensions', 'Overhead press',
+    'Lateral raise', 'Cable lateral raise', 'Shoulder halo', 'External band rotation', 'Overhead press',
     'Biceps curl', 'Hammer curl', 'Bayesian cable curl', 'Preacher curl', 'Chin-up',
     'Overhead triceps extension', 'Triceps pushdown', 'Dips',
     'Plank', 'Hanging leg raise', 'Hanging side crunch',
@@ -46,6 +46,9 @@
       s.mine = [...new Set(logged)].filter((n) => !arch.includes(n));
     }
     delete s.archived;
+    // A renamed exercise keeps its old name as an alias, so it stays on and seen.
+    const renamed = (a) => Array.isArray(a) ? [...new Set(a.map((n) => Score.findExercise(n)?.name || n))] : a;
+    s.mine = renamed(s.mine); s.seen = renamed(s.seen);
     // Once: the user's own list (2026-09-28) replaces whatever was on; everything else stays in Mijn oefeningen, switched off.
     if (s.lijst !== 1) {
       s.mine = [...MIJN_LIJST];
@@ -243,7 +246,8 @@
       return;
     }
     const r = Plan.recommendDay(S.workouts, Date.now());
-    box.innerHTML = `<h4>Aanbevolen vandaag</h4><p class="day-name">${esc(r.label)}</p><p class="muted">${esc(r.reason)}</p>
+    const abs = r.id !== 'mobility' && absToday() ? ' Buik is vandaag ook aan de beurt.' : '';
+    box.innerHTML = `<h4>Aanbevolen vandaag</h4><p class="day-name">${esc(r.label)}</p><p class="muted">${esc(r.reason + abs)}</p>
       <div class="row"><button class="btn" type="button" data-choose="${r.id}">Kies oefeningen</button></div>`;
   }
 
@@ -291,8 +295,12 @@
   }
 
   // ---------- Training: choose ----------
+  // Abs twice a week: the planner says when, only if an abs exercise is switched on.
+  const absToday = () => Plan.absDue(S.workouts, Date.now()) && S.mine.some((n) => Plan.isCore(Score.findExercise(n)));
+  // Five exercises for the day, plus every abs exercise when abs are due.
   function resetPicks() {
-    U.picks = new Set(U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now(), S.mine).slice(0, 5).map((x) => x.name));
+    const p = U.day === 'mobility' ? [] : Plan.pool(U.day, S.workouts, Date.now(), S.mine), abs = absToday();
+    U.picks = new Set([...p.filter((x) => !x.core).slice(0, 5), ...p.filter((x) => x.core && abs)].map((x) => x.name));
     U.extra = [];
   }
   // Named stretches are a checklist during the training, not sets. The generic "Stretchen" keeps its muscles as an item.
@@ -327,6 +335,7 @@
       <div><h2>Training</h2><p class="muted" style="margin-top:6px">Aanbevolen: <b>${esc(rec.label)}</b>. ${esc(rec.reason)}</p></div>
       <div class="daychips" role="group" aria-label="Dagtype">${Plan.DAYS.map((d) => `<button type="button" data-day="${d.id}" aria-pressed="${d.id === U.day}"${d.id === rec.id ? ' data-rec title="Aanbevolen"' : ''}>${esc(d.label)}</button>`).join('')}</div>
       <div><h3>Oefeningen</h3><p class="small">${U.day === 'mobility' ? 'Je stretches vink je aan tijdens de training.' : 'Oefeningen uit je kennis eerst, daarna wat je het langst niet hebt gedaan. Stretches vink je aan tijdens de training.'}</p>
+        ${U.day !== 'mobility' && absToday() ? '<p class="small"><b>Buik is vandaag aan de beurt</b> (2 keer per week).</p>' : ''}
         ${extras.length || main.length ? `<ul class="picks">${[...extras, ...main].map(pickRow).join('')}</ul>`
           : U.day === 'mobility' ? '' : '<p class="muted">Voor deze dag staat nog niets aan. <button class="link" type="button" data-go="oefeningen">Oefeningen kiezen</button></p>'}</div>
       <div class="row"><input list="all-ex" id="add-pick" placeholder="Andere oefening toevoegen" aria-label="Andere oefening toevoegen"><button class="btn ghost" type="button" id="btn-add-pick">Voeg toe</button></div>
