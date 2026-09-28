@@ -35,16 +35,16 @@ assert.ok(Plan.pool('mobility', [], now).every((x) => x.kind === 'stretch'));
 // targets: double progression with a rep range
 Score.addExercises([{ name: 'Lateral raise', dose: { sets: 3, reps: '8-12' }, days: ['push'] }]);
 let t = Plan.target('Lateral raise', [w(48, 'push', [{ exercise: 'Lateral raise', sets: times(3, { reps: 12, kg: 10 }) }])]);
-assert.deepEqual(t, { sets: 3, reps: 8, kg: 12.5 });
+assert.deepEqual(t, { sets: 2, reps: 8, kg: 12.5 });
 t = Plan.target('Lateral raise', [w(48, 'push', [{ exercise: 'Lateral raise', sets: [{ reps: 12, kg: 10 }, { reps: 10, kg: 10 }, { reps: 9, kg: 10 }] }])]);
-assert.deepEqual(t, { sets: 3, reps: 10, kg: 10 });
-// no range, lower body: all sets hit -> +5 kg
+assert.deepEqual(t, { sets: 2, reps: 10, kg: 10 });
+// always 2 sets, whatever the dose or last time; no range, lower body: all sets hit -> +5 kg
 t = Plan.target('Squat', [w(48, 'benen', [{ exercise: 'Squat', sets: times(5, { reps: 5, kg: 100 }) }])]);
-assert.deepEqual(t, { sets: 5, reps: 5, kg: 105 });
-assert.deepEqual(Plan.target('Hip thrust', []), { sets: 3, reps: 8 });
+assert.deepEqual(t, { sets: 2, reps: 5, kg: 105 });
+assert.deepEqual(Plan.target('Hip thrust', []), { sets: 2, reps: 8 });
 assert.deepEqual(Plan.target('Duivenhouding', []), { sets: 1, sec: 60 });
-assert.deepEqual(Plan.target('Front lever', [w(48, 'calisthenics', [{ exercise: 'Front lever', sets: times(3, { step: 2, sec: 8 }) }])]), { sets: 3, step: 2, sec: 8 });
-assert.deepEqual(Plan.target('Box jump', [w(48, 'benen', [{ exercise: 'Box jump', sets: times(4, { reps: 5 }) }])]), { sets: 4, reps: 5 });
+assert.deepEqual(Plan.target('Front lever', [w(48, 'calisthenics', [{ exercise: 'Front lever', sets: times(3, { step: 2, sec: 8 }) }])]), { sets: 2, step: 2, sec: 8 });
+assert.deepEqual(Plan.target('Box jump', [w(48, 'benen', [{ exercise: 'Box jump', sets: times(4, { reps: 5 }) }])]), { sets: 2, reps: 5 });
 
 // day guess for spoken workouts
 const E = (exercise, kind) => ({ exercise, kind: kind || Score.findExercise(exercise).kind });
@@ -63,10 +63,15 @@ const lowerNames = (mine) => Plan.pool('lower', [w(24, 'lower', [{ exercise: 'Sq
 assert.ok(lowerNames(undefined).includes('Squat'));
 assert.deepEqual(lowerNames(['Hip thrust', 'Leg curl']).sort(), ['Hip thrust', 'Leg curl']);
 assert.deepEqual(lowerNames([]), []);
+// a switched-on exercise comes up on every day that trains its main muscle, not on others
+assert.ok(Plan.pool('pull', [], now, ['Shrugs']).some((x) => x.name === 'Shrugs'));
+assert.deepEqual(Plan.pool('push', [], now, ['Shrugs']), []);
 
 // holds are timed: dose seconds first, then the best time from last session
 Score.addExercises([{ name: 'Frog stand test', kind: 'lichaamsgewicht', muscles: { primary: ['schouders'] }, days: ['calisthenics'], hold: true, dose: { sets: 3, sec: 20 } }]);
-assert.deepEqual(Plan.target('Frog stand test', []), { sets: 3, sec: 20 });
-assert.deepEqual(Plan.target('Frog stand test', [w(24, 'calisthenics', [{ exercise: 'Frog stand test', sets: [{ sec: 25 }, { sec: 30 }] }])]), { sets: 3, sec: 30 });
+assert.deepEqual(Plan.target('Frog stand test', []), { sets: 2, sec: 20 });
+assert.deepEqual(Plan.target('Frog stand test', [w(24, 'calisthenics', [{ exercise: 'Frog stand test', sets: [{ sec: 25 }, { sec: 30 }] }])]), { sets: 2, sec: 30 });
+// plank is timed without kennis.json too
+assert.deepEqual(Plan.target('Plank', []), { sets: 2, sec: 20 });
 
 console.log('plan.js: all checks passed');

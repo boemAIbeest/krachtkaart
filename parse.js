@@ -110,6 +110,8 @@
       }
     }
     if (o.reps == null && o.sec == null && e.kind !== 'stretch') take(st, /\b(\d+)\b/, (m) => { o.reps = +m[1]; });
+    // A hold has no reps: "2 keer plank 60 seconden" means 2 sets.
+    if (e.hold && o.sec && o.reps) { sets = sets || o.reps; delete o.reps; }
     for (const k of Object.keys(o)) if (!(o[k] > 0)) delete o[k];
     if (!Object.keys(o).length) return [];
     return Array.from({ length: Math.min(sets || 1, 20) }, () => ({ ...o }));

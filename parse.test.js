@@ -83,6 +83,9 @@ assert.equal(r.entries[0].exercise, 'Hamstring stretch');
 assert.deepEqual(r.entries[0].sets, [{ sec: 120 }]);
 assert.match(r.unknown.join('|'), /reverse flyes met de band/);
 // ...but a skill step joined with "en" stays with its exercise
+// plank is a hold: said in seconds, and "2 keer" before it means sets
+assert.deepEqual(one('plank 45 seconden').entries[0].sets, [{ sec: 45 }]);
+assert.deepEqual(one('2 keer plank 60 seconden').entries[0].sets, times(2, { sec: 60 }));
 r = one('front lever 3 keer 8 seconden en advanced tuck');
 assert.deepEqual(r.entries[0].sets, times(3, { step: 2, sec: 8 }));
 assert.equal(r.unknown.length, 0);

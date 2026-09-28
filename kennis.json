@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-28",
   "sources": [
     {
       "id": "huberman-spier",
@@ -753,7 +753,7 @@
     },
     {
       "name": "Overhead triceps extension",
-      "aliases": ["overhead tricep extension", "overhead cable triceps extension", "triceps extension boven je hoofd"],
+      "aliases": ["overhead tricep extension", "overhead cable triceps extension", "triceps extension boven je hoofd", "tricep extensie", "triceps extensie", "tricep extension", "triceps extension"],
       "kind": "gewicht",
       "muscles": { "primary": ["triceps"], "secondary": [] },
       "days": ["fullbody", "upper", "push", "armen-schouders"],
@@ -1087,7 +1087,7 @@
     },
     {
       "name": "Bayesian cable curl",
-      "aliases": ["bayesian curl", "bayesian curls"],
+      "aliases": ["bayesian curl", "bayesian curls", "cable curl behind", "behind the back cable curl"],
       "kind": "gewicht",
       "muscles": { "primary": ["biceps"], "secondary": [] },
       "days": ["pull", "armen-schouders", "upper"],
@@ -1150,7 +1150,7 @@
       "name": "Clap push-up",
       "aliases": ["clap push-ups", "clapping push-up", "klap push-up", "klap push ups"],
       "kind": "explosief",
-      "muscles": { "primary": ["borst", "triceps"], "secondary": ["schouders"] },
+      "muscles": { "primary": ["borst"], "secondary": ["triceps", "schouders"] },
       "days": ["calisthenics", "push"],
       "source": "cf-intermediate",
       "note": "Duw jezelf zo explosief omhoog dat je in de lucht kunt klappen."

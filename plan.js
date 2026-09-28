@@ -70,6 +70,8 @@
     const add = (e) => { if (e && !seen.has(e.name) && (!mine || mine.includes(e.name)) && (e.kind === 'stretch') === stretchDay && (!stretchDay || e.muscles.primary.length)) seen.set(e.name, e); };
     S.CATALOG.filter((e) => e.fromKennis && (e.days || []).includes(dayId)).forEach(add);
     (stretchDay ? S.CATALOG.filter((e) => e.kind === 'stretch') : d.defaults.map((n) => S.findExercise(n))).forEach(add);
+    // Switched-on exercises also come up on every day that trains their main muscle.
+    if (mine && !stretchDay) S.CATALOG.filter((e) => mine.includes(e.name) && e.muscles.primary.some((m) => d.muscles.includes(m))).forEach(add);
     workouts.filter((w) => w.dayType === dayId).forEach((w) => (w.entries || []).forEach((en) => add(S.findExercise(en.exercise))));
     return [...seen.values()].map((e) => item(e, dayId, last))
       .sort((a, b) => (b.fromKennis - a.fromKennis) || (age(b, now) - age(a, now)));
@@ -90,7 +92,8 @@
     const key = e?.name || name, kind = e?.kind || 'gewicht', dose = e?.dose || {};
     const range = parseRange(dose.reps);
     const last = newestFirst(workouts).flatMap((w) => w.entries || []).find((en) => keyOf(en) === key && (en.sets || []).length);
-    const sets = +dose.sets || last?.sets.length || (kind === 'stretch' ? 1 : 3);
+    // The user always does 2 sets per exercise, whatever a video or last time says.
+    const sets = kind === 'stretch' ? 1 : 2;
     if (kind === 'stretch') return { sets, sec: (last && maxOf(last.sets, 'sec')) || +dose.sec || 60 };
     if (kind === 'skill') {
       const t = { sets, step: (last && maxOf(last.sets, 'step')) || +dose.step || 1 };

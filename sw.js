@@ -1,6 +1,6 @@
 // Offline cache: app files and fonts are served from cache and refreshed in the background;
 // kennis.json and vragen.json go to the network first so new knowledge shows up as soon as there is a connection.
-const CACHE = 'krachtkaart-v2';
+const CACHE = 'krachtkaart-v3';
 const SHELL = ['./', 'index.html', 'score.js', 'body.js', 'parse.js', 'plan.js', 'vraag.js', 'app.js', 'kennis.json', 'vragen.json',
   'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 

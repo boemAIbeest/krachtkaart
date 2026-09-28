@@ -29,6 +29,15 @@
   const KEY = 'krachtkaart.v1';
   // mine = the exercises the app may use; seen = names already shown in Mijn oefeningen (null until kennis.json loads once).
   const blank = () => ({ workouts: [], profile: null, notes: [], active: null, lastBackup: null, seen: null, custom: [] });
+  const MIJN_LIJST = [
+    'Incline dumbbell press', 'Machine press', 'Pec deck fly', 'Clap push-up', 'Bankdrukken',
+    'Barbell row', 'Lat pulldown', 'Pull-up', 'Machine row',
+    'Lateral raise', 'Cable lateral raise', 'Shoulder halo', 'Band extensions', 'Overhead press',
+    'Biceps curl', 'Hammer curl', 'Bayesian cable curl', 'Preacher curl', 'Chin-up',
+    'Overhead triceps extension', 'Triceps pushdown', 'Dips',
+    'Plank', 'Hanging leg raise', 'Hanging side crunch',
+    '90/90 heupstretch', 'Adductor stretch', 'Zittende vooroverbuiging', 'Cobra', 'Kindhouding', "World's greatest stretch", 'Ninja squat',
+  ];
   // Older saves had an archive instead: everything ever logged goes on, minus what was archived (squat and deadlift by default).
   function migrate(s) {
     if (!Array.isArray(s.mine)) {
@@ -37,6 +46,12 @@
       s.mine = [...new Set(logged)].filter((n) => !arch.includes(n));
     }
     delete s.archived;
+    // Once: the user's own list (2026-09-28) replaces whatever was on; everything else stays in Mijn oefeningen, switched off.
+    if (s.lijst !== 1) {
+      s.mine = [...MIJN_LIJST];
+      if (Array.isArray(s.seen)) s.seen = [...new Set([...s.seen, ...MIJN_LIJST])];
+      s.lijst = 1;
+    }
     return s;
   }
   function load() {
@@ -685,7 +700,6 @@
     tick('#c-prim', c?.muscles.primary || []);
     tick('#c-sec', c?.muscles.secondary || []);
     tick('#c-days', c?.days || []);
-    $('#c-sets').value = c?.dose?.sets || '';
     $('#c-reps').value = c?.dose?.sec || c?.dose?.reps || '';
     $('#c-note').value = c?.note || '';
     $('#btn-c-del').hidden = !c;
@@ -702,8 +716,8 @@
     const clash = Score.findExercise(name);
     if (clash && clash.name !== old) return status(st, `${clash.name} bestaat al. Zet hem aan in de lijst hieronder.`, true);
     if (!primary.length) return status(st, 'Kies minstens één hoofdspier.', true);
-    const amount = $('#c-reps').value.trim(), sets = Math.round(+$('#c-sets').value) || (amount ? 3 : 0);
-    const dose = k !== 'stretch' && sets > 0 ? { sets: Math.min(sets, 10), ...(amount && (k === 'hold' ? { sec: parseInt(amount, 10) || 30 } : { reps: amount.slice(0, 10) })) } : null;
+    const amount = $('#c-reps').value.trim();
+    const dose = k !== 'stretch' && amount ? (k === 'hold' ? { sec: parseInt(amount, 10) || 30 } : { reps: amount.slice(0, 10) }) : null;
     const note = $('#c-note').value.trim().slice(0, 500);
     const c = { name, kind: k === 'hold' ? 'lichaamsgewicht' : k, ...(k === 'hold' && { hold: true }), muscles: { primary, secondary },
       days: k === 'stretch' ? [] : ticked('#c-days'), ...(dose && { dose }), ...(note && { note }) };
@@ -721,7 +735,7 @@
   }
 
   async function makeBackup() {
-    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, mine: S.mine, seen: S.seen, custom: S.custom });
+    const payload = JSON.stringify({ app: 'krachtkaart', version: 1, exportedAt: new Date().toISOString(), workouts: S.workouts, profile: S.profile, notes: S.notes, mine: S.mine, seen: S.seen, custom: S.custom, lijst: S.lijst });
     const name = `krachtkaart-backup-${todayISO()}.json`;
     const file = new File([payload], name, { type: 'application/json' });
     try {
@@ -750,7 +764,7 @@
       const workouts = d.workouts.filter((w) => w && typeof w.at === 'string' && Array.isArray(w.entries)).map((w) => ({ ...w, id: w.id || uid() }));
       U.restore = { workouts, profile: d.profile && typeof d.profile === 'object' ? d.profile : null, notes: Array.isArray(d.notes) ? d.notes : [],
         ...(Array.isArray(d.archived) && { archived: d.archived.map(String) }),
-        ...(Array.isArray(d.mine) && { mine: d.mine.map(String) }), ...(Array.isArray(d.seen) && { seen: d.seen.map(String) }),
+        ...(Array.isArray(d.mine) && { mine: d.mine.map(String) }), ...(Array.isArray(d.seen) && { seen: d.seen.map(String) }), ...(d.lijst != null && { lijst: +d.lijst }),
         ...(Array.isArray(d.custom) && { custom: d.custom.filter((c) => c && typeof c.name === 'string' && c.muscles) }) };
       box.hidden = false;
       box.innerHTML = `<p>Back-up van ${esc(d.exportedAt ? fmtDay.format(new Date(d.exportedAt)) : 'onbekende datum')} met ${workouts.length} ${workouts.length === 1 ? 'training' : 'trainingen'}. Terugzetten vervangt alles wat nu op deze telefoon staat.</p>
