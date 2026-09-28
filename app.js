@@ -38,6 +38,22 @@
     'Plank', 'Hanging leg raise', 'Hanging side crunch',
     '90/90 heupstretch', 'Adductor stretch', 'Zittende vooroverbuiging', 'Cobra', 'Kindhouding', "World's greatest stretch", 'Ninja squat',
   ];
+  let voor = null; // the switched-on list from before that reset, while this phone still had it
+  // Once, after kennis.json: the Benen (explosief) day gets back what was on for it or was ever logged
+  // (else the day's own defaults, without squat, which was off by default), plus the user's new leg exercises.
+  const BENEN_NIEUW = ['Jumping Bulgarian split squat', 'Explosive squat', 'Romanian deadlift'];
+  function benenTerug() {
+    if (S.lijst !== 1) return;
+    const day = Plan.pool('benen', S.workouts, Date.now()).map((x) => x.name);
+    const logged = S.workouts.flatMap((w) => (w.entries || []).map((e) => Score.findExercise(e.exercise)?.name));
+    const had = day.filter((n) => (voor || []).includes(n) || logged.includes(n));
+    const back = had.length ? had : Plan.dayById('benen').defaults.filter((n) => n !== 'Squat');
+    S.mine = [...new Set([...S.mine, ...back, ...BENEN_NIEUW])];
+    if (Array.isArray(S.seen)) S.seen = [...new Set([...S.seen, ...BENEN_NIEUW])];
+    S.lijst = 2;
+    voor = null;
+    save();
+  }
   // Older saves had an archive instead: everything ever logged goes on, minus what was archived (squat and deadlift by default).
   function migrate(s) {
     if (!Array.isArray(s.mine)) {
@@ -50,7 +66,8 @@
     const renamed = (a) => Array.isArray(a) ? [...new Set(a.map((n) => Score.findExercise(n)?.name || n))] : a;
     s.mine = renamed(s.mine); s.seen = renamed(s.seen);
     // Once: the user's own list (2026-09-28) replaces whatever was on; everything else stays in Mijn oefeningen, switched off.
-    if (s.lijst !== 1) {
+    if (!s.lijst) {
+      voor = s.mine;
       s.mine = [...MIJN_LIJST];
       if (Array.isArray(s.seen)) s.seen = [...new Set([...s.seen, ...MIJN_LIJST])];
       s.lijst = 1;
@@ -143,6 +160,7 @@
       Score.addExercises(K.exercises);
       Score.setRecords(K.records);
       if (!Array.isArray(S.seen)) { S.seen = listable().filter((e) => !isResearch(e)).map((e) => e.name); save(); }
+      benenTerug();
     } catch { K.failed = true; }
     await vragen;
     fillDatalist();
@@ -905,6 +923,7 @@
         const prev = S.custom;
         S = migrate({ ...blank(), seen: S.seen, ...U.restore, lastBackup: S.lastBackup });
         useCustom(prev, S.custom);
+        if (!K.failed) benenTerug();
         fillDatalist();
         U.restore = null;
         $('#restore-confirm').hidden = true;
